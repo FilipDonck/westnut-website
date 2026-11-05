@@ -1,0 +1,2 @@
+HERSTEL VERSIE 4
+De originele foto’s en pagina’s zijn opgenomen. De ontbrekende content-JSON is opnieuw opgebouwd op basis van beschikbare informatie, dus controleer de teksten in Pages CMS. De officiële LEADER-banner ontbreekt nog en moet later worden toegevoegd. Upload de INHOUD van deze map naar de hoofdmap van GitHub (vervang bestaande bestanden). Verwijder geen andere bestanden die je wilt bewaren.

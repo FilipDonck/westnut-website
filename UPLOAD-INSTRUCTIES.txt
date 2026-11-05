@@ -1,0 +1,5 @@
+WESTNUT V4
+1. Pak deze ZIP uit.
+2. Upload alle bestanden en mappen naar GitHub: https://github.com/FilipDonck/westnut-website/upload/main
+3. Let op: .pages.yml is een verborgen bestand; upload dit ook.
+4. Zie README.md voor Cloudflare Pages en Pages CMS.

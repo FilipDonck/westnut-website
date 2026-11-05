@@ -1,0 +1,61 @@
+media:
+  input: images
+  output: /images
+  categories: [image]
+content:
+  - name: site
+    label: Website-instellingen en teksten
+    type: file
+    path: content/site.json
+    format: json
+    fields:
+      - { name: eyebrow, label: Korte regel boven titel, type: string }
+      - { name: hero_title, label: Grote titel homepagina, type: string }
+      - { name: hero_text, label: Introductietekst homepagina, type: text }
+      - { name: hero_image, label: Grote achtergrondfoto, type: image }
+      - { name: about_title, label: Titel ons verhaal, type: string }
+      - { name: about_text, label: Tekst ons verhaal, type: text }
+      - { name: about_image, label: Foto ons verhaal, type: image }
+      - { name: products_intro, label: Introductie producten, type: text }
+      - { name: contact_email, label: Contact e-mailadres, type: string }
+      - { name: instagram_url, label: Instagram link, type: string }
+      - { name: facebook_url, label: Facebook link, type: string }
+  - name: rassen
+    label: Hazelnootrassen
+    type: file
+    path: content/rassen.json
+    format: json
+    list: true
+    fields:
+      - { name: naam, label: Rasnaam, type: string, required: true }
+      - { name: herkomst, label: Herkomst, type: string }
+      - { name: beschrijving, label: Beschrijving, type: text }
+      - { name: foto, label: Foto, type: image }
+      - { name: zichtbaar, label: Zichtbaar op website, type: boolean }
+  - name: producten
+    label: Producten en prijzen
+    type: file
+    path: content/producten.json
+    format: json
+    list: true
+    fields:
+      - { name: naam, label: Productnaam, type: string, required: true }
+      - { name: categorie, label: Categorie, type: string }
+      - { name: omschrijving, label: Omschrijving, type: text }
+      - { name: prijs, label: Prijs in euro, type: number }
+      - { name: gewicht, label: Gewicht of verpakking, type: string }
+      - { name: foto, label: Productfoto, type: image }
+      - { name: beschikbaar, label: Verkrijgbaar, type: boolean }
+      - { name: zichtbaar, label: Zichtbaar op website, type: boolean }
+  - name: nieuws
+    label: Nieuwsberichten
+    type: file
+    path: content/nieuws.json
+    format: json
+    list: true
+    fields:
+      - { name: titel, label: Titel, type: string, required: true }
+      - { name: datum, label: Datum (JJJJ-MM-DD), type: string }
+      - { name: samenvatting, label: Bericht, type: text }
+      - { name: foto, label: Foto, type: image }
+      - { name: zichtbaar, label: Zichtbaar op website, type: boolean }
