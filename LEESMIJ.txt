@@ -1,0 +1,6 @@
+WESTNUT WEBSITE V7
+
+Upload index.html en westnut-logo.png naar de hoofdmap van je GitHub repository.
+De LEADER West-Vlaanderen-afbeelding is nog niet toegevoegd; vervang de tijdelijke tekst pas na ontvangst van het juiste logo.
+Controleer info@westnut.be voordat je de website publiceert.
+De sfeerbeelden worden van Unsplash geladen en vereisen internet.
