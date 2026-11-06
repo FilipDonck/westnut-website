@@ -14,7 +14,9 @@ content="Westnut: lokaal en duurzaam geteelde Belgische hazelnoten uit West-Vlaa
 
 <style>
 
-/* ALGEMENE INSTELLINGEN */
+/* ======================================
+   WESTNUT - ALGEMENE INSTELLINGEN
+====================================== */
 
 :root {
   --green: #173824;
@@ -43,7 +45,9 @@ a {
   color: inherit;
 }
 
-/* NAVIGATIE */
+/* ======================================
+   NAVIGATIE
+====================================== */
 
 .site-header {
   background: #faf8f3;
@@ -54,22 +58,32 @@ a {
 .nav {
   max-width: 1450px;
   margin: auto;
-  padding: 12px 30px;
+  padding: 8px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 35px;
+  gap: 25px;
+}
+
+/* GROTER WESTNUT-LOGO */
+
+.brand {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
 }
 
 .brand img {
-  width: 105px;
+  width: 140px;
   height: auto;
   display: block;
+  object-fit: contain;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 26px;
   flex-wrap: wrap;
 }
@@ -91,6 +105,10 @@ a {
   border-radius: 8px;
 }
 
+.nav-links .active:hover {
+  color: white;
+}
+
 .menu-toggle {
   display: none;
   border: 0;
@@ -100,7 +118,9 @@ a {
   cursor: pointer;
 }
 
-/* HERO */
+/* ======================================
+   HERO - HOOFDBANNER
+====================================== */
 
 .hero {
   min-height: 465px;
@@ -165,7 +185,9 @@ a {
   transform: translateY(-2px);
 }
 
-/* KERNWAARDEN */
+/* ======================================
+   KERNWAARDEN
+====================================== */
 
 .values {
   position: relative;
@@ -199,7 +221,9 @@ a {
   font-size: 30px;
 }
 
-/* VIER FOTOKAARTEN */
+/* ======================================
+   VIER FOTOKAARTEN
+====================================== */
 
 .explore {
   max-width: 1500px;
@@ -223,8 +247,6 @@ a {
   isolation: isolate;
 }
 
-/* FOTO'S */
-
 .feature-card img {
   display: block;
   width: 100%;
@@ -238,7 +260,7 @@ a {
   transform: scale(1.06);
 }
 
-/* DONKERGROEN KLEURVERLOOP */
+/* DONKER KLEURVERLOOP */
 
 .feature-card::after {
   content: "";
@@ -291,6 +313,8 @@ a {
   background: rgba(255,255,255,.18);
 }
 
+/* TOEGANKELIJKHEID */
+
 .feature-card:focus-visible,
 .hero-button:focus-visible,
 .nav-links a:focus-visible {
@@ -298,7 +322,9 @@ a {
   outline-offset: 3px;
 }
 
-/* FOOTER */
+/* ======================================
+   FOOTER
+====================================== */
 
 .footer {
   background: var(--green);
@@ -308,12 +334,18 @@ a {
   font-size: 14px;
 }
 
-/* TABLET */
+/* ======================================
+   TABLET
+====================================== */
 
 @media (max-width: 1100px) {
 
   .nav {
     gap: 15px;
+  }
+
+  .brand img {
+    width: 120px;
   }
 
   .nav-links {
@@ -334,7 +366,9 @@ a {
 
 }
 
-/* SMARTPHONE */
+/* ======================================
+   SMARTPHONE
+====================================== */
 
 @media (max-width: 750px) {
 
@@ -343,7 +377,7 @@ a {
   }
 
   .brand img {
-    width: 80px;
+    width: 100px;
   }
 
   .menu-toggle {
@@ -410,7 +444,10 @@ a {
 
 }
 
+/* MINDER ANIMATIES INDIEN INGESTELD */
+
 @media (prefers-reduced-motion: reduce) {
+
   html {
     scroll-behavior: auto;
   }
@@ -419,6 +456,7 @@ a {
   .hero-button {
     transition: none;
   }
+
 }
 
 </style>
@@ -426,7 +464,9 @@ a {
 
 <body>
 
-<!-- NAVIGATIE -->
+<!-- ======================================
+     NAVIGATIE
+====================================== -->
 
 <header class="site-header">
 
@@ -453,22 +493,35 @@ a {
 
     <div class="nav-links" id="nav-links">
 
-      <a href="index.html" class="active"
-         aria-current="page">Home</a>
+      <a href="index.html"
+         class="active"
+         aria-current="page">
+        Home
+      </a>
 
-      <a href="over-ons.html">Ons verhaal</a>
+      <a href="over-ons.html">
+        Ons verhaal
+      </a>
 
-      <a href="rassen.html">Rassen</a>
+      <a href="rassen.html">
+        Rassen
+      </a>
 
-      <a href="producten.html">Producten</a>
+      <a href="producten.html">
+        Producten
+      </a>
 
-      <a href="nieuws.html">Nieuws</a>
+      <a href="nieuws.html">
+        Nieuws
+      </a>
 
       <a href="steun.html">
         Steun &amp; samenwerking
       </a>
 
-      <a href="contact.html">Contact</a>
+      <a href="contact.html">
+        Contact
+      </a>
 
     </div>
 
@@ -478,7 +531,9 @@ a {
 
 <main>
 
-<!-- HOOFDSECTIE -->
+<!-- ======================================
+     HOOFDBANNER
+====================================== -->
 
 <section class="hero">
 
@@ -505,7 +560,9 @@ a {
 
 </section>
 
-<!-- ONZE WAARDEN -->
+<!-- ======================================
+     ONZE WAARDEN
+====================================== -->
 
 <section class="values" aria-label="Onze waarden">
 
@@ -535,7 +592,9 @@ a {
 
 </section>
 
-<!-- VIER FOTOKAARTEN -->
+<!-- ======================================
+     VIER FOTOKAARTEN
+====================================== -->
 
 <section class="explore" aria-label="Ontdek Westnut">
 
@@ -639,7 +698,9 @@ a {
 
 </main>
 
-<!-- FOOTER -->
+<!-- ======================================
+     FOOTER
+====================================== -->
 
 <footer class="footer">
 
@@ -648,7 +709,9 @@ a {
 
 </footer>
 
-<!-- JAVASCRIPT -->
+<!-- ======================================
+     JAVASCRIPT
+====================================== -->
 
 <script>
 
