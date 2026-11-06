@@ -1,116 +1,222 @@
-
+µ
 <!doctype html>
 <html lang="nl">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Belgische hazelnoten | Westnut</title>
-  <meta name="description" content="Westnut teelt Belgische hazelnoten in West-Vlaanderen en ontwikkelt verfijnde hazelnootproducten.">
+  <title>Westnut | Belgische hazelnoten</title>
+  <meta name="description" content="Westnut teelt Belgische hazelnoten in West-Vlaanderen. Ontdek onze hazelnootrassen, lokale teelt en toekomstige hazelnootproducten.">
 
-  <link rel="stylesheet" href="style.css">
   <link rel="icon" href="logo.jpg">
+  <link rel="stylesheet" href="style.css">
 
   <style>
-    /* WESTNUT - DEFINITIEF HERO-ONTWERP */
+    /* WESTNUT - COMPLETE STARTPAGINA */
+    :root {
+      --westnut-green: #17351f;
+      --westnut-cream: #f8f6ef;
+      --westnut-brown: #e6b789;
+      --westnut-orange: #c77942;
+    }
 
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    /* Navigatie */
+    .top {
+      background: var(--westnut-cream);
+    }
+
+    .top .nav {
+      width: min(94%, 1380px);
+      max-width: 1380px;
+      min-height: 110px;
+      margin: 0 auto;
+      padding: 12px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 35px;
+    }
+
+    .top .brand {
+      flex: 0 0 auto;
+      display: block;
+    }
+
+    .top .brand img {
+      display: block;
+      width: 105px !important;
+      max-width: none !important;
+      height: auto !important;
+      max-height: none !important;
+    }
+
+    .top .links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 15px 25px;
+    }
+
+    .top .links a {
+      font-size: 18px !important;
+      line-height: 1.4;
+      font-weight: 500;
+      text-decoration: none;
+      white-space: nowrap;
+      color: #243321;
+    }
+
+    .top .links a:hover {
+      color: #bd733f;
+    }
+
+    /* Hoofdbanner */
     .hero {
+      background: var(--westnut-green) !important;
       min-height: 0 !important;
-      padding: 55px 0 !important;
-      background: #17351f;
+      height: auto !important;
+      padding: 65px 0 !important;
     }
 
     .hero .hero-inner {
       display: block !important;
+      width: min(94%, 1380px);
+      max-width: 1380px !important;
       min-height: 0 !important;
-      max-width: 1380px;
-      width: 94%;
+      height: auto !important;
       margin: 0 auto;
+      padding: 0 !important;
     }
 
     .hero-layout {
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      gap: 35px;
+      display: grid;
+      grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+      align-items: start;
+      gap: 38px;
       width: 100%;
     }
 
-    /* Logo links */
     .hero-logo {
-      flex: 0 0 38%;
-      max-width: 470px;
-      margin: 0;
-      padding: 0;
+      width: 100%;
+      min-width: 0;
     }
 
     .hero-logo img {
       display: block;
       width: 100%;
       height: auto;
+      max-width: 500px;
+      margin: 0;
+      object-fit: contain;
     }
 
-    /* Tekst rechts */
     .hero-content {
-      flex: 1 1 0;
       min-width: 0;
-      max-width: 790px;
+      width: 100%;
       text-align: left;
     }
 
     .hero-content h1 {
-      color: #fffaf2;
+      display: block;
+      width: 100%;
+      max-width: none !important;
+      margin: -8px 0 28px !important;
+      padding: 0 !important;
+      color: #fffaf2 !important;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(38px, 4.3vw, 76px);
+      font-size: clamp(38px, 4.4vw, 76px) !important;
       font-weight: 400;
       line-height: 1.08;
       letter-spacing: -0.025em;
-      max-width: none !important;
-      width: 100%;
-      margin: -8px 0 30px !important;
+      text-align: left;
     }
 
     .hero-content #hero-text {
-      color: #e6b789 !important;
-      font-size: clamp(19px, 2.1vw, 31px) !important;
-      line-height: 1.35;
-      margin: 0 0 35px !important;
+      display: block;
+      width: 100%;
       max-width: none !important;
+      margin: 0 0 35px !important;
+      color: var(--westnut-brown) !important;
+      font-size: clamp(20px, 2.2vw, 31px) !important;
+      line-height: 1.35;
+      font-weight: 500;
+      text-align: left;
     }
 
     .hero-content .button {
       display: inline-block;
-      background: #c77942;
-      color: #ffffff;
-      padding: 16px 30px;
-      font-weight: 600;
+      width: auto;
+      padding: 17px 30px;
+      background: var(--westnut-orange) !important;
+      color: #fff !important;
+      font-size: 13px;
+      font-weight: 700;
       letter-spacing: 0.07em;
       text-decoration: none;
+      text-align: center;
     }
 
     .hero-content .button:hover {
-      background: #ad6534;
+      background: #a95f32 !important;
     }
 
-    /* Tablets */
-    @media (max-width: 1050px) {
+    /* Tablet */
+    @media (max-width: 1100px) {
+      .top .links {
+        gap: 12px 17px;
+      }
+
+      .top .links a {
+        font-size: 16px !important;
+      }
+
       .hero-layout {
+        grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
         gap: 25px;
       }
 
-      .hero-logo {
-        flex-basis: 35%;
-      }
-
       .hero-content h1 {
-        font-size: clamp(35px, 4.4vw, 58px);
+        font-size: clamp(35px, 4.4vw, 55px) !important;
       }
     }
 
-    /* Smartphones */
+    /* Smartphone */
     @media (max-width: 768px) {
+      .top .nav {
+        flex-direction: column;
+        min-height: 0;
+        padding: 16px 0;
+        gap: 18px;
+      }
+
+      .top .brand img {
+        width: 90px !important;
+      }
+
+      .top .links {
+        justify-content: center;
+        gap: 12px 18px;
+      }
+
+      .top .links a {
+        font-size: 16px !important;
+      }
+
       .hero {
-        padding: 35px 0 !important;
+        padding: 35px 0 45px !important;
       }
 
       .hero .hero-inner {
@@ -118,25 +224,23 @@
       }
 
       .hero-layout {
+        display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 28px;
+        gap: 30px;
       }
 
       .hero-logo {
-        flex: none;
         width: 75%;
         max-width: 300px;
       }
 
       .hero-content {
-        flex: none;
         width: 100%;
-        max-width: 100%;
       }
 
       .hero-content h1 {
-        font-size: clamp(35px, 8vw, 53px);
+        font-size: clamp(35px, 8vw, 52px) !important;
         margin: 0 0 22px !important;
       }
 
@@ -153,8 +257,10 @@
   <!-- Navigatie -->
   <header class="top">
     <nav class="container nav">
+
       <a class="brand" href="index.html">
-        <img src="logo.jpg" alt="Westnut logo">
+        <img src="Westnut Belgische Hazelnoten-logo.png"
+             alt="Westnut logo">
       </a>
 
       <div class="links">
@@ -166,14 +272,16 @@
         <a href="samenwerking.html">Steun & samenwerking</a>
         <a href="contact.html">Contact</a>
       </div>
+
     </nav>
   </header>
 
   <main id="home">
 
-    <!-- Nieuwe Westnut hoofdbanner -->
+    <!-- Hoofdbanner -->
     <section class="hero">
       <div class="container hero-inner">
+
         <div class="hero-layout">
 
           <div class="hero-logo">
@@ -201,12 +309,14 @@
 
           </div>
         </div>
+
       </div>
     </section>
 
     <!-- Ons verhaal -->
     <section class="section">
       <div class="container split">
+
         <div>
           <div class="eyebrow">Ons verhaal</div>
 
@@ -229,9 +339,10 @@
       </div>
     </section>
 
-    <!-- Producten -->
+    <!-- Van boomgaard tot product -->
     <section class="section dark">
       <div class="container">
+
         <div class="eyebrow">
           Van boomgaard tot product
         </div>
@@ -240,6 +351,7 @@
         <p id="products-intro"></p>
 
         <div class="grid">
+
           <div>
             <h3>01 · Teelt</h3>
             <p>
@@ -263,11 +375,13 @@
               van verfijnde hazelnootproducten.
             </p>
           </div>
+
         </div>
 
         <a class="button" href="producten.html">
           Onze producten
         </a>
+
       </div>
     </section>
 
@@ -276,6 +390,7 @@
   <!-- Footer -->
   <footer class="foot">
     <div class="container">
+
       <div>
         <strong>WESTNUT</strong>
         <br>
@@ -291,6 +406,7 @@
         <br>
         <span class="small">© Westnut 2026</span>
       </div>
+
     </div>
   </footer>
 
