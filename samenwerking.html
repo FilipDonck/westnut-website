@@ -1,192 +1,221 @@
 
 <!doctype html>
 <html lang="nl">
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Steun & samenwerking | Westnut</title>
+<title>Steun & samenwerking | Westnut</title>
 
-  <meta name="description"
-        content="Ontdek hoe Westnut samenwerkt met LEADER West-Vlaanderen en onderzoekscentra aan de toekomst van Belgische hazelnoten.">
+<meta name="description"
+content="Westnut werkt samen met LEADER West-Vlaanderen en onderzoekscentra aan de toekomst van Belgische hazelnoten.">
 
-  <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 
-  <link rel="icon"
-        type="image/png"
-        href="Westnut Belgische Hazelnoten-logo.png">
+<link rel="icon" type="image/png"
+href="Westnut Belgische Hazelnoten-logo.png">
 
-  <style>
-    /* LEADER-AFBEELDING */
+<style>
 
-    .leader-image {
-      display: block;
-      width: 100%;
-      max-width: 490px;
-      height: auto;
-      max-height: none;
-      object-fit: contain;
-      margin: 0 auto;
-    }
+/* LEADER PAGINA */
 
-    .leader-section {
-      background: var(--cream);
-    }
+.leader-section {
+  background: var(--cream);
+}
 
-    .leader-section .split {
-      align-items: center;
-    }
+.leader-section .split {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 55px;
+}
 
-    @media (max-width: 800px) {
-      .leader-image {
-        max-width: 330px;
-      }
-    }
-  </style>
+/* LEADER WEST-VLAANDEREN OP EEN REGEL */
+
+.leader-section .eyebrow {
+  font-size: clamp(18px, 2.1vw, 30px) !important;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  color: var(--copper);
+  margin-bottom: 22px;
+}
+
+/* AFBEELDING RECHTS */
+
+.leader-image {
+  display: block;
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+.leader-section h2 {
+  margin-top: 0;
+}
+
+/* SMARTPHONE */
+
+@media (max-width: 800px) {
+
+  .leader-section .split {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .leader-section .eyebrow {
+    font-size: clamp(15px, 4vw, 23px) !important;
+    white-space: normal;
+  }
+
+  .leader-image {
+    max-width: 330px;
+  }
+
+}
+
+</style>
 </head>
 
 <body>
 
-  <!-- NAVIGATIE -->
+<header class="top">
+  <nav class="container nav">
 
-  <header class="top">
-    <nav class="container nav">
+    <a class="brand" href="index.html">
+      <img
+        src="Westnut Belgische Hazelnoten-logo.png"
+        alt="Westnut Belgische Hazelnoten">
+    </a>
 
-      <a class="brand" href="index.html">
-        <img
-          src="Westnut Belgische Hazelnoten-logo.png"
-          alt="Westnut Belgische Hazelnoten">
-      </a>
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="over-ons.html">Ons verhaal</a>
+      <a href="rassen.html">Rassen</a>
+      <a href="producten.html">Producten</a>
+      <a href="nieuws.html">Nieuws</a>
+      <a href="samenwerking.html">Steun & samenwerking</a>
+      <a href="contact.html">Contact</a>
+    </div>
 
-      <div class="links">
-        <a href="index.html">Home</a>
-        <a href="over-ons.html">Ons verhaal</a>
-        <a href="rassen.html">Rassen</a>
-        <a href="producten.html">Producten</a>
-        <a href="nieuws.html">Nieuws</a>
-        <a href="samenwerking.html">Steun & samenwerking</a>
-        <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- PAGINATITEL -->
+
+  <section class="pagehead">
+    <div class="container">
+
+      <div class="eyebrow">
+        Samen vooruit
       </div>
 
-    </nav>
-  </header>
+      <h1>Steun & samenwerking.</h1>
 
-  <main>
+      <p>
+        De toekomst van Belgische hazelnoten
+        bouwen we samen.
+      </p>
 
-    <!-- PAGINATITEL -->
+    </div>
+  </section>
 
-    <section class="pagehead">
-      <div class="container">
+  <!-- LEADER -->
+
+  <section class="section leader-section">
+
+    <div class="container split">
+
+      <div>
 
         <div class="eyebrow">
-          Samen vooruit
-        </div>
-
-        <h1>
-          Steun & samenwerking.
-        </h1>
-
-        <p>
-          De toekomst van Belgische hazelnoten
-          bouwen we samen.
-        </p>
-
-      </div>
-    </section>
-
-    <!-- LEADER WEST-VLAANDEREN -->
-
-    <section class="section leader-section">
-      <div class="container split">
-
-        <div>
-
-          <div class="eyebrow">
-            LEADER West-Vlaanderen
-          </div>
-
-          <h2>
-            Ook LEADER gelooft in de
-            toekomst van hazelnoten.
-          </h2>
-
-          <p>
-            Niet alleen wij geloven dat hazelnoten
-            een toekomst hebben in Vlaanderen.
-            Ook LEADER West-Vlaanderen
-            ondersteunt ons project.
-          </p>
-
-          <p>
-            Die steun helpt ons om verder
-            te werken aan een lokale,
-            toekomstgerichte hazelnootteelt.
-          </p>
-
-        </div>
-
-        <div>
-          <img
-            class="leader-image"
-            src="Leader logo's vierkant.jpg"
-            alt="LEADER West-Vlaanderen, medegefinancierd door de Europese Unie">
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ONDERZOEK EN KENNISDELING -->
-
-    <section class="section dark">
-      <div class="container">
-
-        <div class="eyebrow">
-          Onderzoek & kennisdeling
+          LEADER WEST-VLAANDEREN
         </div>
 
         <h2>
-          Door samenwerking groeien we verder.
+          Ook LEADER gelooft in de
+          toekomst van hazelnoten.
         </h2>
 
         <p>
-          We werken samen met onderzoekscentra
-          om teelteigenschappen en technieken
-          op te volgen. Door praktijkervaring
-          en onderzoek samen te brengen,
-          willen we de teelt verder verbeteren
-          en kwaliteitsvolle hazelnoten
-          produceren in Vlaanderen.
+          Niet alleen wij geloven dat hazelnoten
+          een toekomst hebben in Vlaanderen.
+          Ook LEADER West-Vlaanderen
+          ondersteunt ons project.
+        </p>
+
+        <p>
+          Die steun helpt ons om verder
+          te werken aan een lokale,
+          toekomstgerichte hazelnootteelt.
         </p>
 
       </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-
-  <footer class="foot">
-    <div class="container">
 
       <div>
-        <strong>WESTNUT</strong><br>
-        Belgische hazelnoten · West-Vlaanderen<br>
-
-        <span class="small">
-          Lokale teelt. Toekomstige smaken.
-        </span>
-      </div>
-
-      <div>
-        <a data-email>E-mailadres volgt</a><br>
-        <span class="small">© Westnut 2026</span>
+        <img
+          class="leader-image"
+          src="leader-west-vlaanderen-banner.png"
+          alt="LEADER West-Vlaanderen, medegefinancierd door de Europese Unie">
       </div>
 
     </div>
-  </footer>
 
-  <script src="site.js" defer></script>
+  </section>
+
+  <!-- ONDERZOEK -->
+
+  <section class="section dark">
+
+    <div class="container">
+
+      <div class="eyebrow">
+        Onderzoek & kennisdeling
+      </div>
+
+      <h2>
+        Door samenwerking groeien we verder.
+      </h2>
+
+      <p>
+        We werken samen met onderzoekscentra
+        om teelteigenschappen en technieken
+        op te volgen. Door praktijkervaring
+        en onderzoek samen te brengen,
+        willen we de teelt verder verbeteren
+        en kwaliteitsvolle hazelnoten
+        produceren in Vlaanderen.
+      </p>
+
+    </div>
+
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="container">
+
+    <div>
+      <strong>WESTNUT</strong><br>
+      Belgische hazelnoten · West-Vlaanderen<br>
+      <span class="small">
+        Lokale teelt. Toekomstige smaken.
+      </span>
+    </div>
+
+    <div>
+      <a data-email>E-mailadres volgt</a><br>
+      <span class="small">© Westnut 2026</span>
+    </div>
+
+  </div>
+</footer>
+
+<script src="site.js" defer></script>
 
 </body>
 </html>
