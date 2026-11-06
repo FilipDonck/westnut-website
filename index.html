@@ -154,8 +154,7 @@
 
     /* KNOPPEN */
 
-    .hero-content .button,
-    .story-content .button {
+    .hero-content .button {
       display: inline-block;
       padding: 19px 32px;
       background: var(--orange) !important;
@@ -168,66 +167,35 @@
       line-height: 1.25;
     }
 
-    .hero-content .button:hover,
-    .story-content .button:hover {
+    .hero-content .button:hover {
       background: #a9602d !important;
     }
 
-    /* ONS VERHAAL */
-
-    .story-section {
-      padding: 60px 0;
-      background: var(--cream);
+    /* ONS VERHAAL — identieke opmaak als over-ons.html */
+    .story-section {background:#f9f7f2;color:#173824;}
+    .story-section *, .story-section *::before, .story-section *::after {box-sizing:border-box;}
+    .story-layout {max-width:1480px;margin:0 auto;padding:56px 46px 66px;display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,1fr);align-items:center;gap:clamp(28px,3.4vw,56px);width:100%;}
+    .story-content {min-width:0;}
+    .story-content .eyebrow {display:inline-block;border:1px solid #d47c35;border-radius:50px;padding:10px 20px;color:#a65c29;font:bold clamp(23px,2.6vw,39px)/1.15 Arial,sans-serif;letter-spacing:.02em;margin:0 0 25px;}
+    .story-content h2 {font-family:Georgia,'Times New Roman',serif;font-weight:400;font-size:clamp(26px,2.55vw,39px);line-height:1.12;letter-spacing:-.035em;color:#173824;margin:0 0 25px;white-space:nowrap;}
+    .story-content #about-text {font:clamp(17px,1.55vw,23px)/1.65 Arial,sans-serif;max-width:620px;margin:0 0 38px;color:#1b3627;}
+    .story-content .button {display:inline-block;padding:18px 27px;background:#c87938 !important;color:white !important;text-decoration:none;font:bold 17px/1.2 Arial,sans-serif;border:0;}
+    .story-content .button:hover {background:#a95d27 !important;}
+    .story-photo {display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;max-height:none;}
+    @media(max-width:1100px) {
+      .story-layout {padding:45px 26px 55px;gap:25px;}
+      .story-content h2 {font-size:clamp(23px,2.7vw,31px);}
     }
-
-    .story-layout {
-      width: min(94%, 1380px);
-      margin: auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: 65px;
+    @media(max-width:800px) {
+      .story-layout {grid-template-columns:1fr;padding:38px 22px 48px;}
+      .story-content h2 {font-size:clamp(27px,5vw,38px);white-space:normal;}
+      .story-content #about-text {font-size:18px;}
+      .story-photo {max-height:480px;}
     }
-
-    .story-content {
-      min-width: 0;
-    }
-
-    .story-content .eyebrow {
-      display: inline-block;
-      margin-bottom: 24px;
-      padding: 9px 20px;
-      border: 2px solid var(--orange);
-      border-radius: 40px;
-      color: #a65d29 !important;
-      font-size: 45px !important;
-      font-weight: 700;
-      letter-spacing: .02em;
-      line-height: 1.2;
-    }
-
-    .story-content h2 {
-      margin: 0 0 26px;
-      color: var(--green);
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(40px, 4vw, 66px);
-      font-weight: 400;
-      line-height: 1.1;
-    }
-
-    .story-content #about-text {
-      margin-bottom: 28px;
-      font-size: 28px !important;
-      line-height: 1.5;
-      color: #374333;
-    }
-
-    .story-photo {
-      width: 100%;
-      max-height: 520px;
-      height: auto;
-      object-fit: cover;
-      display: block;
+    @media(max-width:480px) {
+      .story-content .eyebrow {font-size:24px;}
+      .story-content h2 {font-size:30px;}
+      .story-content .button {font-size:14px !important;padding:15px 18px;}
     }
 
     /* VAN BOOMGAARD TOT PRODUCT */
@@ -340,10 +308,6 @@
       .hero-content #hero-text {
         font-size: clamp(31px, 3.74vw, 44.6px) !important;
       }
-
-      .story-layout {
-        gap: 35px;
-      }
     }
 
     /* SMARTPHONES */
@@ -402,32 +366,9 @@
         font-size: 34px !important;
       }
 
-      .hero-content .button,
-      .story-content .button {
+      .hero-content .button {
         font-size: 17px !important;
         padding: 16px 24px;
-      }
-
-      .story-section {
-        padding: 40px 0;
-      }
-
-      .story-layout {
-        width: 90%;
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
-
-      .story-content .eyebrow {
-        font-size: 32.5px !important;
-      }
-
-      .story-content h2 {
-        font-size: 43px;
-      }
-
-      .story-content #about-text {
-        font-size: 22px !important;
       }
 
       .process-section {
@@ -548,8 +489,8 @@
 
         <img id="about-photo"
              class="story-photo"
-             src="boomgaard-2.jpg"
-             alt="Hazelnootplantage van Westnut">
+             src="ons-verhaal-foto.jpg"
+             alt="Westnut hazelnootplantage met een close-up van hazelnoten">
 
       </div>
     </section>
