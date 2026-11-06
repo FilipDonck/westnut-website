@@ -6,34 +6,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Belgische hazelnoten | Westnut</title>
-  <meta name="description"
-        content="Westnut teelt Belgische hazelnoten in West-Vlaanderen en ontwikkelt verfijnde hazelnootproducten.">
+  <meta name="description" content="Westnut teelt Belgische hazelnoten in West-Vlaanderen en ontwikkelt verfijnde hazelnootproducten.">
 
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="logo.jpg">
 
   <style>
-    /* Nieuwe compacte startpagina */
+    /* WESTNUT - DEFINITIEF HERO-ONTWERP */
+
     .hero {
       min-height: 0 !important;
-      padding: 50px 0 !important;
+      padding: 55px 0 !important;
+      background: #17351f;
     }
 
     .hero .hero-inner {
+      display: block !important;
       min-height: 0 !important;
-      display: block;
+      max-width: 1380px;
+      width: 94%;
+      margin: 0 auto;
     }
 
     .hero-layout {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: center;
-      gap: 55px;
+      gap: 35px;
       width: 100%;
     }
 
+    /* Logo links */
     .hero-logo {
-      flex: 0 0 260px;
+      flex: 0 0 38%;
+      max-width: 470px;
+      margin: 0;
+      padding: 0;
     }
 
     .hero-logo img {
@@ -42,33 +50,99 @@
       height: auto;
     }
 
+    /* Tekst rechts */
     .hero-content {
-      flex: 0 1 520px;
+      flex: 1 1 0;
       min-width: 0;
+      max-width: 790px;
+      text-align: left;
     }
 
     .hero-content h1 {
-      margin: 12px 0 18px;
+      color: #fffaf2;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(38px, 4.3vw, 76px);
+      font-weight: 400;
+      line-height: 1.08;
+      letter-spacing: -0.025em;
+      max-width: none !important;
+      width: 100%;
+      margin: -8px 0 30px !important;
     }
 
+    .hero-content #hero-text {
+      color: #e6b789 !important;
+      font-size: clamp(19px, 2.1vw, 31px) !important;
+      line-height: 1.35;
+      margin: 0 0 35px !important;
+      max-width: none !important;
+    }
+
+    .hero-content .button {
+      display: inline-block;
+      background: #c77942;
+      color: #ffffff;
+      padding: 16px 30px;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-decoration: none;
+    }
+
+    .hero-content .button:hover {
+      background: #ad6534;
+    }
+
+    /* Tablets */
+    @media (max-width: 1050px) {
+      .hero-layout {
+        gap: 25px;
+      }
+
+      .hero-logo {
+        flex-basis: 35%;
+      }
+
+      .hero-content h1 {
+        font-size: clamp(35px, 4.4vw, 58px);
+      }
+    }
+
+    /* Smartphones */
     @media (max-width: 768px) {
       .hero {
         padding: 35px 0 !important;
       }
 
+      .hero .hero-inner {
+        width: 90%;
+      }
+
       .hero-layout {
         flex-direction: column;
-        gap: 25px;
+        align-items: center;
+        gap: 28px;
       }
 
       .hero-logo {
         flex: none;
-        width: 190px;
+        width: 75%;
+        max-width: 300px;
       }
 
       .hero-content {
         flex: none;
         width: 100%;
+        max-width: 100%;
+      }
+
+      .hero-content h1 {
+        font-size: clamp(35px, 8vw, 53px);
+        margin: 0 0 22px !important;
+      }
+
+      .hero-content #hero-text {
+        font-size: 20px !important;
+        margin-bottom: 25px !important;
       }
     }
   </style>
@@ -97,23 +171,24 @@
 
   <main id="home">
 
-    <!-- Groene balk met logo links en tekst rechts -->
+    <!-- Nieuwe Westnut hoofdbanner -->
     <section class="hero">
       <div class="container hero-inner">
         <div class="hero-layout">
 
           <div class="hero-logo">
-            <img src="Westnut Belgische Hazelnoten-logo.png"
-                 alt="Westnut - Belgische Hazelnoten">
+            <img
+              src="Westnut Belgische Hazelnoten-logo.png"
+              alt="Westnut - Belgische Hazelnoten">
           </div>
 
           <div class="hero-content">
-            <div class="eyebrow" id="eyebrow">
-              Belgische hazelnoten
-            </div>
 
             <h1 id="hero-title">
-              Een nieuwe standaard voor Belgische hazelnoten.
+              Een nieuwe<br>
+              standaard<br>
+              voor Belgische<br>
+              hazelnoten.
             </h1>
 
             <p id="hero-text">
@@ -121,10 +196,10 @@
             </p>
 
             <a class="button" href="over-ons.html">
-              Ontdek ons verhaal
+              ONTDEK ONS VERHAAL
             </a>
-          </div>
 
+          </div>
         </div>
       </div>
     </section>
@@ -146,10 +221,11 @@
           </a>
         </div>
 
-        <img id="about-photo"
-             class="photo"
-             src="boomgaard-2.jpg"
-             alt="Westnut hazelnootplantage">
+        <img
+          id="about-photo"
+          class="photo"
+          src="boomgaard-2.jpg"
+          alt="Westnut hazelnootplantage">
       </div>
     </section>
 
