@@ -1,519 +1,628 @@
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="nl">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Westnut | Belgische hazelnoten</title>
-<meta name="description" content="Westnut teelt Belgische hazelnoten in West-Vlaanderen. Ontdek onze hazelnootrassen, lokale teelt en toekomstige hazelnootproducten.">
+  <title>Westnut | Belgische hazelnoten</title>
+  <meta name="description" content="Westnut teelt Belgische hazelnoten in West-Vlaanderen. Ontdek onze teelt, rassen en toekomstige producten.">
 
-<link rel="icon" href="Westnut Belgische Hazelnoten-logo.png">
-<link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="Westnut Belgische Hazelnoten-logo.png">
+  <link rel="stylesheet" href="style.css">
 
-<style>
-/* WESTNUT - NIEUWE STARTPAGINA */
+  <style>
+    :root {
+      --green: #17351f;
+      --cream: #f8f6f0;
+      --orange: #c8793c;
+      --tan: #e6b789;
+      --text: #263b2b;
+    }
 
-:root {
-  --groen: #14351f;
-  --creme: #f8f6f0;
-  --oranje: #c8793c;
-  --lichtbruin: #e8b98e;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-* {
-  box-sizing: border-box;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-html {
-  scroll-behavior: smooth;
-}
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
-body {
-  margin: 0;
-  background: var(--creme);
-}
+    /* HEADER */
 
-/* NAVIGATIE */
+    .top {
+      background: var(--cream) !important;
+    }
 
-.top {
-  background: var(--creme) !important;
-  position: relative;
-}
+    .top .nav {
+      width: min(94%, 1380px);
+      max-width: 1380px !important;
+      min-height: 115px;
+      margin: auto;
+      padding: 12px 0;
+      display: flex !important;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
 
-.top .nav {
-  width: min(94%, 1380px);
-  max-width: 1380px !important;
-  min-height: 112px;
-  margin: auto;
-  padding: 12px 0;
-  display: flex !important;
-  align-items: center;
-  justify-content: space-between;
-  gap: 35px;
-}
+    .top .brand {
+      flex-shrink: 0;
+      display: block;
+    }
 
-.top .brand {
-  display: block;
-  flex: 0 0 auto;
-}
+    .top .brand img {
+      width: 110px !important;
+      height: auto !important;
+      max-width: none !important;
+      max-height: none !important;
+      display: block;
+    }
 
-.top .brand img {
-  display: block;
-  width: 110px !important;
-  max-width: none !important;
-  height: auto !important;
-  max-height: none !important;
-}
+    .top .links {
+      display: flex !important;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 14px 24px;
+    }
 
-.top .links {
-  display: flex !important;
-  align-items: center;
-  justify-content: flex-end;
-  flex-wrap: wrap;
-  gap: 14px 26px;
-}
+    .top .links a {
+      font-size: 20px !important;
+      font-weight: 500;
+      color: var(--green) !important;
+      text-decoration: none;
+      white-space: nowrap;
+    }
 
-.top .links a {
-  font-family: Arial, sans-serif;
-  font-size: 20px !important;
-  font-weight: 500;
-  line-height: 1.4;
-  white-space: nowrap;
-  color: #17351f !important;
-  text-decoration: none;
-}
+    .top .links a:hover {
+      color: var(--orange) !important;
+    }
 
-.top .links a:hover {
-  color: var(--oranje) !important;
-}
+    /* HERO */
 
-/* GROENE HOOFDBANNER */
+    .hero {
+      background: var(--green) !important;
+      min-height: 0 !important;
+      height: auto !important;
+      padding: 50px 0 !important;
+    }
 
-.hero {
-  background: var(--groen) !important;
-  min-height: 0 !important;
-  height: auto !important;
-  padding: 45px 0 !important;
-}
+    .hero .hero-inner {
+      display: block !important;
+      width: min(94%, 1380px);
+      max-width: 1380px !important;
+      min-height: 0 !important;
+      height: auto !important;
+      padding: 0 !important;
+      margin: auto;
+    }
 
-.hero .hero-inner {
-  display: block !important;
-  width: min(94%, 1380px);
-  max-width: 1380px !important;
-  min-height: 0 !important;
-  height: auto !important;
-  margin: 0 auto;
-  padding: 0 !important;
-}
+    .hero-layout {
+      display: grid;
+      grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr);
+      align-items: start;
+      gap: 45px;
+    }
 
-.hero-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
-  align-items: start;
-  gap: 50px;
-  width: 100%;
-}
+    .hero-logo img {
+      display: block;
+      width: 100%;
+      max-width: 480px;
+      height: auto;
+      object-fit: contain;
+    }
 
-.hero-logo {
-  width: 100%;
-  min-width: 0;
-}
+    .hero-content {
+      min-width: 0;
+      text-align: left;
+    }
 
-.hero-logo img {
-  display: block;
-  width: 100%;
-  max-width: 480px;
-  height: auto;
-  margin: 0;
-  object-fit: contain;
-}
+    .hero-content h1 {
+      margin: -8px 0 22px !important;
+      color: #fffaf3 !important;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(42px, 4.3vw, 76px) !important;
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -.025em;
+      text-align: left;
+    }
 
-.hero-content {
-  min-width: 0;
-  width: 100%;
-  text-align: left;
-}
+    /* ONDERTITEL DUBBEL ZO GROOT */
 
-.hero-content h1 {
-  display: block;
-  width: 100%;
-  max-width: none !important;
-  margin: -8px 0 18px !important;
-  padding: 0 !important;
-  color: #fffaf3 !important;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(43px, 4.3vw, 76px) !important;
-  font-weight: 400;
-  line-height: 1.04;
-  letter-spacing: -0.025em;
-  text-align: left;
-}
+    .hero-content #hero-text {
+      margin: 0 0 28px !important;
+      color: var(--tan) !important;
+      font-size: clamp(36px, 4vw, 58px) !important;
+      font-weight: 600;
+      line-height: 1.15;
+      text-align: left;
+    }
 
-.hero-content #hero-text {
-  display: block;
-  width: 100%;
-  max-width: none !important;
-  margin: 0 0 25px !important;
-  color: var(--lichtbruin) !important;
-  font-family: Arial, sans-serif;
-  font-size: clamp(20px, 2.1vw, 30px) !important;
-  font-weight: 600;
-  line-height: 1.3;
-  text-align: left;
-}
+    /* KNOPPEN */
 
-/* KNOPPEN */
+    .hero-content .button,
+    .story-content .button {
+      display: inline-block;
+      padding: 19px 32px;
+      background: var(--orange) !important;
+      color: white !important;
+      font-size: 20px !important;
+      font-weight: 700;
+      text-decoration: none;
+      text-align: center;
+      border: none;
+      line-height: 1.25;
+    }
 
-.hero-content .button,
-.story-content .button {
-  display: inline-block;
-  width: auto;
-  padding: 19px 32px;
-  background: var(--oranje) !important;
-  color: #ffffff !important;
-  font-family: Arial, sans-serif;
-  font-size: 19px !important;
-  font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: 0.02em;
-  text-align: center;
-  text-decoration: none;
-  border: none;
-}
+    .hero-content .button:hover,
+    .story-content .button:hover {
+      background: #a9602d !important;
+    }
 
-.hero-content .button:hover,
-.story-content .button:hover {
-  background: #aa622e !important;
-}
+    /* ONS VERHAAL */
 
-/* ONS VERHAAL */
+    .story-section {
+      padding: 60px 0;
+      background: var(--cream);
+    }
 
-.story-section {
-  background: var(--creme);
-  padding: 55px 0;
-}
+    .story-layout {
+      width: min(94%, 1380px);
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 65px;
+    }
 
-.story-layout {
-  width: min(94%, 1380px);
-  margin: auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 70px;
-  align-items: center;
-}
+    .story-content {
+      min-width: 0;
+    }
 
-.story-content {
-  min-width: 0;
-}
+    .story-content .eyebrow {
+      display: inline-block;
+      margin-bottom: 24px;
+      padding: 9px 20px;
+      border: 2px solid var(--orange);
+      border-radius: 30px;
+      color: #a65d29 !important;
+      font-size: 36px !important;
+      font-weight: 700;
+      letter-spacing: .02em;
+      line-height: 1.2;
+    }
 
-.story-content .eyebrow {
-  display: inline-block;
-  width: auto;
-  margin-bottom: 20px;
-  padding: 7px 16px;
-  border: 2px solid var(--oranje);
-  border-radius: 30px;
-  color: #a65d29 !important;
-  font-family: Arial, sans-serif;
-  font-size: 20px !important;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-}
+    .story-content h2 {
+      margin: 0 0 26px;
+      color: var(--green);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(40px, 4vw, 66px);
+      font-weight: 400;
+      line-height: 1.1;
+    }
 
-.story-content h2 {
-  margin: 0 0 28px;
-  color: var(--groen);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(40px, 4vw, 66px);
-  font-weight: 400;
-  line-height: 1.1;
-}
+    .story-content #about-text {
+      margin-bottom: 28px;
+      font-size: 28px !important;
+      line-height: 1.5;
+      color: #374333;
+    }
 
-.story-content #about-text {
-  font-size: 18px;
-  line-height: 1.6;
-  color: #374333;
-}
+    .story-photo {
+      width: 100%;
+      max-height: 520px;
+      height: auto;
+      object-fit: cover;
+      display: block;
+    }
 
-.story-photo {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: 500px;
-  object-fit: cover;
-}
+    /* EXTRA SECTIE */
 
-/* TABLET */
+    .process-section {
+      background: var(--green);
+      color: #fffaf3;
+      padding: 75px 0;
+    }
 
-@media (max-width: 1100px) {
-  .top .links {
-    gap: 12px 18px;
-  }
+    .process-inner {
+      width: min(94%, 1380px);
+      margin: auto;
+    }
 
-  .top .links a {
-    font-size: 17px !important;
-  }
+    .process-section .eyebrow {
+      color: var(--tan);
+      font-size: 34px !important;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
 
-  .hero-layout {
-    gap: 28px;
-  }
+    .process-section h2 {
+      margin: 0 0 28px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(38px, 4vw, 60px);
+      font-weight: 400;
+      line-height: 1.1;
+    }
 
-  .hero-content h1 {
-    font-size: clamp(36px, 4.5vw, 58px) !important;
-  }
+    .process-section .intro {
+      font-size: 28px !important;
+      line-height: 1.5;
+      max-width: 950px;
+    }
 
-  .story-layout {
-    gap: 35px;
-  }
-}
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 35px;
+      margin: 45px 0;
+    }
 
-/* SMARTPHONE */
+    .process-grid h3 {
+      color: var(--tan);
+      font-size: 30px;
+      margin: 0 0 16px;
+    }
 
-@media (max-width: 768px) {
-  .top .nav {
-    flex-direction: column;
-    min-height: 0;
-    padding: 15px 0;
-    gap: 18px;
-  }
+    .process-grid p {
+      font-size: 25px !important;
+      line-height: 1.5;
+    }
 
-  .top .brand img {
-    width: 95px !important;
-  }
+    .process-section .button {
+      display: inline-block;
+      background: var(--orange) !important;
+      color: white !important;
+      padding: 18px 30px;
+      font-size: 20px !important;
+      font-weight: 700;
+      text-decoration: none;
+    }
 
-  .top .links {
-    justify-content: center;
-    gap: 12px 18px;
-  }
+    /* FOOTER */
 
-  .top .links a {
-    font-size: 16px !important;
-  }
+    .foot {
+      background: var(--cream);
+      color: var(--green);
+      padding: 35px 0;
+    }
 
-  .hero {
-    padding: 35px 0 45px !important;
-  }
+    .foot .container {
+      width: min(94%, 1380px);
+      max-width: 1380px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
+      font-size: 19px;
+      line-height: 1.6;
+    }
 
-  .hero .hero-inner {
-    width: 90%;
-  }
+    .foot a {
+      color: var(--green);
+    }
 
-  .hero-layout {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-  }
+    /* TABLETS */
 
-  .hero-logo {
-    width: 80%;
-    max-width: 310px;
-  }
+    @media (max-width: 1100px) {
+      .top .links a {
+        font-size: 17px !important;
+      }
 
-  .hero-content {
-    width: 100%;
-  }
+      .hero-layout {
+        gap: 25px;
+      }
 
-  .hero-content h1 {
-    font-size: clamp(36px, 8vw, 54px) !important;
-    margin: 0 0 20px !important;
-  }
+      .hero-content h1 {
+        font-size: clamp(35px, 4.5vw, 55px) !important;
+      }
 
-  .hero-content #hero-text {
-    font-size: 21px !important;
-  }
+      .hero-content #hero-text {
+        font-size: clamp(29px, 3.5vw, 42px) !important;
+      }
 
-  .hero-content .button,
-  .story-content .button {
-    font-size: 16px !important;
-    padding: 16px 24px;
-  }
+      .story-layout {
+        gap: 35px;
+      }
+    }
 
-  .story-section {
-    padding: 40px 0;
-  }
+    /* SMARTPHONES */
 
-  .story-layout {
-    width: 90%;
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
+    @media (max-width: 768px) {
+      .top .nav {
+        flex-direction: column;
+        min-height: 0;
+        padding: 15px 0;
+        gap: 18px;
+      }
 
-  .story-content h2 {
-    font-size: 43px;
-  }
+      .top .brand img {
+        width: 95px !important;
+      }
 
-  .story-content .eyebrow {
-    font-size: 16px !important;
-  }
-}
-</style>
+      .top .links {
+        justify-content: center;
+        gap: 12px 18px;
+      }
+
+      .top .links a {
+        font-size: 16px !important;
+      }
+
+      .hero {
+        padding: 35px 0 45px !important;
+      }
+
+      .hero .hero-inner {
+        width: 90%;
+      }
+
+      .hero-layout {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+      }
+
+      .hero-logo {
+        width: 80%;
+        max-width: 310px;
+      }
+
+      .hero-content {
+        width: 100%;
+      }
+
+      .hero-content h1 {
+        font-size: clamp(36px, 8vw, 54px) !important;
+        margin: 0 0 20px !important;
+      }
+
+      .hero-content #hero-text {
+        font-size: 32px !important;
+      }
+
+      .hero-content .button,
+      .story-content .button {
+        font-size: 17px !important;
+        padding: 16px 24px;
+      }
+
+      .story-section {
+        padding: 40px 0;
+      }
+
+      .story-layout {
+        width: 90%;
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .story-content .eyebrow {
+        font-size: 26px !important;
+      }
+
+      .story-content h2 {
+        font-size: 43px;
+      }
+
+      .story-content #about-text {
+        font-size: 22px !important;
+      }
+
+      .process-section {
+        padding: 45px 0;
+      }
+
+      .process-section .eyebrow {
+        font-size: 26px !important;
+      }
+
+      .process-section .intro {
+        font-size: 22px !important;
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      .process-grid h3 {
+        font-size: 26px;
+      }
+
+      .process-grid p {
+        font-size: 21px !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- NAVIGATIE -->
+  <!-- HEADER -->
 
-<header class="top">
-  <nav class="container nav">
+  <header class="top">
+    <nav class="container nav">
 
-    <a class="brand" href="index.html">
-      <img src="Westnut Belgische Hazelnoten-logo.png"
-           alt="Westnut - Belgische Hazelnoten">
-    </a>
-
-    <div class="links">
-      <a href="index.html">Home</a>
-      <a href="over-ons.html">Ons verhaal</a>
-      <a href="rassen.html">Rassen</a>
-      <a href="producten.html">Producten</a>
-      <a href="nieuws.html">Nieuws</a>
-      <a href="samenwerking.html">Steun & samenwerking</a>
-      <a href="contact.html">Contact</a>
-    </div>
-
-  </nav>
-</header>
-
-<main id="home">
-
-<!-- HOOFDBANNER -->
-
-<section class="hero">
-  <div class="container hero-inner">
-    <div class="hero-layout">
-
-      <div class="hero-logo">
+      <a class="brand" href="index.html">
         <img src="Westnut Belgische Hazelnoten-logo.png"
              alt="Westnut Belgische Hazelnoten">
+      </a>
+
+      <div class="links">
+        <a href="index.html">Home</a>
+        <a href="over-ons.html">Ons verhaal</a>
+        <a href="rassen.html">Rassen</a>
+        <a href="producten.html">Producten</a>
+        <a href="nieuws.html">Nieuws</a>
+        <a href="samenwerking.html">Steun & samenwerking</a>
+        <a href="contact.html">Contact</a>
       </div>
 
-      <div class="hero-content">
+    </nav>
+  </header>
 
-        <h1 id="hero-title">
-          Een nieuwe<br>
-          standaard<br>
-          voor Belgische<br>
-          hazelnoten.
-        </h1>
+  <main>
 
-        <p id="hero-text">
-          Met zorg geteeld op eigen bodem.
+    <!-- GROENE HOOFDBANNER -->
+
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-layout">
+
+          <div class="hero-logo">
+            <img src="Westnut Belgische Hazelnoten-logo.png"
+                 alt="Westnut - Belgische Hazelnoten">
+          </div>
+
+          <div class="hero-content">
+
+            <h1 id="hero-title">
+              Een nieuwe<br>
+              standaard<br>
+              voor Belgische<br>
+              hazelnoten.
+            </h1>
+
+            <p id="hero-text">
+              Met zorg geteeld op eigen bodem.
+            </p>
+
+            <a class="button" href="over-ons.html">
+              ONTDEK ONS VERHAAL
+            </a>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ONS VERHAAL -->
+
+    <section class="story-section">
+      <div class="story-layout">
+
+        <div class="story-content">
+
+          <div class="eyebrow">
+            ONS VERHAAL
+          </div>
+
+          <h2 id="about-title">
+            Geworteld in West-Vlaanderen.
+          </h2>
+
+          <p id="about-text">
+            Bij Westnut geloven we in de toekomst van
+            Belgische hazelnoten. Vanuit West-Vlaanderen
+            bouwen we aan een lokale en duurzame teelt,
+            met aandacht voor kwaliteit, innovatie
+            en de natuur.
+          </p>
+
+          <a class="button" href="rassen.html">
+            ONTDEK ONZE RASSEN
+          </a>
+
+        </div>
+
+        <img
+          id="about-photo"
+          class="story-photo"
+          src="boomgaard-2.jpg"
+          alt="Hazelnootplantage van Westnut">
+
+      </div>
+    </section>
+
+    <!-- VAN BOOMGAARD TOT PRODUCT -->
+
+    <section class="process-section">
+      <div class="process-inner">
+
+        <div class="eyebrow">
+          VAN BOOMGAARD TOT PRODUCT
+        </div>
+
+        <h2>
+          Met aandacht voor elke stap.
+        </h2>
+
+        <p class="intro" id="products-intro">
+          Van de selectie van onze hazelnootrassen
+          tot de ontwikkeling van verfijnde producten:
+          bij Westnut staat kwaliteit centraal.
         </p>
 
-        <a class="button" href="over-ons.html">
-          ONTDEK ONS VERHAAL
+        <div class="process-grid">
+
+          <div>
+            <h3>01 · Teelt</h3>
+            <p>
+              Verschillende hazelnootrassen,
+              geteeld op onze eigen percelen
+              in West-Vlaanderen.
+            </p>
+          </div>
+
+          <div>
+            <h3>02 · Ontwikkeling</h3>
+            <p>
+              We experimenteren met verwerking,
+              nieuwe technieken en smaakcombinaties.
+            </p>
+          </div>
+
+          <div>
+            <h3>03 · Toekomst</h3>
+            <p>
+              We bouwen aan een lokaal aanbod
+              van verfijnde hazelnootproducten.
+            </p>
+          </div>
+
+        </div>
+
+        <a class="button" href="producten.html">
+          ONTDEK ONZE PRODUCTEN
         </a>
 
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ONS VERHAAL -->
+  </main>
 
-<section class="story-section">
-  <div class="story-layout">
+  <!-- FOOTER -->
 
-    <div class="story-content">
-
-      <div class="eyebrow">
-        ONS VERHAAL
-      </div>
-
-      <h2 id="about-title">
-        Geworteld in West-Vlaanderen.
-      </h2>
-
-      <p id="about-text"></p>
-
-      <a class="button" href="rassen.html">
-        ONTDEK ONZE RASSEN
-      </a>
-
-    </div>
-
-    <img
-      id="about-photo"
-      class="story-photo"
-      src="boomgaard-2.jpg"
-      alt="Westnut hazelnootplantage in West-Vlaanderen">
-
-  </div>
-</section>
-
-<!-- VAN BOOMGAARD TOT PRODUCT -->
-
-<section class="section dark">
-  <div class="container">
-
-    <div class="eyebrow">
-      Van boomgaard tot product
-    </div>
-
-    <h2>Met aandacht voor elke stap.</h2>
-    <p id="products-intro"></p>
-
-    <div class="grid">
+  <footer class="foot">
+    <div class="container">
 
       <div>
-        <h3>01 · Teelt</h3>
-        <p>
-          Verschillende hazelnootrassen,
-          geteeld op onze eigen percelen.
-        </p>
-      </div>
-
-      <div>
-        <h3>02 · Ontwikkeling</h3>
-        <p>
-          We experimenteren met verwerking
-          en smaakcombinaties.
-        </p>
-      </div>
-
-      <div>
-        <h3>03 · Toekomst</h3>
-        <p>
-          We bouwen aan een lokaal aanbod
-          van verfijnde hazelnootproducten.
-        </p>
-      </div>
-
-    </div>
-
-    <a class="button" href="producten.html">
-      Onze producten
-    </a>
-
-  </div>
-</section>
-
-</main>
-
-<!-- FOOTER -->
-
-<footer class="foot">
-  <div class="container">
-
-    <div>
-      <strong>WESTNUT</strong><br>
-      Belgische hazelnoten · West-Vlaanderen<br>
-      <span class="small">
+        <strong>WESTNUT</strong><br>
+        Belgische hazelnoten · West-Vlaanderen<br>
         Lokale teelt. Toekomstige smaken.
-      </span>
+      </div>
+
+      <div>
+        <a href="contact.html">Contacteer ons</a><br>
+        © Westnut 2026
+      </div>
+
     </div>
+  </footer>
 
-    <div>
-      <a data-email>E-mailadres volgt</a><br>
-      <span class="small">© Westnut 2026</span>
-    </div>
-
-  </div>
-</footer>
-
-<script src="site.js" defer></script>
+  <script src="site.js" defer></script>
 
 </body>
 </html>
