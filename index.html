@@ -1,14 +1,16 @@
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Westnut | Belgische hazelnoten</title>
-  <meta name="description" content="Westnut teelt Belgische hazelnoten in West-Vlaanderen. Ontdek onze teelt, rassen en toekomstige producten.">
+  <meta name="description"
+        content="Westnut teelt Belgische hazelnoten in West-Vlaanderen. Ontdek onze teelt, rassen en toekomstige producten.">
 
-  <link rel="icon" type="image/png" href="Westnut Belgische Hazelnoten-logo.png">
+  <link rel="icon" type="image/png"
+        href="Westnut Belgische Hazelnoten-logo.png">
   <link rel="stylesheet" href="style.css">
 
   <style>
@@ -20,22 +22,18 @@
       --text: #263b2b;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
       background: var(--cream);
       color: var(--text);
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: 'DM Sans', Arial, sans-serif;
     }
 
-    /* HEADER */
+    /* NAVIGATIE */
 
     .top {
       background: var(--cream) !important;
@@ -86,13 +84,17 @@
       color: var(--orange) !important;
     }
 
-    /* HERO */
+    /* GROENE HOOFDBANNER */
 
     .hero {
       background: var(--green) !important;
       min-height: 0 !important;
       height: auto !important;
       padding: 50px 0 !important;
+    }
+
+    .hero::before {
+      display: none !important;
     }
 
     .hero .hero-inner {
@@ -125,10 +127,12 @@
       text-align: left;
     }
 
+    /* NIEUWE HOOFDTITEL */
+
     .hero-content h1 {
       margin: -8px 0 22px !important;
       color: #fffaf3 !important;
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: clamp(42px, 4.3vw, 76px) !important;
       font-weight: 400;
       line-height: 1.05;
@@ -136,12 +140,13 @@
       text-align: left;
     }
 
-    /* ONDERTITEL DUBBEL ZO GROOT */
+    /* ONDERTITEL 15% KLEINER */
 
     .hero-content #hero-text {
+      max-width: 100% !important;
       margin: 0 0 28px !important;
       color: var(--tan) !important;
-      font-size: clamp(36px, 4vw, 58px) !important;
+      font-size: clamp(38px, 4.25vw, 61.6px) !important;
       font-weight: 600;
       line-height: 1.15;
       text-align: left;
@@ -193,9 +198,9 @@
       margin-bottom: 24px;
       padding: 9px 20px;
       border: 2px solid var(--orange);
-      border-radius: 30px;
+      border-radius: 40px;
       color: #a65d29 !important;
-      font-size: 36px !important;
+      font-size: 45px !important;
       font-weight: 700;
       letter-spacing: .02em;
       line-height: 1.2;
@@ -204,7 +209,7 @@
     .story-content h2 {
       margin: 0 0 26px;
       color: var(--green);
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: clamp(40px, 4vw, 66px);
       font-weight: 400;
       line-height: 1.1;
@@ -225,7 +230,7 @@
       display: block;
     }
 
-    /* EXTRA SECTIE */
+    /* VAN BOOMGAARD TOT PRODUCT */
 
     .process-section {
       background: var(--green);
@@ -240,23 +245,24 @@
 
     .process-section .eyebrow {
       color: var(--tan);
-      font-size: 34px !important;
+      font-size: 42.5px !important;
       font-weight: 700;
       margin-bottom: 18px;
     }
 
     .process-section h2 {
       margin: 0 0 28px;
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: clamp(38px, 4vw, 60px);
       font-weight: 400;
       line-height: 1.1;
     }
 
     .process-section .intro {
+      max-width: 950px;
+      color: #d2d6cb;
       font-size: 28px !important;
       line-height: 1.5;
-      max-width: 950px;
     }
 
     .process-grid {
@@ -273,6 +279,7 @@
     }
 
     .process-grid p {
+      color: #d2d6cb;
       font-size: 25px !important;
       line-height: 1.5;
     }
@@ -290,9 +297,9 @@
     /* FOOTER */
 
     .foot {
-      background: var(--cream);
-      color: var(--green);
-      padding: 35px 0;
+      background: #182719;
+      color: #ddd;
+      padding: 50px 0;
     }
 
     .foot .container {
@@ -303,17 +310,21 @@
       justify-content: space-between;
       gap: 30px;
       flex-wrap: wrap;
-      font-size: 19px;
-      line-height: 1.6;
+      font-size: 16px;
+      line-height: 1.8;
     }
 
     .foot a {
-      color: var(--green);
+      color: #ddd;
     }
 
     /* TABLETS */
 
     @media (max-width: 1100px) {
+      .top .links {
+        gap: 12px 18px;
+      }
+
       .top .links a {
         font-size: 17px !important;
       }
@@ -327,7 +338,7 @@
       }
 
       .hero-content #hero-text {
-        font-size: clamp(29px, 3.5vw, 42px) !important;
+        font-size: clamp(31px, 3.74vw, 44.6px) !important;
       }
 
       .story-layout {
@@ -388,7 +399,7 @@
       }
 
       .hero-content #hero-text {
-        font-size: 32px !important;
+        font-size: 34px !important;
       }
 
       .hero-content .button,
@@ -408,7 +419,7 @@
       }
 
       .story-content .eyebrow {
-        font-size: 26px !important;
+        font-size: 32.5px !important;
       }
 
       .story-content h2 {
@@ -424,7 +435,7 @@
       }
 
       .process-section .eyebrow {
-        font-size: 26px !important;
+        font-size: 32.5px !important;
       }
 
       .process-section .intro {
@@ -449,7 +460,7 @@
 
 <body>
 
-  <!-- HEADER -->
+  <!-- NAVIGATIE -->
 
   <header class="top">
     <nav class="container nav">
@@ -472,7 +483,7 @@
     </nav>
   </header>
 
-  <main>
+  <main id="home">
 
     <!-- GROENE HOOFDBANNER -->
 
@@ -488,9 +499,8 @@
           <div class="hero-content">
 
             <h1 id="hero-title">
-              Een nieuwe<br>
-              standaard<br>
-              voor Belgische<br>
+              De toekomst<br>
+              van Belgische<br>
               hazelnoten.
             </h1>
 
@@ -503,7 +513,6 @@
             </a>
 
           </div>
-
         </div>
       </div>
     </section>
@@ -537,11 +546,10 @@
 
         </div>
 
-        <img
-          id="about-photo"
-          class="story-photo"
-          src="boomgaard-2.jpg"
-          alt="Hazelnootplantage van Westnut">
+        <img id="about-photo"
+             class="story-photo"
+             src="boomgaard-2.jpg"
+             alt="Hazelnootplantage van Westnut">
 
       </div>
     </section>
@@ -611,7 +619,9 @@
       <div>
         <strong>WESTNUT</strong><br>
         Belgische hazelnoten · West-Vlaanderen<br>
-        Lokale teelt. Toekomstige smaken.
+        <span class="small">
+          Lokale teelt. Toekomstige smaken.
+        </span>
       </div>
 
       <div>
@@ -623,6 +633,28 @@
   </footer>
 
   <script src="site.js" defer></script>
+
+  <!-- Voorkomt dat de oude hoofdtitel uit
+       content/site.json de nieuwe titel overschrijft. -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const title = document.getElementById('hero-title');
+      if (title) {
+        const observer = new MutationObserver(() => {
+          const desired = 'De toekomst van Belgische hazelnoten.';
+          if (title.textContent.trim() !== desired) {
+            title.textContent = desired;
+          }
+        });
+
+        observer.observe(title, {
+          childList: true,
+          characterData: true,
+          subtree: true
+        });
+      }
+    });
+  </script>
 
 </body>
 </html>
