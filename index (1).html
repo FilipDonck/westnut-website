@@ -1,0 +1,701 @@
+
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Westnut | Belgische hazelnoten</title>
+<meta name="description" content="Westnut: lokaal en duurzaam geteelde Belgische hazelnoten uit West-Vlaanderen.">
+
+<link rel="icon" href="Westnut-logo-transparant.png">
+
+<style>
+:root {
+  --green: #173824;
+  --cream: #faf7f0;
+  --copper: #c78043;
+  --text: #183524;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =========================
+   NAVIGATIE
+========================= */
+
+.site-header {
+  background: #faf8f3;
+  position: relative;
+  z-index: 10;
+}
+
+.nav {
+  max-width: 1500px;
+  margin: auto;
+  padding: 10px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+}
+
+/* ORIGINEEL WESTNUT-LOGO */
+
+.brand {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-left: 25px;
+}
+
+.brand img {
+  display: block;
+  width: 330px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* MENUKNOPPEN */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  font-size: 15px;
+  white-space: nowrap;
+  transition: color .2s;
+}
+
+.nav-links a:hover {
+  color: var(--copper);
+}
+
+.nav-links .active {
+  background: var(--green);
+  color: white;
+  padding: 12px 18px;
+  border-radius: 8px;
+}
+
+.nav-links .active:hover {
+  color: white;
+}
+
+.menu-toggle {
+  display: none;
+  border: 0;
+  background: none;
+  font-size: 29px;
+  color: var(--green);
+  cursor: pointer;
+}
+
+/* =========================
+   HOOFDBANNER
+========================= */
+
+.hero-inner {
+  min-height: 465px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(12,42,25,0) 0%,
+      rgba(12,42,25,.05) 32%,
+      rgba(12,42,25,.82) 57%,
+      rgba(12,42,25,.97) 100%
+    ),
+    url("hero-hazelnoten.jpg")
+    center center / cover no-repeat;
+}
+
+.hero-inner {
+  width: 100%;
+  max-width: 1500px;
+  margin: auto;
+  padding: 65px 35px 85px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-content {
+  width: 52%;
+}
+
+.hero h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(38px, 4.2vw, 70px);
+  font-weight: normal;
+  line-height: 1.07;
+  letter-spacing: -1.8px;
+  color: #fffaf4;
+  margin: 0 0 20px;
+}
+
+.hero-subtitle {
+  color: #e9b68c;
+  font-size: clamp(23px, 2.5vw, 38px);
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0 0 32px;
+}
+
+.hero-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  background: var(--copper);
+  color: white;
+  padding: 18px 27px;
+  border-radius: 9px;
+  font-size: 18px;
+  transition: background .2s, transform .2s;
+}
+
+.hero-button:hover {
+  background: #ac6732;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   KERNWAARDEN
+========================= */
+
+.values {
+  background: #f5efe3;
+  padding: 27px 20px;
+}
+
+.values-inner {
+  max-width: 1400px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.value {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-right: 1px solid #d7c3a7;
+}
+
+.value:last-child {
+  border: none;
+}
+
+.value-icon {
+  color: #42652f;
+  font-size: 30px;
+}
+
+/* =========================
+   VIER FOTOKAARTEN
+========================= */
+
+.explore {
+  max-width: 1500px;
+  margin: auto;
+  padding: 38px 30px 65px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.feature-card {
+  height: 260px;
+  border-radius: 17px;
+  position: relative;
+  overflow: hidden;
+  background: #304a35;
+  display: block;
+  isolation: isolate;
+}
+
+.feature-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform .45s ease;
+}
+
+.feature-card:hover img {
+  transform: scale(1.06);
+}
+
+.feature-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(5,23,12,0) 25%,
+    rgba(5,23,12,.15) 50%,
+    rgba(5,23,12,.88) 100%
+  );
+  pointer-events: none;
+}
+
+.card-content {
+  position: absolute;
+  z-index: 1;
+  bottom: 22px;
+  left: 25px;
+  right: 20px;
+  color: white;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.card-title {
+  font-family: Georgia, serif;
+  font-size: clamp(21px, 2vw, 29px);
+  font-weight: normal;
+  line-height: 1.15;
+}
+
+.card-arrow {
+  width: 37px;
+  height: 37px;
+  flex-shrink: 0;
+  border: 1px solid white;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 23px;
+  transition: background .2s;
+}
+
+.feature-card:hover .card-arrow {
+  background: rgba(255,255,255,.18);
+}
+
+/* TOEGANKELIJKHEID */
+
+.feature-card:focus-visible,
+.hero-button:focus-visible,
+.nav-links a:focus-visible {
+  outline: 3px solid var(--copper);
+  outline-offset: 3px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  background: var(--green);
+  color: #f8f3e9;
+  padding: 30px 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1100px) {
+  .nav {
+    gap: 15px;
+  }
+
+  .brand {
+    margin-left: 10px;
+  }
+
+  .brand img {
+    width: 235px;
+  }
+
+  .nav-links {
+    gap: 14px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+  }
+
+  .hero-content {
+    width: 57%;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .value {
+    font-size: 14px;
+  }
+}
+
+/* =========================
+   SMARTPHONE
+========================= */
+
+@media (max-width: 750px) {
+  .nav {
+    padding: 10px 20px;
+  }
+
+  .brand {
+    margin-left: 0;
+  }
+
+  .brand img {
+    width: 200px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #faf8f3;
+    padding: 20px;
+    flex-direction: column;
+    align-items: stretch;
+    box-shadow: 0 10px 20px #0002;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 10px;
+  }
+
+  .hero-inner {
+    min-height: 550px;
+    align-items: flex-end;
+
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(12,42,25,0) 0%,
+        rgba(12,42,25,.35) 35%,
+        rgba(12,42,25,.96) 100%
+      ),
+      url("hero-hazelnoten.jpg")
+      45% center / cover no-repeat;
+  }
+
+  .hero-inner {
+    padding: 70px 23px 55px;
+    justify-content: flex-start;
+  }
+
+  .hero-content {
+    width: 100%;
+  }
+
+  .hero h1 {
+    letter-spacing: -.7px;
+    font-size: clamp(34px, 8vw, 48px);
+  }
+
+  .hero-subtitle {
+    font-size: 23px;
+  }
+
+  .values-inner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .value:nth-child(2) {
+    border-right: none;
+  }
+
+  .value {
+    justify-content: flex-start;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-card {
+    height: 250px;
+  }
+
+  .explore {
+    padding: 25px 18px 45px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .feature-card img,
+  .hero-button {
+    transition: none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATIE -->
+
+<header class="site-header">
+  <nav class="nav" aria-label="Hoofdnavigatie">
+
+    <a class="brand"
+       href="index.html"
+       aria-label="Westnut Home">
+
+      <img
+        src="Westnut-logo-transparant.png"
+        alt="Westnut – Belgische hazelnoten">
+
+    </a>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Menu openen"
+      aria-expanded="false"
+      aria-controls="nav-links">
+      ☰
+    </button>
+
+    <div class="nav-links" id="nav-links">
+
+      <a href="index.html"
+         class="active"
+         aria-current="page">Home</a>
+
+      <a href="over-ons.html">Ons verhaal</a>
+
+      <a href="rassen.html">Rassen</a>
+
+      <a href="producten.html">Producten</a>
+
+      <a href="nieuws.html">Nieuws</a>
+
+      <a href="steun.html">
+        Steun &amp; samenwerking
+      </a>
+
+      <a href="contact.html">Contact</a>
+
+    </div>
+  </nav>
+</header>
+
+<main>
+
+<!-- HOOFDBANNER -->
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+
+      <h1>
+        De toekomst van<br>
+        Belgische hazelnoten.
+      </h1>
+
+      <p class="hero-subtitle">
+        Met zorg geteeld op eigen bodem.
+      </p>
+
+      <a href="over-ons.html" class="hero-button">
+        Ontdek ons verhaal
+        <span aria-hidden="true">→</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ONZE WAARDEN -->
+
+<section class="values" aria-label="Onze waarden">
+  <div class="values-inner">
+
+    <div class="value">
+      <span class="value-icon" aria-hidden="true">♧</span>
+      <span>Lokaal &amp; Belgisch</span>
+    </div>
+
+    <div class="value">
+      <span class="value-icon" aria-hidden="true">🌱</span>
+      <span>Duurzaam geteeld</span>
+    </div>
+
+    <div class="value">
+      <span class="value-icon" aria-hidden="true">◉</span>
+      <span>Ambachtelijk verwerkt</span>
+    </div>
+
+    <div class="value">
+      <span class="value-icon" aria-hidden="true">♧</span>
+      <span>Samen vooruit</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- VIER FOTOKAARTEN -->
+
+<section class="explore" aria-label="Ontdek Westnut">
+  <div class="cards">
+
+    <!-- ONS VERHAAL -->
+
+    <a href="over-ons.html" class="feature-card">
+
+      <img
+        src="ons-verhaal.jpg"
+        alt="Hazelnootplantage van Westnut"
+        loading="lazy">
+
+      <div class="card-content">
+        <span class="card-title">Ons verhaal</span>
+        <span class="card-arrow" aria-hidden="true">→</span>
+      </div>
+
+    </a>
+
+    <!-- PRODUCTEN -->
+
+    <a href="producten.html" class="feature-card">
+
+      <img
+        src="producten.jpg"
+        alt="Chocolade-hazelnootpasta en hazelnoten"
+        loading="lazy">
+
+      <div class="card-content">
+        <span class="card-title">Producten</span>
+        <span class="card-arrow" aria-hidden="true">→</span>
+      </div>
+
+    </a>
+
+    <!-- RASSEN -->
+
+    <a href="rassen.html" class="feature-card">
+
+      <img
+        src="rassen-vergelijking.jpg"
+        alt="Vergelijking van hazelnoten aan de boom"
+        loading="lazy">
+
+      <div class="card-content">
+        <span class="card-title">Rassen</span>
+        <span class="card-arrow" aria-hidden="true">→</span>
+      </div>
+
+    </a>
+
+    <!-- STEUN EN SAMENWERKING -->
+
+    <a href="steun.html" class="feature-card">
+
+      <img
+        src="steun-samenwerking.jpg"
+        alt="Onderzoek en innovatie in de hazelnootteelt"
+        loading="lazy">
+
+      <div class="card-content">
+        <span class="card-title">
+          Steun &amp;<br>samenwerking
+        </span>
+        <span class="card-arrow" aria-hidden="true">→</span>
+      </div>
+
+    </a>
+
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+  © <span id="year"></span>
+  Westnut · Belgische hazelnoten
+</footer>
+
+<!-- JAVASCRIPT -->
+
+<script>
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+const menuButton =
+  document.querySelector(".menu-toggle");
+
+const navLinks =
+  document.querySelector(".nav-links");
+
+menuButton.addEventListener("click", () => {
+  const isOpen = navLinks.classList.toggle("open");
+
+  menuButton.setAttribute(
+    "aria-expanded",
+    String(isOpen)
+  );
+
+  menuButton.setAttribute(
+    "aria-label",
+    isOpen ? "Menu sluiten" : "Menu openen"
+  );
+});
+</script>
+
+</body>
+</html>
