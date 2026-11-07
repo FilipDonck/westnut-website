@@ -14,9 +14,7 @@ content="Westnut: lokaal en duurzaam geteelde Belgische hazelnoten uit West-Vlaa
 
 <style>
 
-/* ======================================
-   WESTNUT - ALGEMENE INSTELLINGEN
-====================================== */
+/* ALGEMENE INSTELLINGEN */
 
 :root {
   --green: #173824;
@@ -45,9 +43,7 @@ a {
   color: inherit;
 }
 
-/* ======================================
-   NAVIGATIE
-====================================== */
+/* NAVIGATIE */
 
 .site-header {
   background: #faf8f3;
@@ -65,20 +61,24 @@ a {
   gap: 25px;
 }
 
-/* GROTER WESTNUT-LOGO */
+/* ORIGINEEL HORIZONTAAL WESTNUT-LOGO */
 
 .brand {
   display: flex;
   align-items: center;
   flex-shrink: 0;
+  margin-left: 35px;
 }
 
 .brand img {
-  width: 140px;
+  width: 280px;
+  max-width: 100%;
   height: auto;
   display: block;
   object-fit: contain;
 }
+
+/* NAVIGATIELINKS */
 
 .nav-links {
   display: flex;
@@ -118,9 +118,7 @@ a {
   cursor: pointer;
 }
 
-/* ======================================
-   HERO - HOOFDBANNER
-====================================== */
+/* HOOFDBANNER */
 
 .hero {
   min-height: 465px;
@@ -185,9 +183,7 @@ a {
   transform: translateY(-2px);
 }
 
-/* ======================================
-   KERNWAARDEN
-====================================== */
+/* KERNWAARDEN */
 
 .values {
   position: relative;
@@ -221,9 +217,7 @@ a {
   font-size: 30px;
 }
 
-/* ======================================
-   VIER FOTOKAARTEN
-====================================== */
+/* VIER FOTOKAARTEN */
 
 .explore {
   max-width: 1500px;
@@ -260,8 +254,6 @@ a {
   transform: scale(1.06);
 }
 
-/* DONKER KLEURVERLOOP */
-
 .feature-card::after {
   content: "";
   position: absolute;
@@ -274,8 +266,6 @@ a {
   );
   pointer-events: none;
 }
-
-/* TITELS EN PIJLTJES */
 
 .card-content {
   position: absolute;
@@ -322,9 +312,7 @@ a {
   outline-offset: 3px;
 }
 
-/* ======================================
-   FOOTER
-====================================== */
+/* FOOTER */
 
 .footer {
   background: var(--green);
@@ -334,9 +322,7 @@ a {
   font-size: 14px;
 }
 
-/* ======================================
-   TABLET
-====================================== */
+/* TABLET */
 
 @media (max-width: 1100px) {
 
@@ -344,8 +330,12 @@ a {
     gap: 15px;
   }
 
+  .brand {
+    margin-left: 20px;
+  }
+
   .brand img {
-    width: 120px;
+    width: 210px;
   }
 
   .nav-links {
@@ -363,12 +353,9 @@ a {
   .value {
     font-size: 14px;
   }
-
 }
 
-/* ======================================
-   SMARTPHONE
-====================================== */
+/* SMARTPHONE */
 
 @media (max-width: 750px) {
 
@@ -376,8 +363,12 @@ a {
     padding: 10px 20px;
   }
 
+  .brand {
+    margin-left: 10px;
+  }
+
   .brand img {
-    width: 100px;
+    width: 180px;
   }
 
   .menu-toggle {
@@ -441,10 +432,9 @@ a {
   .explore {
     padding: 25px 18px 45px;
   }
-
 }
 
-/* MINDER ANIMATIES INDIEN INGESTELD */
+/* MINDER ANIMATIES */
 
 @media (prefers-reduced-motion: reduce) {
 
@@ -456,7 +446,6 @@ a {
   .hero-button {
     transition: none;
   }
-
 }
 
 </style>
@@ -464,9 +453,7 @@ a {
 
 <body>
 
-<!-- ======================================
-     NAVIGATIE
-====================================== -->
+<!-- NAVIGATIE -->
 
 <header class="site-header">
 
@@ -477,8 +464,8 @@ a {
        aria-label="Westnut Home">
 
       <img
-        src="logo.jpg"
-        alt="Westnut Belgische hazelnoten">
+        src="westnut-logo-horizontaal.png"
+        alt="Westnut – Belgische hazelnoten">
 
     </a>
 
@@ -531,9 +518,7 @@ a {
 
 <main>
 
-<!-- ======================================
-     HOOFDBANNER
-====================================== -->
+<!-- HOOFDBANNER -->
 
 <section class="hero">
 
@@ -549,20 +534,15 @@ a {
     </p>
 
     <a href="over-ons.html" class="hero-button">
-
       Ontdek ons verhaal
-
       <span aria-hidden="true">→</span>
-
     </a>
 
   </div>
 
 </section>
 
-<!-- ======================================
-     ONZE WAARDEN
-====================================== -->
+<!-- ONZE WAARDEN -->
 
 <section class="values" aria-label="Onze waarden">
 
@@ -592,9 +572,7 @@ a {
 
 </section>
 
-<!-- ======================================
-     VIER FOTOKAARTEN
-====================================== -->
+<!-- VIER FOTOKAARTEN -->
 
 <section class="explore" aria-label="Ontdek Westnut">
 
@@ -610,15 +588,8 @@ a {
         loading="lazy">
 
       <div class="card-content">
-
-        <span class="card-title">
-          Ons verhaal
-        </span>
-
-        <span class="card-arrow" aria-hidden="true">
-          →
-        </span>
-
+        <span class="card-title">Ons verhaal</span>
+        <span class="card-arrow" aria-hidden="true">→</span>
       </div>
 
     </a>
@@ -633,15 +604,8 @@ a {
         loading="lazy">
 
       <div class="card-content">
-
-        <span class="card-title">
-          Producten
-        </span>
-
-        <span class="card-arrow" aria-hidden="true">
-          →
-        </span>
-
+        <span class="card-title">Producten</span>
+        <span class="card-arrow" aria-hidden="true">→</span>
       </div>
 
     </a>
@@ -656,15 +620,8 @@ a {
         loading="lazy">
 
       <div class="card-content">
-
-        <span class="card-title">
-          Rassen
-        </span>
-
-        <span class="card-arrow" aria-hidden="true">
-          →
-        </span>
-
+        <span class="card-title">Rassen</span>
+        <span class="card-arrow" aria-hidden="true">→</span>
       </div>
 
     </a>
@@ -679,15 +636,10 @@ a {
         loading="lazy">
 
       <div class="card-content">
-
         <span class="card-title">
           Steun &amp;<br>samenwerking
         </span>
-
-        <span class="card-arrow" aria-hidden="true">
-          →
-        </span>
-
+        <span class="card-arrow" aria-hidden="true">→</span>
       </div>
 
     </a>
@@ -698,20 +650,14 @@ a {
 
 </main>
 
-<!-- ======================================
-     FOOTER
-====================================== -->
+<!-- FOOTER -->
 
 <footer class="footer">
-
   © <span id="year"></span>
   Westnut · Belgische hazelnoten
-
 </footer>
 
-<!-- ======================================
-     JAVASCRIPT
-====================================== -->
+<!-- JAVASCRIPT -->
 
 <script>
 
