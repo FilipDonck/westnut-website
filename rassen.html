@@ -1,69 +1,152 @@
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Hazelnootrassen | Westnut</title>
-  <meta name="description" content="Ontdek de hazelnootrassen en aanplantingsplannen van Westnut.">
+<title>Onze aanplantingsplannen | Westnut</title>
 
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="logo.jpg">
+<meta name="description"
+content="Ontdek de aanplantingsplannen van Westnut, met proefvelden en commerciële hazelnootteelt in West-Vlaanderen.">
 
-  <style>
-    .aanplant-section {
-      padding: 45px 0 55px;
-      background: #faf7f0;
-    }
+<link rel="icon" href="logo.jpg">
+<link rel="stylesheet" href="style.css">
 
-    .aanplant-heading {
-      text-align: center;
-      color: #173824;
-      font-size: clamp(24px, 3vw, 36px);
-      margin: 0 0 12px;
-    }
+<style>
 
-    .aanplant-intro {
-      text-align: center;
-      max-width: 760px;
-      margin: 0 auto 30px;
-      line-height: 1.7;
-      color: #526052;
-    }
+/* PAGINA */
 
-    .aanplant-image {
-      display: block;
-      width: 100%;
-      max-width: 1150px;
-      height: auto;
-      margin: 0 auto;
-      border-radius: 12px;
-      box-shadow: 0 8px 28px rgba(0,0,0,.08);
-    }
+.westnut-plannen {
+  background: #faf7f0;
+  color: #173824;
+  min-height: 100vh;
+}
 
-    .aanplant-caption {
-      text-align: center;
-      font-size: 13px;
-      color: #687568;
-      margin-top: 15px;
-    }
+/* INTRODUCTIE */
 
-    @media (max-width: 600px) {
-      .aanplant-section {
-        padding: 30px 0 40px;
-      }
-      .aanplant-image {
-        border-radius: 6px;
-      }
-    }
-  </style>
+.plannen-intro {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 55px 25px 30px;
+  text-align: center;
+}
+
+.plannen-label {
+  color: #b47742;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.plannen-intro h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(32px, 4vw, 46px);
+  font-weight: normal;
+  margin: 0 0 20px;
+  color: #173824;
+}
+
+.plannen-intro p {
+  max-width: 780px;
+  margin: auto;
+  color: #536356;
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+/* AFBEELDING */
+
+.plannen-container {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 15px 25px 70px;
+}
+
+.plannen-afbeelding {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+  cursor: zoom-in;
+}
+
+.plannen-bijschrift {
+  text-align: center;
+  font-size: 13px;
+  color: #687568;
+  margin-top: 18px;
+}
+
+/* VERGROTING */
+
+.plannen-lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0,0,0,0.93);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.plannen-lightbox.open {
+  display: flex;
+}
+
+.plannen-lightbox img {
+  max-width: 100%;
+  max-height: 95vh;
+  object-fit: contain;
+}
+
+.plannen-sluiten {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+/* SMARTPHONE */
+
+@media (max-width: 700px) {
+
+  .plannen-intro {
+    padding: 35px 18px 20px;
+  }
+
+  .plannen-container {
+    padding: 10px 12px 45px;
+  }
+
+  .plannen-intro p {
+    font-size: 15px;
+  }
+
+  .plannen-afbeelding {
+    border-radius: 5px;
+  }
+
+}
+
+</style>
 </head>
 
-<body>
+<body class="westnut-plannen">
+
+<!-- NAVIGATIE -->
 
 <header class="top">
   <nav class="container nav">
+
     <a class="brand" href="index.html">
       <img src="logo.jpg" alt="Westnut logo">
       WESTNUT
@@ -78,79 +161,61 @@
       <a href="samenwerking.html">Steun & samenwerking</a>
       <a href="contact.html">Contact</a>
     </div>
+
   </nav>
 </header>
 
 <main>
 
-  <section class="pagehead">
-    <div class="container">
-      <div class="eyebrow">Onze boomgaard</div>
+<!-- INTRODUCTIE -->
 
-      <h1>Een wereld aan hazelnootrassen.</h1>
+<section class="plannen-intro">
 
-      <p>
-        We volgen verschillende Amerikaanse en Europese
-        variëteiten in onze eigen teelt.
-        De beschrijvingen worden verder aangevuld
-        met onze praktijkervaring.
-      </p>
-    </div>
-  </section>
+  <div class="plannen-label">
+    Onze boomgaard
+  </div>
 
-  <!-- AANPLANTINGSPLANNEN -->
+  <h1>Onze aanplantingsplannen</h1>
 
-  <section class="aanplant-section">
-    <div class="container">
+  <p>
+    Bij Westnut combineren we commerciële
+    hazelnootteelt met proefvelden waarin
+    we verschillende Amerikaanse en Europese
+    hazelnootrassen vergelijken en opvolgen.
 
-      <h2 class="aanplant-heading">
-        Onze aanplantingsplannen
-      </h2>
+    Zo bouwen we praktijkkennis op over
+    de teelt van kwalitatieve Belgische
+    hazelnoten.
+  </p>
 
-      <p class="aanplant-intro">
-        Bij Westnut combineren we commerciële hazelnootteelt
-        met proefvelden waarin we verschillende rassen
-        vergelijken en opvolgen.
-        Zo bouwen we praktijkkennis op over de teelt
-        van kwalitatieve Belgische hazelnoten.
-      </p>
+</section>
 
-      <a href="westnut-aanplantingsplannen.png"
-         target="_blank"
-         rel="noopener noreferrer"
-         aria-label="Open het volledige aanplantingsplan">
+<!-- AANPLANTINGSPLAN -->
 
-        <img
-          class="aanplant-image"
-          src="westnut-aanplantingsplannen.png"
-          alt="Aanplantingsplannen van Westnut met twee proefvelden en een commercieel perceel"
-          loading="lazy"
-          decoding="async"
-        >
+<section class="plannen-container">
 
-      </a>
+  <img
+    id="aanplantingsplan"
+    class="plannen-afbeelding"
+    src="aanplantingsplannen.png"
+    alt="Westnut aanplantingsplannen met twee proefvelden en commercieel perceel"
+    onclick="openPlan()"
+  >
 
-      <p class="aanplant-caption">
-        Klik op de afbeelding om het volledige plan te bekijken.
-      </p>
+  <p class="plannen-bijschrift">
+    Klik op de afbeelding om het
+    volledige aanplantingsplan te vergroten.
+  </p>
 
-    </div>
-  </section>
-
-  <!-- RASSENOVERZICHT -->
-
-  <section class="section">
-    <div class="container">
-      <div id="rassen-list" class="grid loading">
-        Rassen laden…
-      </div>
-    </div>
-  </section>
+</section>
 
 </main>
 
+<!-- FOOTER -->
+
 <footer class="foot">
   <div class="container">
+
     <div>
       <strong>WESTNUT</strong><br>
       Belgische hazelnoten · West-Vlaanderen<br>
@@ -160,13 +225,63 @@
     </div>
 
     <div>
-      <a data-email>E-mailadres volgt</a><br>
-      <span class="small">© Westnut 2026</span>
+      <span class="small">
+        © Westnut 2026
+      </span>
     </div>
+
   </div>
 </footer>
 
-<div id="rassen-list" class="grid loading">   Rassen laden… </div>
+<!-- LIGHTBOX -->
+
+<div
+  id="planLightbox"
+  class="plannen-lightbox"
+  onclick="closePlan()"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Vergroot aanplantingsplan"
+>
+
+  <button
+    class="plannen-sluiten"
+    onclick="closePlan()"
+    aria-label="Sluiten"
+  >
+    &times;
+  </button>
+
+  <img
+    src="aanplantingsplannen.png"
+    alt="Vergroot aanplantingsplan Westnut"
+  >
+
+</div>
+
+<script>
+
+function openPlan() {
+  document.getElementById("planLightbox")
+    .classList.add("open");
+
+  document.body.style.overflow = "hidden";
+}
+
+function closePlan() {
+  document.getElementById("planLightbox")
+    .classList.remove("open");
+
+  document.body.style.overflow = "";
+}
+
+document.addEventListener("keydown", function(e) {
+  if (e.key === "Escape") {
+    closePlan();
+  }
+});
+
+</script>
 
 </body>
 </html>
