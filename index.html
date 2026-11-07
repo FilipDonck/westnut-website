@@ -527,6 +527,8 @@ a {
 
       <a href="over-ons.html">Ons verhaal</a>
 
+      <a href="waarom-hazelnoten.html">Waarom hazelnoten?</a>
+
       <a href="rassen.html">Rassen</a>
 
       <a href="producten.html">Producten</a>
@@ -693,6 +695,19 @@ const menuButton =
 
 const navLinks =
   document.querySelector(".nav-links");
+
+// Markeer automatisch het tabblad van de huidige pagina groen.
+const huidigePagina = window.location.pathname.split("/").pop() || "index.html";
+document.querySelectorAll(".nav-links a").forEach(link => {
+  const doelPagina = new URL(link.href).pathname.split("/").pop();
+  const actief = doelPagina === huidigePagina;
+  link.classList.toggle("active", actief);
+  if (actief) {
+    link.setAttribute("aria-current", "page");
+  } else {
+    link.removeAttribute("aria-current");
+  }
+});
 
 menuButton.addEventListener("click", () => {
   const isOpen = navLinks.classList.toggle("open");
