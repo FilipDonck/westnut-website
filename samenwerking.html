@@ -1,228 +1,445 @@
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="nl">
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Steun & samenwerking | Westnut</title>
+<title>Steun & samenwerking | Westnut</title>
+<meta name="description" content="Ontdek hoe LEADER Westhoek en samenwerking met onderzoekscentra bijdragen aan de toekomst van Belgische hazelnoten.">
+<link rel="icon" href="logo.jpg">
 
-  <meta name="description"
-        content="Westnut werkt samen met LEADER Westhoek en onderzoekscentra aan de toekomst van Belgische hazelnoten.">
+<style>
+:root {
+  --green: #173824;
+  --soft-green: #54765C;
+  --cream: #faf7f0;
+  --copper: #c78043;
+  --text: #183524;
+}
 
-  <link rel="stylesheet" href="style.css">
+* { box-sizing: border-box; }
 
-  <link rel="icon"
-        type="image/png"
-        href="Westnut Belgische Hazelnoten-logo.png">
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-  <style>
-    /* LEADER WESTHOEK */
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
-    .leader-section {
-      background: var(--cream, #f8f6f0);
-    }
+/* NAVIGATIE */
 
-    .leader-section .split {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      align-items: center;
-      gap: 55px;
-    }
+.site-header {
+  background: #faf8f3;
+  position: relative;
+  z-index: 10;
+  border-bottom: 1px solid #e8e5dc;
+}
 
-    /* SUBTITEL OP EEN REGEL */
+.nav {
+  max-width: 1450px;
+  margin: auto;
+  padding: 8px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
 
-    .leader-section .eyebrow {
-      font-size: clamp(24px, 2.5vw, 36px) !important;
-      letter-spacing: 0.01em;
-      white-space: nowrap;
-      color: var(--copper, #c8793c);
-      margin-bottom: 22px;
-    }
+.brand {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
 
-    /* OFFICIËLE LEADER-LOGO'S */
+.brand img {
+  width: 140px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
 
-    .leader-image {
-      display: block;
-      width: 100%;
-      max-width: 440px;
-      height: auto;
-      object-fit: contain;
-      margin: 0 auto;
-    }
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 26px;
+}
 
-    .leader-section h2 {
-      margin-top: 0;
-    }
+.nav-links a {
+  font-size: 16px;
+  white-space: nowrap;
+  transition: color .2s;
+}
 
-    /* SMARTPHONES */
+.nav-links a:hover {
+  color: var(--copper);
+}
 
-    @media (max-width: 800px) {
+.nav-links .active {
+  background: var(--green);
+  color: white;
+  padding: 12px 18px;
+  border-radius: 8px;
+}
 
-      .leader-section .split {
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
+.menu-toggle {
+  display: none;
+  border: 0;
+  background: none;
+  font-size: 29px;
+  color: var(--green);
+  cursor: pointer;
+}
 
-      .leader-section .eyebrow {
-        font-size: 26px !important;
-        white-space: normal;
-      }
+/* BOVENSTE BANNER */
 
-      .leader-image {
-        max-width: 330px;
-      }
+.support-hero {
+  background: var(--soft-green);
+  color: white;
+  padding: 45px 30px 48px;
+}
 
-    }
-  </style>
+.support-hero-inner {
+  max-width: 1450px;
+  margin: auto;
+}
+
+.hero-eyebrow {
+  color: #f1c8a1;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin: 0 0 12px;
+}
+
+.support-hero h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(32px, 3.2vw, 54px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -.7px;
+  max-width: 1300px;
+  margin: 0 0 18px;
+}
+
+.hero-subtitle {
+  color: #f5dfc8;
+  font-size: clamp(17px, 1.4vw, 22px);
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* INHOUD */
+
+.support-content {
+  max-width: 1450px;
+  margin: auto;
+  padding: 32px 30px 40px;
+}
+
+.support-card {
+  background: #fff;
+  border: 1px solid #eeeae2;
+  border-radius: 17px;
+  padding: 30px 35px;
+  margin-bottom: 24px;
+  box-shadow: 0 5px 20px rgba(20, 45, 28, .055);
+}
+
+.section-label {
+  color: var(--copper);
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: .025em;
+  text-transform: uppercase;
+  margin: 0 0 10px;
+}
+
+.support-card h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(28px, 2.4vw, 40px);
+  font-weight: 400;
+  line-height: 1.18;
+  color: var(--green);
+  margin: 0 0 15px;
+}
+
+.support-card p {
+  color: #354738;
+  font-size: 18px;
+  line-height: 1.65;
+  margin: 0 0 12px;
+}
+
+.support-card p:last-child {
+  margin-bottom: 0;
+}
+
+/* LEADER - TWEE KOLOMMEN */
+
+.leader-layout {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 45px;
+  align-items: center;
+}
+
+.leader-logos {
+  border-left: 1px solid #e4e0d7;
+  padding-left: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.leader-logos img {
+  width: 100%;
+  max-width: 590px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* FOOTER */
+
+.footer {
+  background: var(--green);
+  color: #f8f3e9;
+  text-align: center;
+  padding: 28px 20px;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.footer strong {
+  font-weight: 700;
+}
+
+/* TABLET */
+
+@media (max-width: 1100px) {
+  .nav { gap: 15px; }
+  .brand img { width: 120px; }
+  .nav-links { gap: 14px; }
+  .nav-links a { font-size: 14px; }
+
+  .leader-layout {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .leader-logos {
+    border-left: 0;
+    border-top: 1px solid #e4e0d7;
+    padding: 25px 0 0;
+  }
+}
+
+/* SMARTPHONE */
+
+@media (max-width: 750px) {
+  .nav { padding: 10px 20px; }
+  .brand img { width: 100px; }
+  .menu-toggle { display: block; }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #faf8f3;
+    padding: 20px;
+    flex-direction: column;
+    align-items: stretch;
+    box-shadow: 0 10px 20px #0002;
+  }
+
+  .nav-links.open { display: flex; }
+  .nav-links a { padding: 10px; }
+
+  .support-hero {
+    padding: 38px 22px 42px;
+  }
+
+  .support-content {
+    padding: 22px 16px 30px;
+  }
+
+  .support-card {
+    padding: 24px 20px;
+    margin-bottom: 18px;
+  }
+
+  .support-card p {
+    font-size: 16px;
+  }
+
+  .section-label {
+    font-size: 14px;
+  }
+
+  .leader-logos img {
+    max-width: 100%;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- NAVIGATIE -->
+<!-- NAVIGATIE -->
 
-  <header class="top">
-    <nav class="container nav">
+<header class="site-header">
+  <nav class="nav" aria-label="Hoofdnavigatie">
 
-      <a class="brand" href="index.html">
-        <img
-          src="Westnut Belgische Hazelnoten-logo.png"
-          alt="Westnut Belgische Hazelnoten">
-      </a>
+    <a class="brand" href="index.html" aria-label="Westnut Home">
+      <img src="logo.jpg" alt="Westnut Belgische hazelnoten">
+    </a>
 
-      <div class="links">
-        <a href="index.html">Home</a>
-        <a href="over-ons.html">Ons verhaal</a>
-        <a href="rassen.html">Rassen</a>
-        <a href="producten.html">Producten</a>
-        <a href="nieuws.html">Nieuws</a>
-        <a href="samenwerking.html">Steun & samenwerking</a>
-        <a href="contact.html">Contact</a>
-      </div>
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Menu openen"
+      aria-expanded="false"
+      aria-controls="nav-links">☰</button>
 
-    </nav>
-  </header>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="over-ons.html">Ons verhaal</a>
+      <a href="rassen.html">Rassen</a>
+      <a href="producten.html">Producten</a>
+      <a href="nieuws.html">Nieuws</a>
+      <a href="steun.html" class="active" aria-current="page">Steun &amp; samenwerking</a>
+      <a href="contact.html">Contact</a>
+    </div>
 
-  <main>
+  </nav>
+</header>
 
-    <!-- PAGINATITEL -->
+<main>
 
-    <section class="pagehead">
-      <div class="container">
+  <!-- GROENE BANNER -->
 
-        <div class="eyebrow">
-          Samen vooruit
-        </div>
+  <section class="support-hero">
+    <div class="support-hero-inner">
 
-        <h1>
-          Steun & samenwerking.
-        </h1>
+      <p class="hero-eyebrow">
+        Westnut · Samenwerking
+      </p>
 
-        <p>
-          De toekomst van Belgische hazelnoten
-          bouwen we samen.
-        </p>
+      <h1>
+        Samen bouwen aan de toekomst van Belgische hazelnoten.
+      </h1>
 
-      </div>
-    </section>
+      <p class="hero-subtitle">
+        Met steun, onderzoek en kennisdeling maken we de lokale hazelnootteelt sterker.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- INHOUD -->
+
+  <div class="support-content">
 
     <!-- LEADER WESTHOEK -->
 
-    <section class="section leader-section">
+    <section class="support-card" aria-labelledby="leader-title">
 
-      <div class="container split">
+      <div class="leader-layout">
 
         <div>
+          <p class="section-label">01 — Steun</p>
 
-          <div class="eyebrow">
-            LEADER WESTHOEK
-          </div>
-
-          <h2>
-            Ook LEADER gelooft in de
-            toekomst van hazelnoten.
+          <h2 id="leader-title">
+            Ook LEADER gelooft in onze toekomst.
           </h2>
 
           <p>
-            Niet alleen wij geloven dat hazelnoten
-            een toekomst hebben in Vlaanderen.
-            Ook LEADER Westhoek ondersteunt
-            ons project.
+            Niet alleen wij geloven dat hazelnoten een toekomst
+            hebben in Vlaanderen. Ook LEADER Westhoek
+            ondersteunt ons project.
           </p>
 
           <p>
-            Die steun helpt ons om verder
-            te werken aan een lokale,
-            toekomstgerichte hazelnootteelt.
+            Die steun helpt ons om verder te werken aan een
+            lokale, toekomstgerichte hazelnootteelt.
           </p>
-
         </div>
 
-        <div>
+        <div class="leader-logos">
+          <!--
+            Vervang onderstaande bestandsnaam indien nodig
+            door de naam van je bestaande LEADER-afbeelding.
+          -->
           <img
-            class="leader-image"
-            src="leader-west-vlaanderen-banner.png"
-            alt="Officiële LEADER-logo's en Europese medefinanciering">
+            src="leader-westhoek.jpg"
+            alt="Officiële logo's van LEADER, de Europese Unie en West-Vlaanderen">
         </div>
 
       </div>
 
     </section>
 
-    <!-- ONDERZOEK & KENNISDELING -->
+    <!-- ONDERZOEK -->
 
-    <section class="section dark">
+    <section class="support-card" aria-labelledby="research-title">
 
-      <div class="container">
+      <p class="section-label">
+        02 — Onderzoek &amp; kennisdeling
+      </p>
 
-        <div class="eyebrow">
-          Onderzoek & kennisdeling
-        </div>
+      <h2 id="research-title">
+        Door samenwerking groeien we verder.
+      </h2>
 
-        <h2>
-          Door samenwerking groeien we verder.
-        </h2>
-
-        <p>
-          We werken samen met onderzoekscentra
-          om teelteigenschappen en technieken
-          op te volgen. Door praktijkervaring
-          en onderzoek samen te brengen,
-          willen we de teelt verder verbeteren
-          en kwaliteitsvolle hazelnoten
-          produceren in Vlaanderen.
-        </p>
-
-      </div>
+      <p>
+        We werken samen met onderzoekscentra om
+        teelteigenschappen en technieken op te volgen.
+        Door praktijkervaring en onderzoek samen te brengen,
+        willen we de teelt verder verbeteren en
+        kwaliteitsvolle hazelnoten produceren in Vlaanderen.
+      </p>
 
     </section>
 
-  </main>
+  </div>
 
-  <!-- FOOTER -->
+</main>
 
-  <footer class="foot">
-    <div class="container">
+<!-- FOOTER -->
 
-      <div>
-        <strong>WESTNUT</strong><br>
-        Belgische hazelnoten · West-Vlaanderen<br>
+<footer class="footer">
+  <strong>WESTNUT</strong> · Belgische hazelnoten · West-Vlaanderen
+  <div>© <span id="year"></span> Westnut</div>
+</footer>
 
-        <span class="small">
-          Lokale teelt. Toekomstige smaken.
-        </span>
-      </div>
+<script>
+document.getElementById("year").textContent =
+  new Date().getFullYear();
 
-      <div>
-        <a data-email>E-mailadres volgt</a><br>
-        <span class="small">© Westnut 2026</span>
-      </div>
+const menuButton = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
 
-    </div>
-  </footer>
+menuButton.addEventListener("click", () => {
+  const isOpen = navLinks.classList.toggle("open");
 
-  <script src="site.js" defer></script>
+  menuButton.setAttribute("aria-expanded", String(isOpen));
+  menuButton.setAttribute(
+    "aria-label",
+    isOpen ? "Menu sluiten" : "Menu openen"
+  );
+});
+</script>
 
 </body>
 </html>
