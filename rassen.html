@@ -6,143 +6,147 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Onze aanplantingsplannen | Westnut</title>
-
-<meta name="description"
-content="Ontdek de aanplantingsplannen van Westnut, met proefvelden en commerciële hazelnootteelt in West-Vlaanderen.">
+<meta name="description" content="Ontdek de aanplantingsplannen van Westnut met twee proefvelden en een commerciële hazelnootplantage in West-Vlaanderen.">
 
 <link rel="icon" href="logo.jpg">
 <link rel="stylesheet" href="style.css">
 
 <style>
+/* Specifieke vormgeving voor de rassenpagina */
 
-/* PAGINA */
-
-.westnut-plannen {
+.rassen-page {
   background: #faf7f0;
   color: #173824;
   min-height: 100vh;
 }
 
-/* INTRODUCTIE */
+.rassen-page *,
+.rassen-page *::before,
+.rassen-page *::after {
+  box-sizing: border-box;
+}
 
-.plannen-intro {
-  max-width: 1100px;
+.rassen-intro {
+  max-width: 1050px;
   margin: 0 auto;
-  padding: 55px 25px 30px;
+  padding: 55px 24px 30px;
   text-align: center;
 }
 
-.plannen-label {
+.rassen-label {
   color: #b47742;
-  text-transform: uppercase;
-  letter-spacing: 3px;
   font-size: 12px;
   font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
   margin-bottom: 15px;
 }
 
-.plannen-intro h1 {
+.rassen-intro h1 {
   font-family: Georgia, serif;
   font-size: clamp(32px, 4vw, 46px);
-  font-weight: normal;
-  margin: 0 0 20px;
-  color: #173824;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0 0 22px;
 }
 
-.plannen-intro p {
-  max-width: 780px;
-  margin: auto;
-  color: #536356;
-  font-size: 16px;
-  line-height: 1.9;
-}
-
-/* AFBEELDING */
-
-.plannen-container {
-  max-width: 1150px;
+.rassen-intro p {
+  max-width: 800px;
   margin: 0 auto;
-  padding: 15px 25px 70px;
+  font-size: 16px;
+  line-height: 1.85;
+  color: #536356;
 }
 
-.plannen-afbeelding {
+.rassen-plan-section {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 15px 24px 75px;
+}
+
+.rassen-plan {
   display: block;
   width: 100%;
+  max-width: 1100px;
   height: auto;
+  margin: 0 auto;
   border-radius: 10px;
   box-shadow: 0 8px 30px rgba(0,0,0,0.08);
   cursor: zoom-in;
 }
 
-.plannen-bijschrift {
+.rassen-caption {
   text-align: center;
   font-size: 13px;
   color: #687568;
-  margin-top: 18px;
+  margin: 18px 0 0;
 }
 
-/* VERGROTING */
+/* Vergrote afbeelding */
 
-.plannen-lightbox {
+.plan-lightbox {
   display: none;
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background: rgba(0,0,0,0.93);
-  align-items: center;
+  background: rgba(0,0,0,0.94);
+  padding: 55px 15px 20px;
+  overflow: auto;
+  align-items: flex-start;
   justify-content: center;
-  padding: 20px;
 }
 
-.plannen-lightbox.open {
+.plan-lightbox.open {
   display: flex;
 }
 
-.plannen-lightbox img {
+.plan-lightbox img {
+  display: block;
+  width: auto;
   max-width: 100%;
-  max-height: 95vh;
-  object-fit: contain;
+  height: auto;
+  max-height: none;
+  margin: 0 auto;
 }
 
-.plannen-sluiten {
-  position: absolute;
-  top: 15px;
-  right: 25px;
-  background: transparent;
+.plan-close {
+  position: fixed;
+  top: 10px;
+  right: 22px;
+  z-index: 10000;
+  background: #ffffff;
+  color: #173824;
   border: none;
-  color: white;
-  font-size: 40px;
+  border-radius: 50%;
+  width: 43px;
+  height: 43px;
+  font-size: 29px;
   cursor: pointer;
 }
 
-/* SMARTPHONE */
+/* Smartphone */
 
 @media (max-width: 700px) {
-
-  .plannen-intro {
+  .rassen-intro {
     padding: 35px 18px 20px;
   }
 
-  .plannen-container {
-    padding: 10px 12px 45px;
-  }
-
-  .plannen-intro p {
+  .rassen-intro p {
     font-size: 15px;
   }
 
-  .plannen-afbeelding {
-    border-radius: 5px;
+  .rassen-plan-section {
+    padding: 10px 12px 45px;
   }
 
+  .rassen-plan {
+    border-radius: 5px;
+  }
 }
-
 </style>
 </head>
 
-<body class="westnut-plannen">
-
-<!-- NAVIGATIE -->
+<body class="rassen-page">
 
 <header class="top">
   <nav class="container nav">
@@ -167,55 +171,50 @@ content="Ontdek de aanplantingsplannen van Westnut, met proefvelden en commerci�
 
 <main>
 
-<!-- INTRODUCTIE -->
+  <section class="rassen-intro">
 
-<section class="plannen-intro">
+    <div class="rassen-label">
+      Onze boomgaard
+    </div>
 
-  <div class="plannen-label">
-    Onze boomgaard
-  </div>
+    <h1>Onze aanplantingsplannen</h1>
 
-  <h1>Onze aanplantingsplannen</h1>
+    <p>
+      Bij Westnut combineren we commerciële
+      hazelnootteelt met proefvelden waarin
+      we verschillende Amerikaanse en Europese
+      hazelnootrassen vergelijken en opvolgen.
+      Zo bouwen we praktijkkennis op over de
+      teelt van kwalitatieve Belgische hazelnoten.
+    </p>
 
-  <p>
-    Bij Westnut combineren we commerciële
-    hazelnootteelt met proefvelden waarin
-    we verschillende Amerikaanse en Europese
-    hazelnootrassen vergelijken en opvolgen.
+  </section>
 
-    Zo bouwen we praktijkkennis op over
-    de teelt van kwalitatieve Belgische
-    hazelnoten.
-  </p>
+  <section class="rassen-plan-section">
 
-</section>
+    <img
+      id="aanplantingsplan"
+      class="rassen-plan"
+      src="aanplantingsplannen.png.png"
+      alt="Aanplantingsplannen van Westnut met twee proefvelden en een commercieel perceel"
+      loading="eager"
+      decoding="async"
+      tabindex="0"
+      role="button"
+      aria-label="Vergroot het aanplantingsplan"
+    >
 
-<!-- AANPLANTINGSPLAN -->
+    <p class="rassen-caption">
+      Klik op de afbeelding om het volledige
+      aanplantingsplan te vergroten.
+    </p>
 
-<section class="plannen-container">
-
-  <img
-    id="aanplantingsplan"
-    class="plannen-afbeelding"
-    src="aanplantingsplannen.png"
-    alt="Westnut aanplantingsplannen met twee proefvelden en commercieel perceel"
-    onclick="openPlan()"
-  >
-
-  <p class="plannen-bijschrift">
-    Klik op de afbeelding om het
-    volledige aanplantingsplan te vergroten.
-  </p>
-
-</section>
+  </section>
 
 </main>
 
-<!-- FOOTER -->
-
 <footer class="foot">
   <div class="container">
-
     <div>
       <strong>WESTNUT</strong><br>
       Belgische hazelnoten · West-Vlaanderen<br>
@@ -229,58 +228,76 @@ content="Ontdek de aanplantingsplannen van Westnut, met proefvelden en commerci�
         © Westnut 2026
       </span>
     </div>
-
   </div>
 </footer>
 
-<!-- LIGHTBOX -->
-
 <div
   id="planLightbox"
-  class="plannen-lightbox"
-  onclick="closePlan()"
+  class="plan-lightbox"
   role="dialog"
   aria-modal="true"
   aria-label="Vergroot aanplantingsplan"
+  aria-hidden="true"
 >
-
   <button
-    class="plannen-sluiten"
-    onclick="closePlan()"
+    id="planClose"
+    class="plan-close"
+    type="button"
     aria-label="Sluiten"
   >
     &times;
   </button>
 
   <img
-    src="aanplantingsplannen.png"
-    alt="Vergroot aanplantingsplan Westnut"
+    src="aanplantingsplannen.png.png"
+    alt="Vergroot aanplantingsplan van Westnut"
   >
-
 </div>
 
 <script>
+(function () {
+  const plan = document.getElementById("aanplantingsplan");
+  const lightbox = document.getElementById("planLightbox");
+  const closeButton = document.getElementById("planClose");
 
-function openPlan() {
-  document.getElementById("planLightbox")
-    .classList.add("open");
-
-  document.body.style.overflow = "hidden";
-}
-
-function closePlan() {
-  document.getElementById("planLightbox")
-    .classList.remove("open");
-
-  document.body.style.overflow = "";
-}
-
-document.addEventListener("keydown", function(e) {
-  if (e.key === "Escape") {
-    closePlan();
+  function openPlan() {
+    lightbox.classList.add("open");
+    lightbox.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    closeButton.focus();
   }
-});
 
+  function closePlan() {
+    lightbox.classList.remove("open");
+    lightbox.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+    plan.focus();
+  }
+
+  plan.addEventListener("click", openPlan);
+
+  plan.addEventListener("keydown", function (event) {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      openPlan();
+    }
+  });
+
+  closeButton.addEventListener("click", closePlan);
+
+  lightbox.addEventListener("click", function (event) {
+    if (event.target === lightbox) {
+      closePlan();
+    }
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" &&
+        lightbox.classList.contains("open")) {
+      closePlan();
+    }
+  });
+})();
 </script>
 
 </body>
