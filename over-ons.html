@@ -1,98 +1,16 @@
 <!doctype html>
 <html lang="nl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ons verhaal | Westnut</title>
-  <meta name="description" content="Ontdek het verhaal van Westnut: lokale en duurzame Belgische hazelnoten uit West-Vlaanderen.">
-  <link rel="icon" href="logo.jpg">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    /* Specifieke vormgeving voor Ons verhaal; andere pagina's blijven ongewijzigd. */
-    .westnut-story-page {background:#f9f7f2;color:#173824;min-height:100vh;}
-    .westnut-story-page *, .westnut-story-page *::before, .westnut-story-page *::after {box-sizing:border-box;}
-    .westnut-story-page .story-header {border-bottom:1px solid #e6e2d9;background:#f9f7f2;}
-    .westnut-story-page .story-nav {max-width:1480px;margin:auto;padding:0 46px;min-height:112px;display:flex;align-items:center;justify-content:space-between;gap:35px;}
-    .westnut-story-page .story-brand img {width:102px;height:100px;object-fit:contain;display:block;}
-    .westnut-story-page .story-links {display:flex;align-items:center;justify-content:flex-end;gap:clamp(12px,1.6vw,27px);flex-wrap:wrap;}
-    .westnut-story-page .story-links a {color:#102e1c;text-decoration:none;font-family:Arial,sans-serif;font-size:17px;white-space:nowrap;}
-    .westnut-story-page .story-links a:hover {color:#bb6a2d;}
-    .westnut-story-page .story-hero {max-width:1480px;margin:0 auto;padding:56px 46px 66px;display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,1fr);align-items:center;gap:clamp(28px,3.4vw,56px);}
-    .westnut-story-page .story-eyebrow {display:inline-block;border:1px solid #d47c35;border-radius:50px;padding:10px 20px;color:#a65c29;font:bold clamp(23px,2.6vw,39px)/1.15 Arial,sans-serif;letter-spacing:.02em;margin-bottom:25px;}
-    .westnut-story-page .story-title {font-family:Georgia,'Times New Roman',serif;font-weight:400;font-size:clamp(26px,2.55vw,39px);line-height:1.12;letter-spacing:-.035em;color:#173824;margin:0 0 25px;white-space:nowrap;}
-    .westnut-story-page .story-copy {font:clamp(17px,1.55vw,23px)/1.65 Arial,sans-serif;max-width:620px;margin:0 0 38px;color:#1b3627;}
-    .westnut-story-page .story-button {display:inline-block;padding:18px 27px;background:#c87938;color:white;text-decoration:none;font:bold 17px/1.2 Arial,sans-serif;}
-    .westnut-story-page .story-button:hover {background:#a95d27;}
-    .westnut-story-page .story-photo {display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;}
-    /* Nieuwe tekstsectie onder de bestaande introductie. */
-    .westnut-story-page .story-history {border-top:1px solid #e6e2d9;padding:58px 46px 76px;}
-    .westnut-story-page .story-history-inner {max-width:1050px;margin:0 auto;}
-    .westnut-story-page .story-history h2 {font:400 clamp(27px,3vw,39px)/1.2 Georgia,'Times New Roman',serif;color:#173824;margin:0 0 27px;padding-left:22px;border-left:4px solid #c87938;}
-    .westnut-story-page .story-history p {font:18px/1.8 Arial,sans-serif;color:#1b3627;margin:0 0 22px;}
-    .westnut-story-page .story-history p:last-child {margin-bottom:0;}
-    .westnut-story-page .story-bottom {height:15px;background:#153c27;}
-    @media(max-width:1100px) {
-      .westnut-story-page .story-nav {padding:12px 26px;min-height:95px;}
-      .westnut-story-page .story-links {gap:12px 18px;}
-      .westnut-story-page .story-links a {font-size:15px;}
-      .westnut-story-page .story-hero {padding:45px 26px 55px;gap:25px;}
-      .westnut-story-page .story-title {font-size:clamp(23px,2.7vw,31px);}
-    }
-    @media(max-width:800px) {
-      .westnut-story-page .story-nav {flex-direction:column;gap:12px;padding:12px 20px 20px;}
-      .westnut-story-page .story-brand img {height:85px;width:90px;}
-      .westnut-story-page .story-links {justify-content:center;}
-      .westnut-story-page .story-hero {grid-template-columns:1fr;padding:38px 22px 48px;}
-      .westnut-story-page .story-title {font-size:clamp(27px,5vw,38px);white-space:normal;}
-      .westnut-story-page .story-copy {font-size:18px;}
-      .westnut-story-page .story-photo {max-height:480px;}
-      .westnut-story-page .story-history {padding:42px 22px 56px;}
-      .westnut-story-page .story-history p {font-size:17px;}
-    }
-    @media(max-width:480px) {
-      .westnut-story-page .story-links a {font-size:13px;}
-      .westnut-story-page .story-eyebrow {font-size:24px;}
-      .westnut-story-page .story-title {font-size:30px;}
-      .westnut-story-page .story-button {font-size:14px;padding:15px 18px;}
-    }
-  </style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ons verhaal | Westnut</title>
+<meta name="description" content="Het verhaal van Westnut: Belgische hazelnoten uit West-Vlaanderen.">
+<link rel="icon" href="images/westnut-logo.png">
+<style>
+:root{--bg:#faf8f3;--green:#173824;--orange:#c87536;--line:#e8e3da}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--green);font-family:Arial,Helvetica,sans-serif;line-height:1.65}a{color:inherit;text-decoration:none}.container{max-width:1220px;margin:auto;padding:0 28px}.header{border-bottom:1px solid var(--line)}.nav{display:flex;align-items:center;justify-content:space-between;gap:28px;min-height:76px}.brand img{width:75px;height:64px;object-fit:contain;display:block}.links{display:flex;gap:20px;align-items:center;flex-wrap:wrap;font-size:13px}.links a:hover,.links a.active{color:#258045}.hero{border-bottom:1px solid var(--line)}.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;padding-top:56px;padding-bottom:56px}.eyebrow{display:inline-block;border:1.5px solid var(--orange);border-radius:30px;padding:4px 15px;color:#b55e29;font-size:20px;font-weight:bold;letter-spacing:.03em}.hero h1{font-family:Georgia,serif;font-size:clamp(27px,3vw,40px);font-weight:normal;line-height:1.2;margin:18px 0}.hero p{max-width:520px;font-size:16px}.btn{display:inline-block;background:var(--orange);color:white;padding:12px 19px;font-weight:bold;font-size:12px;margin-top:10px}.hero-logo{display:flex;align-items:center;justify-content:center}.hero-logo img{display:block;width:100%;max-width:470px;height:auto;object-fit:contain;mix-blend-mode:multiply}.story{padding-top:54px;padding-bottom:65px}.story h2{font-family:Georgia,serif;font-weight:normal;font-size:clamp(25px,2.7vw,34px);line-height:1.25;border-left:4px solid var(--orange);padding-left:16px;margin:0 0 25px}.story-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(280px,1fr);gap:48px;align-items:center}.story-copy{font-size:15px}.story-copy p{margin:0 0 19px}.story-photo{display:block;width:100%;height:auto;border-radius:3px}.photo-missing{background:#f0ebe1;border:1px dashed #b9ab96;padding:45px 20px;text-align:center;font-size:14px;color:#695d4b}.footer-line{height:9px;background:var(--green)}@media(max-width:760px){.container{padding:0 20px}.nav{align-items:flex-start;padding-top:10px;padding-bottom:14px}.links{gap:10px;font-size:12px}.hero-inner{grid-template-columns:1fr;gap:24px;padding-top:35px;padding-bottom:38px}.hero-logo img{max-width:330px}.story{padding-top:35px}.story-grid{grid-template-columns:1fr;gap:18px}.story-photo{max-width:540px}}
+</style>
 </head>
-<body class="westnut-story-page">
-  <header class="story-header">
-    <nav class="story-nav" aria-label="Hoofdnavigatie">
-      <a class="story-brand" href="index.html" aria-label="Westnut - Home"><img src="logo.jpg" alt="Westnut logo"></a>
-      <div class="story-links">
-        <a href="index.html">Home</a>
-        <a href="over-ons.html" aria-current="page">Ons verhaal</a>
-        <a href="rassen.html">Rassen</a>
-        <a href="producten.html">Producten</a>
-        <a href="nieuws.html">Nieuws</a>
-        <a href="steun-samenwerking.html">Steun &amp; samenwerking</a>
-        <a href="contact.html">Contact</a>
-      </div>
-    </nav>
-  </header>
-  <main>
-    <section class="story-hero" aria-labelledby="story-title">
-      <div class="story-content">
-        <div class="story-eyebrow">ONS VERHAAL</div>
-        <h1 class="story-title" id="story-title">Geworteld in West-Vlaanderen.</h1>
-        <p class="story-copy">Bij Westnut geloven we in de toekomst van Belgische hazelnoten. Vanuit West-Vlaanderen bouwen we aan een lokale en duurzame teelt, met aandacht voor kwaliteit, innovatie en de natuur.</p>
-        <a class="story-button" href="rassen.html">ONTDEK ONZE RASSEN</a>
-      </div>
-      <img class="story-photo" src="ons-verhaal-foto.jpg" alt="Westnut hazelnootplantage met een close-up van hazelnoten" loading="eager">
-    </section>
-    <section class="story-history" aria-labelledby="history-title">
-      <div class="story-history-inner">
-        <h2 id="history-title">Van landbouwtraditie naar een nieuwe toekomst</h2>
-        <p>Westnut is ontstaan vanuit de ambitie om ons familiale landbouwbedrijf een nieuwe toekomst te geven. Met respect voor onze landbouwroots kiezen we bewust voor een nieuwe richting: de teelt en verwerking van Belgische hazelnoten.</p>
-        <p>Wat begon als een idee, groeide uit tot een ambitieus landbouwproject waarin ondernemerschap, duurzaamheid en passie voor lokale voeding samenkomen.</p>
-        <p>België staat wereldwijd bekend om zijn chocolade. Ook in West-Vlaanderen vinden we chocolatiers en chocoladeproducenten van wereldklasse. En wat past er beter bij chocolade dan de rijke, verfijnde smaak van hazelnoten? Denk maar aan praliné, een van de meest geliefde combinaties binnen de chocoladewereld.</p>
-        <p>Toch worden de hazelnoten die in deze producten verwerkt worden vandaag grotendeels ingevoerd. <strong>Waarom zouden we deze waardevolle grondstof niet dichter bij huis kunnen telen?</strong></p>
-        <p>Vanuit die gedachte wil Westnut mee bouwen aan een nieuwe toekomst: lokaal geteelde Belgische hazelnoten die hun weg vinden naar onze chocolatiers, voedingsproducenten en uiteindelijk de consument.</p>
-      </div>
-    </section>
-  </main>
-  <div class="story-bottom" aria-hidden="true"></div>
-</body>
-</html>
+<body>
+<header class="header"><nav class="container nav" aria-label="Hoofdnavigatie"><a class="brand" href="index.html"><img src="images/westnut-logo.png" alt="Westnut – Belgische hazelnoten"></a><div class="links"><a href="index.html">Home</a><a class="active" aria-current="page" href="over-ons.html">Ons verhaal</a><a href="rassen.html">Rassen</a><a href="producten.html">Producten</a><a href="nieuws.html">Nieuws</a><a href="steun-samenwerking.html">Steun &amp; samenwerking</a><a href="contact.html">Contact</a></div></nav></header>
+<main><section class="hero"><div class="container hero-inner"><div><span class="eyebrow">ONS VERHAAL</span><h1>Geworteld in West-Vlaanderen.</h1><p>Bij Westnut geloven we in de toekomst van Belgische hazelnoten. Vanuit West-Vlaanderen bouwen we aan een lokale en duurzame teelt, met aandacht voor kwaliteit, innovatie en de natuur.</p><a class="btn" href="rassen.html">ONTDEK ONZE RASSEN</a></div><div class="hero-logo"><img src="images/westnut-logo.png" alt="Origineel Westnut-logo met Belgische hazelnoten"></div></div></section>
+<section class="container story"><h2>Van landbouwtraditie naar een nieuwe toekomst</h2><div class="story-grid"><div class="story-copy"><p>Westnut is ontstaan vanuit de ambitie om ons familiale landbouwbedrijf een nieuwe toekomst te geven. Met respect voor onze landbouwroots kiezen we bewust voor een nieuwe richting: de teelt en verwerking van Belgische hazelnoten.</p><p>Wat begon als een idee, groeide uit tot een ambitieus landbouwproject waarin ondernemerschap, duurzaamheid en passie voor lokale voeding samenkomen.</p><p>België staat wereldwijd bekend om zijn chocolade. Ook in West-Vlaanderen vinden we chocolatiers en chocoladeproducenten van wereldklasse. En wat past er beter bij chocolade dan de rijke, verfijnde smaak van hazelnoten? Denk maar aan praliné, een van de meest geliefde combinaties binnen de chocoladewereld.</p><p>Toch worden de hazelnoten die in deze producten verwerkt worden vandaag grotendeels ingevoerd. <strong>Waarom zouden we deze waardevolle grondstof niet dichter bij huis kunnen telen?</strong></p><p>Vanuit die gedachte wil Westnut mee bouwen aan een nieuwe toekomst: lokaal geteelde Belgische hazelnoten die hun weg vinden naar onze chocolatiers, voedingsproducenten én uiteindelijk de consument.</p></div><div><img class="story-photo" src="images/hazelaars-verhaal.jpg" alt="Hazelnootboomgaard en hazelnoten" onerror="this.style.display='none';this.nextElementSibling.hidden=false"><div class="photo-missing" hidden>Voeg hier je bestaande foto toe als<br><strong>images/hazelaars-verhaal.jpg</strong></div></div></div></section></main><div class="footer-line"></div>
+</body></html>
