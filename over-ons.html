@@ -7,7 +7,8 @@
 
   <title>Ons verhaal | Westnut</title>
   <meta name="description" content="Het verhaal van Westnut: Belgische hazelnoten uit West-Vlaanderen.">
-  <link rel="icon" type="image/png" href="ons-verhaal-foto.jpg">
+
+  <link rel="icon" type="image/png" href="westnut-logo-transparant.png">
 
   <style>
     :root {
@@ -17,7 +18,9 @@
       --line: #e8e3da;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
@@ -139,7 +142,7 @@
       background: #aa602d;
     }
 
-    /* GROOT ORIGINEEL LOGO */
+    /* GROOT ORIGINEEL WESTNUT-LOGO */
 
     .hero-logo {
       display: flex;
@@ -177,7 +180,9 @@
 
     .story-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.55fr) minmax(280px, 1fr);
+      grid-template-columns:
+        minmax(0, 1.55fr)
+        minmax(280px, 1fr);
       gap: 48px;
       align-items: center;
     }
@@ -195,19 +200,6 @@
       width: 100%;
       height: auto;
       border-radius: 3px;
-    }
-
-    .photo-missing {
-      background: #f0ebe1;
-      border: 1px dashed #b9ab96;
-      padding: 45px 20px;
-      text-align: center;
-      font-size: 14px;
-      color: #695d4b;
-    }
-
-    .photo-missing[hidden] {
-      display: none;
     }
 
     .footer-line {
@@ -268,6 +260,8 @@
 
 <body>
 
+  <!-- NAVIGATIE -->
+
   <header class="header">
     <nav class="container nav" aria-label="Hoofdnavigatie">
 
@@ -279,11 +273,13 @@
 
       <div class="links">
         <a href="index.html">Home</a>
-        <a class="active" aria-current="page" href="over-ons.html">Ons verhaal</a>
+        <a class="active" aria-current="page" href="over-ons.html">
+          Ons verhaal
+        </a>
         <a href="rassen.html">Rassen</a>
         <a href="producten.html">Producten</a>
         <a href="nieuws.html">Nieuws</a>
-        <a href="steun-samenwerking.html">Steun &amp; samenwerking</a>
+        <a href="samenwerking.html">Steun &amp; samenwerking</a>
         <a href="contact.html">Contact</a>
       </div>
 
@@ -291,6 +287,8 @@
   </header>
 
   <main>
+
+    <!-- INTRODUCTIE -->
 
     <section class="hero">
       <div class="container hero-inner">
@@ -320,6 +318,8 @@
 
       </div>
     </section>
+
+    <!-- ONS VERHAAL -->
 
     <section class="container story">
 
@@ -371,17 +371,13 @@
 
         </div>
 
+        <!-- FOTO ONS VERHAAL -->
+
         <div>
           <img
             class="story-photo"
-            src="images/hazelaars-verhaal.jpg"
-            alt="Hazelnootboomgaard en hazelnoten"
-            onerror="this.style.display='none';this.nextElementSibling.hidden=false">
-
-          <div class="photo-missing" hidden>
-            Voeg hier je bestaande foto toe als
-            <strong>images/hazelaars-verhaal.jpg</strong>
-          </div>
+            src="ons-verhaal-foto.jpg"
+            alt="Westnut – ons verhaal en de hazelnootteelt">
         </div>
 
       </div>
