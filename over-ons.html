@@ -178,13 +178,13 @@
       margin: 0 0 25px;
     }
 
-    /* FOTO LINKS, TEKST RECHTS */
+    /* TEKST LINKS, AFBEELDINGEN RECHTS */
 
     .story-grid {
       display: grid;
       grid-template-columns:
-        minmax(280px, 1fr)
-        minmax(0, 1.35fr);
+        minmax(0, 1.1fr)
+        minmax(0, 1fr);
       gap: 40px;
       align-items: center;
     }
@@ -197,9 +197,28 @@
       margin: 0 0 19px;
     }
 
+    /* KAART BOVEN, BESTAANDE FOTO ONDER */
+
+    .story-images {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      min-width: 0;
+    }
+
+    .story-map {
+      display: block;
+      width: 100%;
+      max-width: 420px;
+      height: auto;
+      border-radius: 8px;
+    }
+
     .story-photo {
       display: block;
       width: 100%;
+      max-width: 540px;
       height: auto;
       border-radius: 3px;
     }
@@ -253,8 +272,13 @@
         gap: 18px;
       }
 
+      .story-images {
+        gap: 18px;
+      }
+
+      .story-map,
       .story-photo {
-        max-width: 540px;
+        max-width: 100%;
       }
     }
   </style>
@@ -339,16 +363,7 @@
 
       <div class="story-grid">
 
-        <!-- FOTO LINKS -->
-
-        <div>
-          <img
-            class="story-photo"
-            src="ons-verhaal-foto.jpg"
-            alt="Westnut – ons verhaal en de hazelnootteelt">
-        </div>
-
-        <!-- TEKST RECHTS -->
+        <!-- VOLLEDIGE TEKST LINKS -->
 
         <div class="story-copy">
 
@@ -394,7 +409,30 @@
 
         </div>
 
+        <!-- AFBEELDINGEN RECHTS -->
+
+        <div class="story-images">
+
+          <!-- NIEUWE KAART: BOVEN -->
+
+          <img
+            class="story-map"
+            src="West-Vlaanderen hazelnotenkaart.png"
+            alt="Kaart van West-Vlaanderen met de ligging van Westnut in Reninge"
+            loading="lazy">
+
+          <!-- BESTAANDE FOTO: ONDER -->
+
+          <img
+            class="story-photo"
+            src="ons-verhaal-foto.jpg"
+            alt="Westnut – ons verhaal en de hazelnootteelt"
+            loading="lazy">
+
+        </div>
+
       </div>
+
     </section>
 
   </main>
