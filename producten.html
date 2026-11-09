@@ -9,9 +9,31 @@
   <meta name="description" content="Ontdek hoe Westnut stap voor stap werkt aan toekomstige producten met Belgische hazelnoten.">
 
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="logo.jpg">
+  <link rel="icon" type="image/png" href="westnut-logo-transparant.png">
 
   <style>
+    /* Origineel transparant Westnut-logo */
+
+    .brand {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 150px;
+      height: auto;
+      max-width: 100%;
+      display: block;
+      object-fit: contain;
+      background: transparent;
+      border: none;
+      box-shadow: none;
+    }
+
+    /* Productenpagina */
+
     .producten-verhaal {
       max-width: 850px;
       margin: 0 auto;
@@ -42,12 +64,20 @@
       line-height: 1.6;
     }
 
+    /* Actief tabblad */
+
     .links a[aria-current="page"] {
       color: #43834d;
       font-weight: 700;
     }
 
+    /* Smartphone */
+
     @media (max-width: 600px) {
+      .brand img {
+        width: 130px;
+      }
+
       .producten-verhaal {
         padding: 40px 20px 60px;
       }
@@ -64,9 +94,11 @@
 
 <header class="top">
   <nav class="container nav">
+
     <a class="brand" href="index.html">
-      <img src="logo.jpg" alt="Westnut logo">
-      WESTNUT
+      <img
+        src="westnut-logo-transparant.png"
+        alt="Westnut – Belgische hazelnoten">
     </a>
 
     <div class="links">
@@ -75,9 +107,10 @@
       <a href="rassen.html">Rassen</a>
       <a href="producten.html" aria-current="page">Producten</a>
       <a href="nieuws.html">Nieuws</a>
-      <a href="samenwerking.html">Steun & samenwerking</a>
+      <a href="samenwerking.html">Steun &amp; samenwerking</a>
       <a href="contact.html">Contact</a>
     </div>
+
   </nav>
 </header>
 
