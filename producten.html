@@ -12,7 +12,7 @@
   <link rel="icon" type="image/png" href="westnut-logo-transparant.png">
 
   <style>
-    /* Origineel transparant Westnut-logo */
+    /* ORIGINEEL WESTNUT-LOGO */
 
     .brand {
       display: flex;
@@ -32,18 +32,34 @@
       box-shadow: none;
     }
 
-    /* Productenpagina */
+    /* PRODUCTENPAGINA */
 
     .producten-verhaal {
-      max-width: 850px;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 65px 25px 85px;
+      padding: 65px 0 85px;
+    }
+
+    /* TEKST LINKS, FOTO RECHTS */
+
+    .producten-grid {
+      display: grid;
+      grid-template-columns:
+        minmax(0, 1.1fr)
+        minmax(0, 1fr);
+      gap: 45px;
+      align-items: center;
+    }
+
+    .producten-tekst {
+      min-width: 0;
     }
 
     .producten-verhaal h2 {
       color: #173824;
       font-size: clamp(25px, 3vw, 36px);
       line-height: 1.3;
+      margin-top: 0;
       margin-bottom: 30px;
       font-weight: 600;
     }
@@ -53,6 +69,25 @@
       line-height: 1.9;
       margin-bottom: 24px;
     }
+
+    /* FOTO RECHTS */
+
+    .producten-afbeelding {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 0;
+    }
+
+    .producten-foto {
+      display: block;
+      width: 100%;
+      max-width: 540px;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    /* AFSLUITENDE TEKST */
 
     .producten-slot {
       margin-top: 42px;
@@ -64,27 +99,41 @@
       line-height: 1.6;
     }
 
-    /* Actief tabblad */
+    /* ACTIEF TABBLAD */
 
     .links a[aria-current="page"] {
       color: #43834d;
       font-weight: 700;
     }
 
-    /* Smartphone */
+    /* TABLET EN SMARTPHONE */
 
-    @media (max-width: 600px) {
+    @media (max-width: 760px) {
       .brand img {
         width: 130px;
       }
 
       .producten-verhaal {
-        padding: 40px 20px 60px;
+        padding: 40px 0 60px;
+      }
+
+      .producten-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
       }
 
       .producten-verhaal p {
         font-size: 16px;
         line-height: 1.8;
+      }
+
+      .producten-foto {
+        max-width: 100%;
+      }
+
+      .producten-slot {
+        margin-top: 30px;
+        font-size: 19px;
       }
     }
   </style>
@@ -92,105 +141,138 @@
 
 <body>
 
-<header class="top">
-  <nav class="container nav">
+  <!-- NAVIGATIE -->
 
-    <a class="brand" href="index.html">
-      <img
-        src="westnut-logo-transparant.png"
-        alt="Westnut – Belgische hazelnoten">
-    </a>
+  <header class="top">
+    <nav class="container nav">
 
-    <div class="links">
-      <a href="index.html">Home</a>
-      <a href="over-ons.html">Ons verhaal</a>
-      <a href="rassen.html">Rassen</a>
-      <a href="producten.html" aria-current="page">Producten</a>
-      <a href="nieuws.html">Nieuws</a>
-      <a href="samenwerking.html">Steun &amp; samenwerking</a>
-      <a href="contact.html">Contact</a>
-    </div>
+      <a class="brand" href="index.html">
+        <img
+          src="westnut-logo-transparant.png"
+          alt="Westnut – Belgische hazelnoten">
+      </a>
 
-  </nav>
-</header>
+      <div class="links">
+        <a href="index.html">Home</a>
+        <a href="over-ons.html">Ons verhaal</a>
+        <a href="rassen.html">Rassen</a>
+        <a href="producten.html" aria-current="page">Producten</a>
+        <a href="nieuws.html">Nieuws</a>
+        <a href="samenwerking.html">Steun &amp; samenwerking</a>
+        <a href="contact.html">Contact</a>
+      </div>
 
-<main>
+    </nav>
+  </header>
 
-  <section class="pagehead">
-    <div class="container">
-      <div class="eyebrow">Van noot tot creatie</div>
-      <h1>Onze producten.</h1>
-    </div>
-  </section>
+  <main>
 
-  <section class="section">
-    <div class="container">
+    <!-- PAGINATITEL -->
 
-      <div class="producten-verhaal">
+    <section class="pagehead">
+      <div class="container">
 
-        <h2>Met geduld groeien mooie dingen</h2>
+        <div class="eyebrow">Van noot tot creatie</div>
 
-        <p>
-          Bij Westnut kijken we uit naar de eerste oogst
-          van onze eigen Belgische hazelnoten.
-          Onze hazelaars zijn nog jong en hebben tijd
-          nodig om te groeien en vruchten te dragen.
-        </p>
+        <h1>Onze producten.</h1>
 
-        <p>
-          Ondertussen zitten we niet stil.
-          Achter de schermen experimenteren we met
-          verschillende recepten en ontdekken we
-          hoe we onze hazelnoten later kunnen verwerken
-          tot lekkere, kwaliteitsvolle producten.
-        </p>
+      </div>
+    </section>
 
-        <p>
-          Van hazelnootpasta en granola tot chocolade
-          en andere lekkernijen.
-          We proberen, proeven en leren,
-          stap voor stap.
-        </p>
+    <!-- PRODUCTENVERHAAL -->
 
-        <p>
-          Het zal dus nog even duren voor onze
-          producten verkrijgbaar zijn.
-          Maar we hopen tegen de eerste volwaardige
-          oogst een mooi assortiment te kunnen aanbieden.
-        </p>
+    <section class="section">
+      <div class="container">
 
-        <div class="producten-slot">
-          Terwijl onze hazelaars groeien,
-          groeien ook onze ideeën.
+        <div class="producten-verhaal">
+
+          <div class="producten-grid">
+
+            <!-- TEKST LINKS -->
+
+            <div class="producten-tekst">
+
+              <h2>Met geduld groeien mooie dingen</h2>
+
+              <p>
+                Bij Westnut kijken we uit naar de eerste oogst
+                van onze eigen Belgische hazelnoten.
+                Onze hazelaars zijn nog jong en hebben tijd
+                nodig om te groeien en vruchten te dragen.
+              </p>
+
+              <p>
+                Ondertussen zitten we niet stil.
+                Achter de schermen experimenteren we met
+                verschillende recepten en ontdekken we
+                hoe we onze hazelnoten later kunnen verwerken
+                tot lekkere, kwaliteitsvolle producten.
+              </p>
+
+              <p>
+                Van hazelnootpasta en granola tot chocolade
+                en andere lekkernijen.
+                We proberen, proeven en leren,
+                stap voor stap.
+              </p>
+
+              <p>
+                Het zal dus nog even duren voor onze
+                producten verkrijgbaar zijn.
+                Maar we hopen tegen de eerste volwaardige
+                oogst een mooi assortiment te kunnen aanbieden.
+              </p>
+
+              <div class="producten-slot">
+                Terwijl onze hazelaars groeien,
+                groeien ook onze ideeën.
+              </div>
+
+            </div>
+
+            <!-- FOTO RECHTS -->
+
+            <div class="producten-afbeelding">
+
+              <img
+                class="producten-foto"
+                src="ons-verhaal-foto.jpg"
+                alt="Hazelnoten en jonge hazelaars bij Westnut"
+                loading="lazy">
+
+            </div>
+
+          </div>
+
         </div>
 
       </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+
+  <footer class="foot">
+    <div class="container">
+
+      <div>
+        <strong>WESTNUT</strong><br>
+        Belgische hazelnoten · West-Vlaanderen<br>
+        <span class="small">
+          Lokale teelt. Toekomstige smaken.
+        </span>
+      </div>
+
+      <div>
+        <a data-email>E-mailadres volgt</a><br>
+        <span class="small">© Westnut 2026</span>
+      </div>
 
     </div>
-  </section>
+  </footer>
 
-</main>
-
-<footer class="foot">
-  <div class="container">
-
-    <div>
-      <strong>WESTNUT</strong><br>
-      Belgische hazelnoten · West-Vlaanderen<br>
-      <span class="small">
-        Lokale teelt. Toekomstige smaken.
-      </span>
-    </div>
-
-    <div>
-      <a data-email>E-mailadres volgt</a><br>
-      <span class="small">© Westnut 2026</span>
-    </div>
-
-  </div>
-</footer>
-
-<script src="site.js" defer></script>
+  <script src="site.js" defer></script>
 
 </body>
 </html>
