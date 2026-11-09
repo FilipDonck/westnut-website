@@ -178,20 +178,14 @@
       margin: 0 0 25px;
     }
 
-    /*
-      FOTO VERDER NAAR LINKS
-
-      De tekstkolom wordt smaller.
-      De ruimte tussen tekst en foto wordt 16px.
-      De foto blijft rechts van de tekst.
-    */
+    /* FOTO LINKS, TEKST RECHTS */
 
     .story-grid {
       display: grid;
       grid-template-columns:
-        minmax(0, 1.1fr)
-        minmax(280px, 1fr);
-      gap: 16px;
+        minmax(280px, 1fr)
+        minmax(0, 1.35fr);
+      gap: 40px;
       align-items: center;
     }
 
@@ -326,7 +320,7 @@
           </a>
         </div>
 
-        <!-- JUISTE ORIGINELE LOGO -->
+        <!-- ORIGINEEL WESTNUT-LOGO -->
 
         <div class="hero-logo">
           <img
@@ -344,6 +338,17 @@
       <h2>Van landbouwtraditie naar een nieuwe toekomst</h2>
 
       <div class="story-grid">
+
+        <!-- FOTO LINKS -->
+
+        <div>
+          <img
+            class="story-photo"
+            src="ons-verhaal-foto.jpg"
+            alt="Westnut – ons verhaal en de hazelnootteelt">
+        </div>
+
+        <!-- TEKST RECHTS -->
 
         <div class="story-copy">
 
@@ -387,15 +392,6 @@
             voedingsproducenten én uiteindelijk de consument.
           </p>
 
-        </div>
-
-        <!-- FOTO VERDER NAAR LINKS -->
-
-        <div>
-          <img
-            class="story-photo"
-            src="ons-verhaal-foto.jpg"
-            alt="Westnut – ons verhaal en de hazelnootteelt">
         </div>
 
       </div>
