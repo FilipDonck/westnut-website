@@ -1,1 +1,123 @@
-<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Nieuws | Westnut</title><meta name="description" content="Nieuws van Westnut, Belgische hazelnoten."><link rel="stylesheet" href="style.css"><link rel="icon" href="logo.jpg"></head><body><header class="top"><nav class="container nav"><a class="brand" href="index.html"><img src="logo.jpg" alt="Westnut logo"> WESTNUT</a><div class="links"><a href="index.html">Home</a><a href="over-ons.html">Ons verhaal</a><a href="rassen.html">Rassen</a><a href="producten.html">Producten</a><a href="nieuws.html">Nieuws</a><a href="samenwerking.html">Steun & samenwerking</a><a href="contact.html">Contact</a></div></nav></header><main><section class="pagehead"><div class="container"><div class="eyebrow">Achter de schermen</div><h1>Nieuws uit de boomgaard.</h1><p>Volg de aanplant, de teelt en de ontwikkeling van onze hazelnootproducten.</p></div></section><section class="section"><div class="container"><div id="nieuws-list" class="grid loading">Nieuws laden…</div></div></section></main><footer class="foot"><div class="container"><div><strong>WESTNUT</strong><br>Belgische hazelnoten · West-Vlaanderen<br><span class="small">Lokale teelt. Toekomstige smaken.</span></div><div><a data-email>E-mailadres volgt</a><br><span class="small">© Westnut 2026</span></div></div></footer><script src="site.js" defer></script></body></html>
+
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Nieuws | Westnut</title>
+  <meta name="description" content="Nieuws over de boomgaard, hazelnootteelt en productontwikkeling bij Westnut.">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="westnut-logo-transparant.png">
+
+  <style>
+    /* Origineel transparant Westnut-logo */
+
+    .brand {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 150px;
+      height: auto;
+      max-width: 100%;
+      display: block;
+      object-fit: contain;
+      background: transparent;
+      border: none;
+      box-shadow: none;
+    }
+
+    /* Actief tabblad Nieuws */
+
+    .links a[aria-current="page"] {
+      color: #43834d;
+      font-weight: 700;
+    }
+
+    /* Smartphone */
+
+    @media (max-width: 600px) {
+      .brand img {
+        width: 130px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="top">
+  <nav class="container nav">
+
+    <a class="brand" href="index.html">
+      <img
+        src="westnut-logo-transparant.png"
+        alt="Westnut – Belgische hazelnoten">
+    </a>
+
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="over-ons.html">Ons verhaal</a>
+      <a href="rassen.html">Rassen</a>
+      <a href="producten.html">Producten</a>
+      <a href="nieuws.html" aria-current="page">Nieuws</a>
+      <a href="samenwerking.html">Steun &amp; samenwerking</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+  </nav>
+</header>
+
+<main>
+
+  <section class="pagehead">
+    <div class="container">
+      <div class="eyebrow">Achter de schermen</div>
+      <h1>Nieuws uit de boomgaard.</h1>
+      <p>
+        Volg de aanplant, de teelt en de ontwikkeling
+        van onze hazelnootproducten.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div id="nieuws-list" class="grid loading">
+        Nieuws laden…
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="container">
+
+    <div>
+      <strong>WESTNUT</strong><br>
+      Belgische hazelnoten · West-Vlaanderen<br>
+      <span class="small">
+        Lokale teelt. Toekomstige smaken.
+      </span>
+    </div>
+
+    <div>
+      <a data-email>E-mailadres volgt</a><br>
+      <span class="small">© Westnut 2026</span>
+    </div>
+
+  </div>
+</footer>
+
+<script src="site.js" defer></script>
+
+</body>
+</html>
