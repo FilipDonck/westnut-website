@@ -32,12 +32,59 @@
       box-shadow: none;
     }
 
-    /* PRODUCTENPAGINA */
+    /* PAGINATITEL */
+
+    .producten-pagehead {
+      padding: 50px 0 30px;
+    }
+
+    .producten-pagehead h1 {
+      color: #173824;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: clamp(27px, 3vw, 38px);
+      font-weight: 700;
+      line-height: 1.25;
+      margin: 0;
+    }
+
+    /* GROTE SLOGAN */
+
+    .producten-slogan {
+      margin: 65px auto 0;
+      max-width: 1100px;
+      text-align: center;
+    }
+
+    .producten-slogan h2 {
+      color: #173824;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: clamp(34px, 5vw, 64px);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin: 0;
+    }
+
+    /* SUBTIELE GROENE SIERLIJN */
+
+    .producten-slogan::after {
+      content: "";
+      display: block;
+      width: 65%;
+      max-width: 650px;
+      height: 4px;
+      margin: 22px auto 0;
+      background: #78b900;
+      border-radius: 50%;
+      transform: rotate(-1deg);
+    }
+
+    /* PRODUCTENVERHAAL */
 
     .producten-verhaal {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 65px 0 85px;
+      padding: 55px 0 85px;
     }
 
     /* TEKST LINKS, FOTO RECHTS */
@@ -113,8 +160,26 @@
         width: 130px;
       }
 
+      .producten-pagehead {
+        padding: 35px 0 20px;
+      }
+
+      .producten-slogan {
+        margin-top: 40px;
+      }
+
+      .producten-slogan h2 {
+        font-size: clamp(28px, 7vw, 42px);
+      }
+
+      .producten-slogan::after {
+        width: 70%;
+        height: 3px;
+        margin-top: 16px;
+      }
+
       .producten-verhaal {
-        padding: 40px 0 60px;
+        padding: 45px 0 60px;
       }
 
       .producten-grid {
@@ -167,14 +232,16 @@
 
   <main>
 
-    <!-- PAGINATITEL -->
+    <!-- PAGINATITEL EN SLOGAN -->
 
-    <section class="pagehead">
+    <section class="producten-pagehead">
       <div class="container">
 
-        <div class="eyebrow">Van noot tot creatie</div>
-
         <h1>Onze producten.</h1>
+
+        <div class="producten-slogan">
+          <h2>Van noot tot creatie</h2>
+        </div>
 
       </div>
     </section>
@@ -233,13 +300,11 @@
             <!-- FOTO RECHTS -->
 
             <div class="producten-afbeelding">
-
               <img
                 class="producten-foto"
                 src="ons-verhaal-foto.jpg"
                 alt="Hazelnoten en jonge hazelaars bij Westnut"
                 loading="lazy">
-
             </div>
 
           </div>
