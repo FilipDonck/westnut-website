@@ -188,14 +188,35 @@ a {
   transform: translateY(-2px);
 }
 
-/* Officieel Westnut-logo naast de hoofdtitel, zonder achtergrondvlak */
-.hero-heading { display: flex; align-items: center; gap: 18px; }
-.hero-mark { width: clamp(82px, 8vw, 118px); height: auto; flex-shrink: 0; object-fit: contain; }
-.hero-heading h1 { min-width: 0; }
-@media (max-width: 1100px) {
-  .hero-heading { gap: 12px; }
-  .hero-mark { width: 82px; }
+/* ORIGINEEL LOGO NAAST DE HOOFDTITEL */
+
+.hero-heading {
+  display: flex;
+  align-items: center;
+  gap: 18px;
 }
+
+.hero-mark {
+  width: clamp(82px, 8vw, 118px);
+  height: auto;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.hero-heading h1 {
+  min-width: 0;
+}
+
+@media (max-width: 1100px) {
+  .hero-heading {
+    gap: 12px;
+  }
+
+  .hero-mark {
+    width: 82px;
+  }
+}
+
 /* =========================
    KERNWAARDEN
 ========================= */
@@ -443,8 +464,14 @@ a {
   .hero-content {
     width: 100%;
   }
-  .hero-mark { width: 75px; }
-  .hero-heading { align-items: flex-start; }
+
+  .hero-mark {
+    width: 75px;
+  }
+
+  .hero-heading {
+    align-items: flex-start;
+  }
 
   .hero h1 {
     letter-spacing: -.7px;
@@ -535,7 +562,8 @@ a {
 
       <a href="nieuws.html">Nieuws</a>
 
-      <a href="steun-samenwerking.html">
+      <!-- AANGEPASTE LINK -->
+      <a href="samenwerking.html">
         Steun &amp; samenwerking
       </a>
 
@@ -552,12 +580,21 @@ a {
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-content">
+
       <div class="hero-heading">
-        <img class="hero-mark" src="Westnut Belgische Hazelnoten-logo(2).png" alt="" width="110" height="123">
-      <h1>
-        De toekomst van<br>
-        Belgische hazelnoten.
-      </h1>
+
+        <img
+          class="hero-mark"
+          src="Westnut Belgische Hazelnoten-logo(2).png"
+          alt=""
+          width="110"
+          height="123">
+
+        <h1>
+          De toekomst van<br>
+          Belgische hazelnoten.
+        </h1>
+
       </div>
 
       <p class="hero-subtitle">
@@ -655,8 +692,9 @@ a {
     </a>
 
     <!-- STEUN EN SAMENWERKING -->
+    <!-- LINK GECORRIGEERD -->
 
-    <a href="steun-samenwerking.html" class="feature-card">
+    <a href="samenwerking.html" class="feature-card">
 
       <img
         src="steun-samenwerking.jpg"
@@ -697,11 +735,17 @@ const navLinks =
   document.querySelector(".nav-links");
 
 // Markeer automatisch het tabblad van de huidige pagina groen.
-const huidigePagina = window.location.pathname.split("/").pop() || "index.html";
+const huidigePagina =
+  window.location.pathname.split("/").pop() || "index.html";
+
 document.querySelectorAll(".nav-links a").forEach(link => {
-  const doelPagina = new URL(link.href).pathname.split("/").pop();
+  const doelPagina =
+    new URL(link.href).pathname.split("/").pop();
+
   const actief = doelPagina === huidigePagina;
+
   link.classList.toggle("active", actief);
+
   if (actief) {
     link.setAttribute("aria-current", "page");
   } else {
