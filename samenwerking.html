@@ -8,7 +8,7 @@
 <title>Steun & samenwerking | Westnut</title>
 <meta name="description" content="Westnut werkt samen met LEADER Westhoek en onderzoekscentra aan duurzame Belgische hazelnoten.">
 
-<link rel="icon" href="logo.jpg">
+<link rel="icon" type="image/png" href="westnut-logo-transparant.png">
 <link rel="stylesheet" href="style.css">
 
 <style>
@@ -54,18 +54,19 @@ body {
 .westnut-brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  flex-shrink: 0;
   text-decoration: none;
-  color: var(--green);
-  font-size: 23px;
-  font-weight: bold;
-  letter-spacing: 2px;
 }
 
 .westnut-brand img {
-  width: 54px;
-  height: 54px;
+  width: 150px;
+  height: auto;
+  max-width: 100%;
+  display: block;
   object-fit: contain;
+  background: transparent;
+  border: none;
+  box-shadow: none;
 }
 
 .westnut-links {
@@ -84,7 +85,11 @@ body {
 
 .westnut-links a:hover,
 .westnut-links a.active {
-  color: var(--copper);
+  color: #258045;
+}
+
+.westnut-links a.active {
+  font-weight: 700;
 }
 
 /* PAGINA */
@@ -133,7 +138,6 @@ body {
     minmax(0, 1fr);
   gap: 55px;
   align-items: center;
-
   background: #fffdf9;
   border: 1px solid #e9e5dc;
   border-radius: 12px;
@@ -163,7 +167,7 @@ body {
   margin-bottom: 0;
 }
 
-/* OFFICIELE LOGO'S */
+/* OFFICIËLE LOGO'S */
 
 .leader-image-container {
   width: 100%;
@@ -251,11 +255,16 @@ body {
 @media (max-width: 700px) {
   .westnut-nav {
     flex-direction: column;
-    padding: 15px;
+    align-items: flex-start;
+    padding: 15px 20px;
+  }
+
+  .westnut-brand img {
+    width: 130px;
   }
 
   .westnut-links {
-    justify-content: center;
+    justify-content: flex-start;
     gap: 12px 18px;
   }
 
@@ -299,22 +308,25 @@ body {
 <body>
 
 <header class="westnut-header">
-  <nav class="westnut-nav">
+  <nav class="westnut-nav" aria-label="Hoofdnavigatie">
 
     <a class="westnut-brand" href="index.html">
-      <img src="logo.jpg" alt="Westnut logo">
-      <span>WESTNUT</span>
+      <img
+        src="westnut-logo-transparant.png"
+        alt="Westnut – Belgische hazelnoten">
     </a>
 
     <div class="westnut-links">
       <a href="index.html">Home</a>
       <a href="over-ons.html">Ons verhaal</a>
-      <a href="rassen.html">Onze rassen</a>
+      <a href="rassen.html">Rassen</a>
       <a href="producten.html">Producten</a>
-      <a href="samenwerking.html" class="active">
-        Steun & samenwerking
-      </a>
       <a href="nieuws.html">Nieuws</a>
+      <a href="samenwerking.html"
+         class="active"
+         aria-current="page">
+        Steun &amp; samenwerking
+      </a>
       <a href="contact.html">Contact</a>
     </div>
 
