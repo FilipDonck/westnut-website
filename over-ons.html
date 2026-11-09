@@ -178,14 +178,14 @@
       margin: 0 0 25px;
     }
 
-    /* TEKST LINKS, AFBEELDINGEN RECHTS */
+    /* TEKST LINKS, GROTERE KAART RECHTS */
 
     .story-grid {
       display: grid;
       grid-template-columns:
-        minmax(0, 1.1fr)
-        minmax(0, 1fr);
-      gap: 40px;
+        minmax(0, 1fr)
+        minmax(0, 1.25fr);
+      gap: 35px;
       align-items: center;
     }
 
@@ -197,33 +197,24 @@
       margin: 0 0 19px;
     }
 
-    /* KAART BOVEN, FOTO ONDER */
+    /* KAART VAN WEST-VLAANDEREN */
 
     .story-images {
       display: flex;
-      flex-direction: column;
       align-items: center;
-      gap: 24px;
+      justify-content: center;
       min-width: 0;
     }
-
-    /* KAART EVEN BREED ALS FOTO */
 
     .story-map {
       display: block;
       width: 100%;
-      max-width: 540px;
+      max-width: 675px;
       height: auto;
       border-radius: 8px;
     }
 
-    .story-photo {
-      display: block;
-      width: 100%;
-      max-width: 540px;
-      height: auto;
-      border-radius: 3px;
-    }
+    /* ONDERSTE GROENE LIJN */
 
     .footer-line {
       height: 9px;
@@ -274,12 +265,7 @@
         gap: 18px;
       }
 
-      .story-images {
-        gap: 18px;
-      }
-
-      .story-map,
-      .story-photo {
+      .story-map {
         max-width: 100%;
       }
     }
@@ -411,24 +397,14 @@
 
         </div>
 
-        <!-- AFBEELDINGEN RECHTS -->
+        <!-- GROTERE KAART RECHTS -->
 
         <div class="story-images">
-
-          <!-- NIEUWE KAART BOVEN -->
 
           <img
             class="story-map"
             src="West-Vlaanderen hazelnotenkaart.png"
             alt="Kaart van West-Vlaanderen met de ligging van Westnut in Reninge"
-            loading="lazy">
-
-          <!-- BESTAANDE FOTO ONDER -->
-
-          <img
-            class="story-photo"
-            src="ons-verhaal-foto.jpg"
-            alt="Westnut – ons verhaal en de hazelnootteelt"
             loading="lazy">
 
         </div>
