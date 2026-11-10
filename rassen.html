@@ -19,16 +19,18 @@
 <style>
 .rassen-page{background:#faf7f0;color:#173824;min-height:100vh}
 .rassen-page *, .rassen-page *::before,.rassen-page *::after{box-sizing:border-box}
-.rassen-page .top{position:relative;z-index:100;background:#faf8f3}
-.rassen-page .top .nav{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:nowrap;padding-top:12px;padding-bottom:12px}
-.rassen-page .brand{display:flex;align-items:center;flex-shrink:0;text-decoration:none}
-.rassen-page .brand img{width:150px;height:auto;max-width:100%;object-fit:contain;display:block;background:transparent;border:0;box-shadow:none}
-.rassen-page .top .links{display:flex;align-items:center;justify-content:flex-end;gap:14px;flex-wrap:wrap}
-.rassen-page .top .links a{font-size:18px;font-weight:500;line-height:1.4;white-space:nowrap;text-decoration:none;color:#173824}
-.rassen-page .top .links a:hover{color:#c78043}
-.rassen-page .top .links a[aria-current="page"]{background:#173824;color:#fff;font-weight:600;padding:12px 18px;border-radius:8px}
+/* Exact dezelfde bovenbalk als Steun & samenwerking; eigen selectors voorkomen conflicten met style.css. */
+.rassen-page .westnut-header{background:#f0eee5;border-bottom:1px solid #deded3;position:relative;z-index:100}
+.rassen-page .westnut-nav{max-width:1400px;width:100%;margin:auto;padding:12px 28px;display:flex;justify-content:space-between;align-items:center;gap:25px;flex-wrap:nowrap;min-height:0}
+.rassen-page .westnut-brand{display:flex;align-items:center;flex-shrink:0;text-decoration:none}
+.rassen-page .westnut-brand img{width:150px;height:auto;max-width:100%;display:block;object-fit:contain;background:transparent;border:none;box-shadow:none}
+.rassen-page .westnut-links{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:flex-end}
+.rassen-page .westnut-links a{color:#173824;text-decoration:none;font-family:Arial,Helvetica,sans-serif;font-size:18px;font-weight:500;white-space:nowrap;line-height:1.4;letter-spacing:normal}
+.rassen-page .westnut-links a:hover{color:#c78043}
+.rassen-page .westnut-links a[aria-current="page"]{background:#173824;color:#fff;font-weight:600;padding:12px 18px;border-radius:8px}
+.rassen-page .westnut-links a[aria-current="page"]:hover{color:#fff}
 .rassen-page .menu-toggle{display:none;align-items:center;justify-content:center;width:46px;height:46px;border:1px solid #d8dfd5;border-radius:8px;background:transparent;color:#173824;font-size:29px;line-height:1;cursor:pointer;flex-shrink:0}
-.rassen-page .menu-toggle:focus-visible,.rassen-page .top .links a:focus-visible{outline:3px solid #c78043;outline-offset:3px}
+.rassen-page .menu-toggle:focus-visible,.rassen-page .westnut-links a:focus-visible{outline:3px solid #c78043;outline-offset:3px}
 .rassen-intro{max-width:1050px;margin:0 auto;padding:55px 24px 30px;text-align:center}
 .rassen-label{color:#b47742;font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;margin-bottom:15px}
 .rassen-intro h1{font-family:Georgia,serif;font-size:clamp(32px,4vw,46px);font-weight:400;line-height:1.2;margin:0 0 22px}
@@ -45,21 +47,23 @@
 .plan-lightbox img{display:block;width:auto;max-width:100%;height:auto;max-height:none;margin:0 auto}
 .plan-close{position:fixed;top:10px;right:22px;z-index:10000;background:#fff;color:#173824;border:none;border-radius:50%;width:43px;height:43px;font-size:29px;cursor:pointer}
 @media(max-width:1100px){
-.rassen-page .top .nav{position:relative}
 .rassen-page .menu-toggle{display:flex}
-.rassen-page .top .links{display:none;position:absolute;top:100%;left:0;right:0;z-index:200;background:#faf8f3;padding:20px;flex-direction:column;align-items:stretch;gap:6px;box-shadow:0 10px 20px rgba(0,0,0,.12);border-radius:0 0 10px 10px}
-.rassen-page .top .links.open{display:flex}
-.rassen-page .top .links a{display:block;font-size:18px;padding:12px 14px;white-space:normal}
-.rassen-page .top .links a[aria-current="page"]{padding:12px 14px}
+.rassen-page .westnut-links{display:none;position:absolute;top:100%;left:0;right:0;z-index:200;background:#f0eee5;padding:20px;flex-direction:column;align-items:stretch;gap:6px;box-shadow:0 10px 20px rgba(0,0,0,.12)}
+.rassen-page .westnut-links.open{display:flex}
+.rassen-page .westnut-links a{display:block;font-size:18px;padding:12px 14px;white-space:normal}
+.rassen-page .westnut-links a[aria-current="page"]{padding:12px 14px}
 }
-@media(max-width:700px){.rassen-intro{padding:35px 18px 20px}.rassen-intro p{font-size:15px}.rassen-plan-section{padding:10px 12px 45px}.rassen-plan{border-radius:5px}.rassen-page .brand img{width:130px}.rassen-details{padding:0 18px 55px}}
+@media(max-width:700px){
+.rassen-intro{padding:35px 18px 20px}.rassen-intro p{font-size:15px}.rassen-plan-section{padding:10px 12px 45px}.rassen-plan{border-radius:5px}.rassen-details{padding:0 18px 55px}
+.rassen-page .westnut-nav{padding:15px 20px}.rassen-page .westnut-brand img{width:130px}
+}
 </style>
 </head>
 <body class="rassen-page">
-<header class="top"><nav class="container nav" aria-label="Hoofdnavigatie">
-<a class="brand" href="index.html"><img src="westnut-logo-transparant.png" alt="Westnut – Belgische hazelnoten"></a>
+<header class="westnut-header"><nav class="westnut-nav" aria-label="Hoofdnavigatie">
+<a class="westnut-brand" href="index.html"><img src="westnut-logo-transparant.png" alt="Westnut – Belgische hazelnoten"></a>
 <button class="menu-toggle" type="button" aria-label="Menu openen" aria-expanded="false" aria-controls="nav-links">☰</button>
-<div class="links" id="nav-links">
+<div class="westnut-links" id="nav-links">
 <a href="index.html">Home</a>
 <a href="over-ons.html">Ons verhaal</a>
 <a href="waarom-hazelnoten.html">Waarom hazelnoten?</a>
@@ -86,7 +90,7 @@
 <p>Lees ook <a href="waarom-hazelnoten.html">waarom hazelnoten zo veelzijdig zijn</a> en ontdek <a href="over-ons.html">het verhaal van Westnut</a>.</p>
 </section>
 </main>
-<footer class="foot"><div class="container"><div><strong>WESTNUT</strong><br>Belgische hazelnoten · West-Vlaanderen<br><span class="small">Lokale teelt. Toekomstige smaken.</span></div><div><span class="small">© Westnut 2026</span></div></div></footer>
+<footer class="foot"><div class="container"><div><strong>WESTNUT</strong><br>Belgische hazelnoten · West-Vlaanderen<br><span class="small">Lokale teelt. Toekomstige smaken.</span></div><div><a href="mailto:info@westnut.be">info@westnut.be</a><br><span class="small">© Westnut 2026</span></div></div></footer>
 <div id="planLightbox" class="plan-lightbox" role="dialog" aria-modal="true" aria-label="Vergroot aanplantingsplan" aria-hidden="true">
 <button id="planClose" class="plan-close" type="button" aria-label="Sluiten">&times;</button>
 <img src="aanplantingsplannen.png" alt="Vergroot aanplantingsplan van Westnut">
@@ -99,6 +103,7 @@ function closeMenu(){navLinks.classList.remove('open');menuButton.setAttribute('
 menuButton.addEventListener('click',function(){const open=navLinks.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(open));menuButton.setAttribute('aria-label',open?'Menu sluiten':'Menu openen');menuButton.textContent=open?'✕':'☰';});
 navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
 window.addEventListener('resize',()=>{if(window.innerWidth>1100)closeMenu();});
+document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!lightbox.classList.contains('open'))closeMenu();});
 const plan=document.getElementById('aanplantingsplan');
 const lightbox=document.getElementById('planLightbox');
 const closeButton=document.getElementById('planClose');
