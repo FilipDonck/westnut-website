@@ -1,452 +1,145 @@
-
 <!DOCTYPE html>
 <html lang="nl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <title>Steun & samenwerking | Westnut</title>
 <meta name="description" content="Westnut werkt samen met LEADER Westhoek en onderzoekscentra aan duurzame Belgische hazelnoten.">
-
 <link rel="icon" type="image/png" href="westnut-logo-transparant.png">
 <link rel="stylesheet" href="style.css">
-
 <style>
-:root {
-  --green: #173824;
-  --cream: #faf7f0;
-  --copper: #b47742;
-  --muted: #536356;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  background: var(--cream);
-  color: var(--green);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
+:root { --green:#173824; --cream:#faf7f0; --copper:#b47742; --muted:#536356; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; background:var(--cream); color:var(--green); font-family:Arial,Helvetica,sans-serif; }
 /* NAVIGATIE */
-
-.westnut-header {
-  background: #f0eee5;
-  border-bottom: 1px solid #deded3;
-}
-
-.westnut-nav {
-  max-width: 1400px;
-  margin: auto;
-  padding: 12px 28px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 25px;
-}
-
-.westnut-brand {
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-  text-decoration: none;
-}
-
-.westnut-brand img {
-  width: 150px;
-  height: auto;
-  max-width: 100%;
-  display: block;
-  object-fit: contain;
-  background: transparent;
-  border: none;
-  box-shadow: none;
-}
-
-.westnut-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 22px;
-  align-items: center;
-}
-
-.westnut-links a {
-  color: var(--green);
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.westnut-links a:hover,
-.westnut-links a.active {
-  color: #258045;
-}
-
-.westnut-links a.active {
-  font-weight: 700;
-}
-
+.westnut-header { background:#f0eee5; border-bottom:1px solid #deded3; position:relative; z-index:100; }
+.westnut-nav { max-width:1400px; margin:auto; padding:12px 28px; display:flex; justify-content:space-between; align-items:center; gap:25px; flex-wrap:nowrap; }
+.westnut-brand { display:flex; align-items:center; flex-shrink:0; text-decoration:none; }
+.westnut-brand img { width:150px; height:auto; max-width:100%; display:block; object-fit:contain; background:transparent; border:none; box-shadow:none; }
+.westnut-links { display:flex; flex-wrap:wrap; gap:14px; align-items:center; justify-content:flex-end; }
+.westnut-links a { color:var(--green); text-decoration:none; font-size:18px; font-weight:500; white-space:nowrap; line-height:1.4; }
+.westnut-links a:hover { color:#c78043; }
+.westnut-links a.active, .westnut-links a[aria-current="page"] { background:var(--green); color:#fff; font-weight:600; padding:12px 18px; border-radius:8px; }
+.westnut-links a.active:hover { color:#fff; }
+.menu-toggle { display:none; align-items:center; justify-content:center; width:46px; height:46px; border:1px solid #d8dfd5; border-radius:8px; background:transparent; color:var(--green); font-size:29px; line-height:1; cursor:pointer; flex-shrink:0; }
+.menu-toggle:focus-visible, .westnut-links a:focus-visible { outline:3px solid #c78043; outline-offset:3px; }
 /* PAGINA */
-
-.samenwerking-main {
-  max-width: 1400px;
-  margin: auto;
-  padding: 65px 28px 85px;
-}
-
-.page-intro {
-  max-width: 850px;
-  text-align: center;
-  margin: 0 auto 65px;
-}
-
-.eyebrow {
-  color: var(--copper);
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-size: 12px;
-  font-weight: bold;
-  margin-bottom: 18px;
-}
-
-.page-intro h1 {
-  font-family: Georgia, serif;
-  font-size: clamp(32px, 4vw, 48px);
-  font-weight: normal;
-  line-height: 1.2;
-  margin: 0 0 22px;
-}
-
-.page-intro p {
-  color: var(--muted);
-  font-size: 17px;
-  line-height: 1.9;
-}
-
+.samenwerking-main { max-width:1400px; margin:auto; padding:65px 28px 85px; }
+.page-intro { max-width:850px; text-align:center; margin:0 auto 65px; }
+.eyebrow { color:var(--copper); text-transform:uppercase; letter-spacing:3px; font-size:12px; font-weight:bold; margin-bottom:18px; }
+.page-intro h1 { font-family:Georgia,serif; font-size:clamp(32px,4vw,48px); font-weight:normal; line-height:1.2; margin:0 0 22px; }
+.page-intro p { color:var(--muted); font-size:17px; line-height:1.9; }
 /* LEADER WESTHOEK */
-
-.leader-section {
-  display: grid;
-  grid-template-columns:
-    minmax(0, 1fr)
-    minmax(0, 1fr);
-  gap: 55px;
-  align-items: center;
-  background: #fffdf9;
-  border: 1px solid #e9e5dc;
-  border-radius: 12px;
-  padding: 45px;
-  margin-bottom: 42px;
-}
-
-.leader-text {
-  min-width: 0;
-}
-
-.leader-text h2 {
-  font-family: Georgia, serif;
-  font-size: 32px;
-  font-weight: normal;
-  margin: 0 0 24px;
-}
-
-.leader-text p {
-  font-size: 16px;
-  line-height: 1.9;
-  color: var(--muted);
-  margin: 0 0 22px;
-}
-
-.leader-text p:last-child {
-  margin-bottom: 0;
-}
-
+.leader-section { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:55px; align-items:center; background:#fffdf9; border:1px solid #e9e5dc; border-radius:12px; padding:45px; margin-bottom:42px; }
+.leader-text { min-width:0; }
+.leader-text h2 { font-family:Georgia,serif; font-size:32px; font-weight:normal; margin:0 0 24px; }
+.leader-text p { font-size:16px; line-height:1.9; color:var(--muted); margin:0 0 22px; }
+.leader-text p:last-child { margin-bottom:0; }
 /* OFFICIËLE LOGO'S */
-
-.leader-image-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.leader-logo {
-  display: block;
-  width: 100%;
-  max-width: 600px;
-  height: auto;
-  object-fit: contain;
-  background: white;
-}
-
+.leader-image-container { width:100%; display:flex; justify-content:center; align-items:center; }
+.leader-logo { display:block; width:100%; max-width:600px; height:auto; object-fit:contain; background:white; }
 /* ONDERZOEK */
-
-.research-section {
-  background: #fffdf9;
-  border: 1px solid #e9e5dc;
-  border-radius: 12px;
-  padding: 45px;
-  margin-bottom: 42px;
-}
-
-.research-section h2 {
-  font-family: Georgia, serif;
-  font-size: 30px;
-  font-weight: normal;
-  margin: 0 0 22px;
-}
-
-.research-section p {
-  color: var(--muted);
-  font-size: 16px;
-  line-height: 1.9;
-  margin: 0 0 20px;
-}
-
-.research-section p:last-child {
-  margin-bottom: 0;
-}
-
+.research-section { background:#fffdf9; border:1px solid #e9e5dc; border-radius:12px; padding:45px; margin-bottom:42px; }
+.research-section h2 { font-family:Georgia,serif; font-size:30px; font-weight:normal; margin:0 0 22px; }
+.research-section p { color:var(--muted); font-size:16px; line-height:1.9; margin:0 0 20px; }
+.research-section p:last-child { margin-bottom:0; }
 /* AFSLUITING */
-
-.closing-text {
-  text-align: center;
-  padding: 35px 20px;
-}
-
-.closing-text p {
-  font-family: Georgia, serif;
-  font-size: 25px;
-  line-height: 1.5;
-  margin: 0;
-}
-
+.closing-text { text-align:center; padding:35px 20px; }
+.closing-text p { font-family:Georgia,serif; font-size:25px; line-height:1.5; margin:0; }
 /* FOOTER */
-
-.westnut-footer {
-  background: var(--green);
-  color: #f5f1e8;
-  text-align: center;
-  padding: 30px 20px;
-  font-size: 13px;
+.westnut-footer { background:var(--green); color:#f5f1e8; text-align:center; padding:30px 20px; font-size:13px; }
+/* TABLET EN SMARTPHONE: UITKLAPMENU */
+@media (max-width:1100px) {
+  .menu-toggle { display:flex; }
+  .westnut-links { display:none; position:absolute; top:100%; left:0; right:0; z-index:200; background:#f0eee5; padding:20px; flex-direction:column; align-items:stretch; gap:6px; box-shadow:0 10px 20px rgba(0,0,0,.12); }
+  .westnut-links.open { display:flex; }
+  .westnut-links a { display:block; padding:12px 14px; font-size:18px; white-space:normal; }
+  .westnut-links a.active, .westnut-links a[aria-current="page"] { padding:12px 14px; }
 }
-
-/* TABLET */
-
-@media (max-width: 1000px) {
-  .leader-section {
-    gap: 28px;
-    padding: 30px;
-  }
-
-  .leader-text h2 {
-    font-size: 27px;
-  }
-}
-
-/* SMARTPHONE */
-
-@media (max-width: 700px) {
-  .westnut-nav {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 15px 20px;
-  }
-
-  .westnut-brand img {
-    width: 130px;
-  }
-
-  .westnut-links {
-    justify-content: flex-start;
-    gap: 12px 18px;
-  }
-
-  .samenwerking-main {
-    padding: 40px 18px;
-  }
-
-  .page-intro {
-    margin-bottom: 40px;
-  }
-
-  .leader-section {
-    grid-template-columns: 1fr;
-    gap: 25px;
-    padding: 25px 20px;
-  }
-
-  .leader-text h2 {
-    font-size: 26px;
-  }
-
-  .leader-logo {
-    max-width: 500px;
-  }
-
-  .research-section {
-    padding: 28px 20px;
-  }
-
-  .research-section h2 {
-    font-size: 25px;
-  }
-
-  .closing-text p {
-    font-size: 22px;
-  }
+@media (max-width:1000px) { .leader-section { gap:28px; padding:30px; } .leader-text h2 { font-size:27px; } }
+@media (max-width:700px) {
+  .westnut-nav { padding:15px 20px; }
+  .westnut-brand img { width:130px; }
+  .samenwerking-main { padding:40px 18px; }
+  .page-intro { margin-bottom:40px; }
+  .leader-section { grid-template-columns:1fr; gap:25px; padding:25px 20px; }
+  .leader-text h2 { font-size:26px; }
+  .leader-logo { max-width:500px; }
+  .research-section { padding:28px 20px; }
+  .research-section h2 { font-size:25px; }
+  .closing-text p { font-size:22px; }
 }
 </style>
 </head>
-
 <body>
-
 <header class="westnut-header">
   <nav class="westnut-nav" aria-label="Hoofdnavigatie">
-
-    <a class="westnut-brand" href="index.html">
-      <img
-        src="westnut-logo-transparant.png"
-        alt="Westnut – Belgische hazelnoten">
-    </a>
-
-    <div class="westnut-links">
+    <a class="westnut-brand" href="index.html"><img src="westnut-logo-transparant.png" alt="Westnut – Belgische hazelnoten"></a>
+    <button class="menu-toggle" type="button" aria-label="Menu openen" aria-expanded="false" aria-controls="nav-links">☰</button>
+    <div class="westnut-links" id="nav-links">
       <a href="index.html">Home</a>
       <a href="over-ons.html">Ons verhaal</a>
+      <a href="waarom-hazelnoten.html">Waarom hazelnoten?</a>
       <a href="rassen.html">Rassen</a>
       <a href="producten.html">Producten</a>
       <a href="nieuws.html">Nieuws</a>
-      <a href="samenwerking.html"
-         class="active"
-         aria-current="page">
-        Steun &amp; samenwerking
-      </a>
+      <a href="samenwerking.html" class="active" aria-current="page">Steun &amp; samenwerking</a>
       <a href="contact.html">Contact</a>
     </div>
-
   </nav>
 </header>
-
 <main class="samenwerking-main">
-
   <!-- INTRODUCTIE -->
-
   <section class="page-intro">
-
-    <div class="eyebrow">
-      Samen bouwen aan de toekomst
-    </div>
-
+    <div class="eyebrow">Samen bouwen aan de toekomst</div>
     <h1>Steun & samenwerking</h1>
-
-    <p>
-      Bij Westnut geloven we in de toekomst van
-      lokaal geteelde Belgische hazelnoten.
-      Door kennis, onderzoek en samenwerking
-      te verbinden, bouwen we aan een duurzame
-      en kwaliteitsvolle hazelnootteelt
-      in Vlaanderen.
-    </p>
-
+    <p>Bij Westnut geloven we in de toekomst van lokaal geteelde Belgische hazelnoten. Door kennis, onderzoek en samenwerking te verbinden, bouwen we aan een duurzame en kwaliteitsvolle hazelnootteelt in Vlaanderen.</p>
   </section>
-
   <!-- LEADER WESTHOEK -->
-
   <section class="leader-section">
-
     <div class="leader-text">
-
-      <div class="eyebrow">
-        Steun voor onze ambitie
-      </div>
-
+      <div class="eyebrow">Steun voor onze ambitie</div>
       <h2>LEADER Westhoek</h2>
-
-      <p>
-        Niet alleen wij geloven dat de hazelnoot
-        een toekomst heeft in Vlaanderen.
-        Ook LEADER Westhoek ondersteunt onze
-        ambitie om de lokale hazelnootteelt
-        verder te ontwikkelen.
-      </p>
-
-      <p>
-        Deze steun helpt Westnut om te investeren
-        in de verdere uitbouw van een duurzame,
-        toekomstgerichte hazelnootteelt,
-        met aandacht voor kwaliteit,
-        innovatie en lokale verankering.
-      </p>
-
+      <p>Niet alleen wij geloven dat de hazelnoot een toekomst heeft in Vlaanderen. Ook LEADER Westhoek ondersteunt onze ambitie om de lokale hazelnootteelt verder te ontwikkelen.</p>
+      <p>Deze steun helpt Westnut om te investeren in de verdere uitbouw van een duurzame, toekomstgerichte hazelnootteelt, met aandacht voor kwaliteit, innovatie en lokale verankering.</p>
     </div>
-
     <div class="leader-image-container">
-
-      <img
-        src="Leader%20logo%27s%20vierkant.jpg"
-        alt="Officiële logo's van LEADER, de Europese Unie en West-Vlaanderen"
-        class="leader-logo"
-      >
-
+      <img src="Leader%20logo%27s%20vierkant.jpg" alt="Officiële logo's van LEADER, de Europese Unie en West-Vlaanderen" class="leader-logo">
     </div>
-
   </section>
-
   <!-- ONDERZOEKSCENTRA -->
-
   <section class="research-section">
-
-    <div class="eyebrow">
-      Kennis delen en vooruitgang boeken
-    </div>
-
+    <div class="eyebrow">Kennis delen en vooruitgang boeken</div>
     <h2>Samenwerking met onderzoekscentra</h2>
-
-    <p>
-      De hazelnootteelt in Vlaanderen biedt
-      interessante mogelijkheden, maar vraagt
-      ook om kennis en praktijkervaring.
-    </p>
-
-    <p>
-      Daarom werkt Westnut samen met
-      onderzoekscentra om de teelteigenschappen
-      van verschillende hazelnootrassen en
-      de toegepaste teelttechnieken
-      nauwgezet op te volgen.
-    </p>
-
-    <p>
-      Door praktijkervaring en onderzoek samen
-      te brengen, willen we bijdragen aan de
-      verdere ontwikkeling van een efficiënte
-      en duurzame hazelnootteelt.
-      Zo werken we samen aan de productie
-      van kwalitatieve Belgische hazelnoten.
-    </p>
-
+    <p>De hazelnootteelt in Vlaanderen biedt interessante mogelijkheden, maar vraagt ook om kennis en praktijkervaring.</p>
+    <p>Daarom werkt Westnut samen met onderzoekscentra om de teelteigenschappen van verschillende hazelnootrassen en de toegepaste teelttechnieken nauwgezet op te volgen.</p>
+    <p>Door praktijkervaring en onderzoek samen te brengen, willen we bijdragen aan de verdere ontwikkeling van een efficiënte en duurzame hazelnootteelt. Zo werken we samen aan de productie van kwalitatieve Belgische hazelnoten.</p>
   </section>
-
   <!-- AFSLUITING -->
-
-  <div class="closing-text">
-    <p>
-      Samen groeien we naar een toekomst
-      voor Belgische hazelnoten.
-    </p>
-  </div>
-
+  <div class="closing-text"><p>Samen groeien we naar een toekomst voor Belgische hazelnoten.</p></div>
 </main>
-
-<footer class="westnut-footer">
-  © 2026 Westnut · Belgische hazelnoten
-</footer>
-
+<footer class="westnut-footer">© 2026 Westnut · Belgische hazelnoten</footer>
+<script>
+const menuButton = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('#nav-links');
+if (menuButton && navLinks) {
+  function closeMenu() {
+    navLinks.classList.remove('open');
+    menuButton.setAttribute('aria-expanded', 'false');
+    menuButton.setAttribute('aria-label', 'Menu openen');
+    menuButton.textContent = '☰';
+  }
+  menuButton.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    menuButton.setAttribute('aria-expanded', String(isOpen));
+    menuButton.setAttribute('aria-label', isOpen ? 'Menu sluiten' : 'Menu openen');
+    menuButton.textContent = isOpen ? '✕' : '☰';
+  });
+  navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+  window.addEventListener('resize', () => { if (window.innerWidth > 1100) closeMenu(); });
+  document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
+}
+</script>
 </body>
 </html>

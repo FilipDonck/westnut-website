@@ -1,343 +1,153 @@
-
 <!doctype html>
 <html lang="nl">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <title>Onze producten | Westnut</title>
   <meta name="description" content="Ontdek hoe Westnut stap voor stap werkt aan toekomstige producten met Belgische hazelnoten.">
-
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="westnut-logo-transparant.png">
-
   <style>
-    /* ORIGINEEL WESTNUT-LOGO */
-
-    .brand {
-      display: flex;
-      align-items: center;
-      flex-shrink: 0;
-      text-decoration: none;
-    }
-
-    .brand img {
-      width: 150px;
-      height: auto;
-      max-width: 100%;
-      display: block;
-      object-fit: contain;
-      background: transparent;
-      border: none;
-      box-shadow: none;
-    }
+    /* ORIGINEEL WESTNUT-LOGO EN NAVIGATIE */
+    .top { position: relative; z-index: 100; background: #faf8f3; }
+    .top .nav { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: nowrap; padding-top: 12px; padding-bottom: 12px; }
+    .brand { display: flex; align-items: center; flex-shrink: 0; text-decoration: none; }
+    .brand img { width: 150px; height: auto; max-width: 100%; display: block; object-fit: contain; background: transparent; border: none; box-shadow: none; }
+    .top .links { display: flex; align-items: center; justify-content: flex-end; gap: 14px; flex-wrap: wrap; }
+    .top .links a { font-size: 18px; font-weight: 500; line-height: 1.4; white-space: nowrap; text-decoration: none; color: #173824; transition: color .2s; }
+    .top .links a:hover { color: #c78043; }
+    .top .links a[aria-current="page"] { background: #173824; color: #fff; font-weight: 600; padding: 12px 18px; border-radius: 8px; }
+    .top .links a[aria-current="page"]:hover { color: #fff; }
+    .menu-toggle { display: none; align-items: center; justify-content: center; width: 46px; height: 46px; border: 1px solid #d8dfd5; border-radius: 8px; background: transparent; color: #173824; font-size: 29px; line-height: 1; cursor: pointer; flex-shrink: 0; }
 
     /* PAGINATITEL */
-
-    .producten-pagehead {
-      padding: 50px 0 30px;
-    }
-
-    .producten-pagehead h1 {
-      color: #173824;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: clamp(27px, 3vw, 38px);
-      font-weight: 700;
-      line-height: 1.25;
-      margin: 0;
-    }
-
+    .producten-pagehead { padding: 50px 0 30px; }
+    .producten-pagehead h1 { color: #173824; font-family: Arial, Helvetica, sans-serif; font-size: clamp(27px, 3vw, 38px); font-weight: 700; line-height: 1.25; margin: 0; }
     /* GROTE SLOGAN */
-
-    .producten-slogan {
-      margin: 65px auto 0;
-      max-width: 1100px;
-      text-align: center;
-    }
-
-    .producten-slogan h2 {
-      color: #173824;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: clamp(34px, 5vw, 64px);
-      font-weight: 700;
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-      margin: 0;
-    }
-
-    /* SUBTIELE GROENE SIERLIJN */
-
-    .producten-slogan::after {
-      content: "";
-      display: block;
-      width: 65%;
-      max-width: 650px;
-      height: 4px;
-      margin: 22px auto 0;
-      background: #78b900;
-      border-radius: 50%;
-      transform: rotate(-1deg);
-    }
-
+    .producten-slogan { margin: 65px auto 0; max-width: 1100px; text-align: center; }
+    .producten-slogan h2 { color: #173824; font-family: Arial, Helvetica, sans-serif; font-size: clamp(34px, 5vw, 64px); font-weight: 700; line-height: 1.2; letter-spacing: -0.02em; margin: 0; }
+    .producten-slogan::after { content: ""; display: block; width: 65%; max-width: 650px; height: 4px; margin: 22px auto 0; background: #78b900; border-radius: 50%; transform: rotate(-1deg); }
     /* PRODUCTENVERHAAL */
+    .producten-verhaal { max-width: 1200px; margin: 0 auto; padding: 55px 0 85px; }
+    .producten-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 45px; align-items: center; }
+    .producten-tekst { min-width: 0; }
+    .producten-verhaal h2 { color: #173824; font-size: clamp(25px, 3vw, 36px); line-height: 1.3; margin-top: 0; margin-bottom: 30px; font-weight: 600; }
+    .producten-verhaal p { font-size: 18px; line-height: 1.9; margin-bottom: 24px; }
+    .producten-afbeelding { display: flex; align-items: center; justify-content: center; min-width: 0; }
+    .producten-foto { display: block; width: 100%; max-width: 540px; height: auto; border-radius: 8px; }
+    .producten-slot { margin-top: 42px; padding-top: 25px; border-top: 1px solid #dedbd2; color: #173824; font-size: 21px; font-weight: 600; line-height: 1.6; }
 
-    .producten-verhaal {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 55px 0 85px;
+    /* TABLET EN SMARTPHONE: UITKLAPMENU */
+    @media (max-width: 1100px) {
+      .top .nav { position: relative; }
+      .menu-toggle { display: flex; }
+      .top .links { display: none; position: absolute; top: 100%; left: 0; right: 0; z-index: 200; background: #faf8f3; padding: 20px; flex-direction: column; align-items: stretch; gap: 6px; box-shadow: 0 10px 20px rgba(0,0,0,.12); border-radius: 0 0 10px 10px; }
+      .top .links.open { display: flex; }
+      .top .links a { display: block; font-size: 18px; padding: 12px 14px; white-space: normal; }
+      .top .links a[aria-current="page"] { padding: 12px 14px; }
     }
-
-    /* TEKST LINKS, FOTO RECHTS */
-
-    .producten-grid {
-      display: grid;
-      grid-template-columns:
-        minmax(0, 1.1fr)
-        minmax(0, 1fr);
-      gap: 45px;
-      align-items: center;
-    }
-
-    .producten-tekst {
-      min-width: 0;
-    }
-
-    .producten-verhaal h2 {
-      color: #173824;
-      font-size: clamp(25px, 3vw, 36px);
-      line-height: 1.3;
-      margin-top: 0;
-      margin-bottom: 30px;
-      font-weight: 600;
-    }
-
-    .producten-verhaal p {
-      font-size: 18px;
-      line-height: 1.9;
-      margin-bottom: 24px;
-    }
-
-    /* FOTO RECHTS */
-
-    .producten-afbeelding {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 0;
-    }
-
-    .producten-foto {
-      display: block;
-      width: 100%;
-      max-width: 540px;
-      height: auto;
-      border-radius: 8px;
-    }
-
-    /* AFSLUITENDE TEKST */
-
-    .producten-slot {
-      margin-top: 42px;
-      padding-top: 25px;
-      border-top: 1px solid #dedbd2;
-      color: #173824;
-      font-size: 21px;
-      font-weight: 600;
-      line-height: 1.6;
-    }
-
-    /* ACTIEF TABBLAD */
-
-    .links a[aria-current="page"] {
-      color: #43834d;
-      font-weight: 700;
-    }
-
-    /* TABLET EN SMARTPHONE */
-
     @media (max-width: 760px) {
-      .brand img {
-        width: 130px;
-      }
-
-      .producten-pagehead {
-        padding: 35px 0 20px;
-      }
-
-      .producten-slogan {
-        margin-top: 40px;
-      }
-
-      .producten-slogan h2 {
-        font-size: clamp(28px, 7vw, 42px);
-      }
-
-      .producten-slogan::after {
-        width: 70%;
-        height: 3px;
-        margin-top: 16px;
-      }
-
-      .producten-verhaal {
-        padding: 45px 0 60px;
-      }
-
-      .producten-grid {
-        grid-template-columns: 1fr;
-        gap: 28px;
-      }
-
-      .producten-verhaal p {
-        font-size: 16px;
-        line-height: 1.8;
-      }
-
-      .producten-foto {
-        max-width: 100%;
-      }
-
-      .producten-slot {
-        margin-top: 30px;
-        font-size: 19px;
-      }
+      .brand img { width: 130px; }
+      .producten-pagehead { padding: 35px 0 20px; }
+      .producten-slogan { margin-top: 40px; }
+      .producten-slogan h2 { font-size: clamp(28px, 7vw, 42px); }
+      .producten-slogan::after { width: 70%; height: 3px; margin-top: 16px; }
+      .producten-verhaal { padding: 45px 0 60px; }
+      .producten-grid { grid-template-columns: 1fr; gap: 28px; }
+      .producten-verhaal p { font-size: 16px; line-height: 1.8; }
+      .producten-foto { max-width: 100%; }
+      .producten-slot { margin-top: 30px; font-size: 19px; }
     }
+    .menu-toggle:focus-visible, .top .links a:focus-visible { outline: 3px solid #c78043; outline-offset: 3px; }
   </style>
 </head>
-
 <body>
-
-  <!-- NAVIGATIE -->
-
   <header class="top">
-    <nav class="container nav">
-
-      <a class="brand" href="index.html">
-        <img
-          src="westnut-logo-transparant.png"
-          alt="Westnut – Belgische hazelnoten">
+    <nav class="container nav" aria-label="Hoofdnavigatie">
+      <a class="brand" href="index.html" aria-label="Westnut Home">
+        <img src="westnut-logo-transparant.png" alt="Westnut – Belgische hazelnoten">
       </a>
-
-      <div class="links">
+      <button class="menu-toggle" type="button" aria-label="Menu openen" aria-expanded="false" aria-controls="nav-links">☰</button>
+      <div class="links" id="nav-links">
         <a href="index.html">Home</a>
         <a href="over-ons.html">Ons verhaal</a>
+        <a href="waarom-hazelnoten.html">Waarom hazelnoten?</a>
         <a href="rassen.html">Rassen</a>
         <a href="producten.html" aria-current="page">Producten</a>
         <a href="nieuws.html">Nieuws</a>
         <a href="samenwerking.html">Steun &amp; samenwerking</a>
         <a href="contact.html">Contact</a>
       </div>
-
     </nav>
   </header>
-
   <main>
-
-    <!-- PAGINATITEL EN SLOGAN -->
-
     <section class="producten-pagehead">
       <div class="container">
-
         <h1>Onze producten.</h1>
-
-        <div class="producten-slogan">
-          <h2>Van noot tot creatie</h2>
-        </div>
-
+        <div class="producten-slogan"><h2>Van noot tot creatie</h2></div>
       </div>
     </section>
-
-    <!-- PRODUCTENVERHAAL -->
-
     <section class="section">
       <div class="container">
-
         <div class="producten-verhaal">
-
           <div class="producten-grid">
-
-            <!-- TEKST LINKS -->
-
             <div class="producten-tekst">
-
               <h2>Met geduld groeien mooie dingen</h2>
-
-              <p>
-                Bij Westnut kijken we uit naar de eerste oogst
+              <p>Bij Westnut kijken we uit naar de eerste oogst
                 van onze eigen Belgische hazelnoten.
                 Onze hazelaars zijn nog jong en hebben tijd
-                nodig om te groeien en vruchten te dragen.
-              </p>
-
-              <p>
-                Ondertussen zitten we niet stil.
+                nodig om te groeien en vruchten te dragen.</p>
+              <p>Ondertussen zitten we niet stil.
                 Achter de schermen experimenteren we met
                 verschillende recepten en ontdekken we
                 hoe we onze hazelnoten later kunnen verwerken
-                tot lekkere, kwaliteitsvolle producten.
-              </p>
-
-              <p>
-                Van hazelnootpasta en granola tot chocolade
+                tot lekkere, kwaliteitsvolle producten.</p>
+              <p>Van hazelnootpasta en granola tot chocolade
                 en andere lekkernijen.
                 We proberen, proeven en leren,
-                stap voor stap.
-              </p>
-
-              <p>
-                Het zal dus nog even duren voor onze
+                stap voor stap.</p>
+              <p>Het zal dus nog even duren voor onze
                 producten verkrijgbaar zijn.
                 Maar we hopen tegen de eerste volwaardige
-                oogst een mooi assortiment te kunnen aanbieden.
-              </p>
-
-              <div class="producten-slot">
-                Terwijl onze hazelaars groeien,
-                groeien ook onze ideeën.
-              </div>
-
+                oogst een mooi assortiment te kunnen aanbieden.</p>
+              <div class="producten-slot">Terwijl onze hazelaars groeien,
+                groeien ook onze ideeën.</div>
             </div>
-
-            <!-- FOTO RECHTS -->
-
             <div class="producten-afbeelding">
-              <img
-                class="producten-foto"
-                src="ons-verhaal-foto.jpg"
-                alt="Hazelnoten en jonge hazelaars bij Westnut"
-                loading="lazy">
+              <img class="producten-foto" src="ons-verhaal-foto.jpg" alt="Hazelnoten en jonge hazelaars bij Westnut" loading="lazy">
             </div>
-
           </div>
-
         </div>
-
       </div>
     </section>
-
   </main>
-
-  <!-- FOOTER -->
-
   <footer class="foot">
     <div class="container">
-
-      <div>
-        <strong>WESTNUT</strong><br>
-        Belgische hazelnoten · West-Vlaanderen<br>
-        <span class="small">
-          Lokale teelt. Toekomstige smaken.
-        </span>
-      </div>
-
-      <div>
-        <a data-email>E-mailadres volgt</a><br>
-        <span class="small">© Westnut 2026</span>
-      </div>
-
+      <div><strong>WESTNUT</strong><br>Belgische hazelnoten · West-Vlaanderen<br>
+        <span class="small">Lokale teelt. Toekomstige smaken.</span></div>
+      <div><a data-email>E-mailadres volgt</a><br><span class="small">© Westnut 2026</span></div>
     </div>
   </footer>
-
   <script src="site.js" defer></script>
-
+  <script>
+    const menuButton = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('#nav-links');
+    if (menuButton && navLinks) {
+      function closeMenu() {
+        navLinks.classList.remove('open');
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.setAttribute('aria-label', 'Menu openen');
+        menuButton.textContent = '☰';
+      }
+      menuButton.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('open');
+        menuButton.setAttribute('aria-expanded', String(isOpen));
+        menuButton.setAttribute('aria-label', isOpen ? 'Menu sluiten' : 'Menu openen');
+        menuButton.textContent = isOpen ? '✕' : '☰';
+      });
+      navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+      window.addEventListener('resize', () => { if (window.innerWidth > 1100) closeMenu(); });
+    }
+  </script>
 </body>
 </html>
