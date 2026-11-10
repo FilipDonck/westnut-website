@@ -1,1 +1,120 @@
-<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Contact | Westnut</title><meta name="description" content="Contact opnemen met Westnut."><link rel="stylesheet" href="style.css"><link rel="icon" href="logo.jpg"></head><body><header class="top"><nav class="container nav"><a class="brand" href="index.html"><img src="logo.jpg" alt="Westnut logo"> WESTNUT</a><div class="links"><a href="index.html">Home</a><a href="over-ons.html">Ons verhaal</a><a href="rassen.html">Rassen</a><a href="producten.html">Producten</a><a href="nieuws.html">Nieuws</a><a href="samenwerking.html">Steun & samenwerking</a><a href="contact.html">Contact</a></div></nav></header><main><section class="pagehead"><div class="container"><div class="eyebrow">Contact</div><h1>Samen groeien.</h1><p>Een vraag over Westnut, onze teelt of toekomstige producten? We horen graag van je.</p></div></section><section class="section"><div class="container"><div class="tile"><h3>Westnut</h3><p>West-Vlaanderen, België</p><p>E-mail: <a data-email>E-mailadres volgt</a></p><p class="small">Vul later je zakelijke e-mailadres in via Pages CMS bij Website-instellingen.</p></div></div></section></main><footer class="foot"><div class="container"><div><strong>WESTNUT</strong><br>Belgische hazelnoten · West-Vlaanderen<br><span class="small">Lokale teelt. Toekomstige smaken.</span></div><div><a data-email>E-mailadres volgt</a><br><span class="small">© Westnut 2026</span></div></div></footer><script src="site.js" defer></script></body></html>
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | Westnut – Belgische hazelnoten</title>
+  <meta name="description" content="Neem contact op met Westnut, producent in ontwikkeling van lokaal geteelde Belgische hazelnoten in West-Vlaanderen.">
+  <link rel="canonical" href="https://westnut.be/contact.html">
+  <link rel="icon" type="image/png" href="westnut-logo-transparant.png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root { --westnut-bg:#faf8f3; --westnut-green:#173824; --westnut-orange:#c78043; --westnut-line:#e8e3da; }
+    *, *::before, *::after { box-sizing:border-box; }
+    body.contact-page { margin:0; background:var(--westnut-bg); color:var(--westnut-green); font-family:Arial,Helvetica,sans-serif; line-height:1.65; }
+    .contact-page .container { max-width:1220px; margin:0 auto; padding-left:28px; padding-right:28px; }
+    /* Zelfde bovenbalk als Steun & samenwerking */
+    .contact-page .top { position:relative; z-index:100; background:var(--westnut-bg); border-bottom:1px solid var(--westnut-line); }
+    .contact-page .top .nav { display:flex; align-items:center; justify-content:space-between; gap:20px; min-height:90px; padding-top:12px; padding-bottom:12px; }
+    .contact-page .top .brand { display:flex; align-items:center; flex-shrink:0; text-decoration:none; }
+    .contact-page .top .brand img { display:block; width:150px; height:auto; max-width:100%; object-fit:contain; border:0; background:transparent; box-shadow:none; }
+    .contact-page .top .links { display:flex; align-items:center; justify-content:flex-end; flex-wrap:wrap; gap:14px; }
+    .contact-page .top .links a { display:inline-block; font-size:18px; font-weight:500; line-height:1.4; color:var(--westnut-green); white-space:nowrap; text-decoration:none; }
+    .contact-page .top .links a:hover { color:var(--westnut-orange); }
+    .contact-page .top .links a[aria-current="page"] { background:var(--westnut-green); color:#fff; font-weight:600; padding:12px 18px; border-radius:8px; }
+    .contact-page .top .links a[aria-current="page"]:hover { color:#fff; }
+    .contact-page .menu-toggle { display:none; align-items:center; justify-content:center; flex-shrink:0; width:46px; height:46px; border:1px solid #d8dfd5; border-radius:8px; background:transparent; color:var(--westnut-green); font-size:29px; line-height:1; cursor:pointer; }
+    .contact-page .menu-toggle:focus-visible, .contact-page .top .links a:focus-visible { outline:3px solid var(--westnut-orange); outline-offset:3px; }
+    /* Contactinhoud: bestaande informatie met verzorgde opmaak */
+    .contact-page .pagehead { padding:65px 0 28px; background:transparent; }
+    .contact-page .pagehead .eyebrow { color:#b47742; font-size:13px; font-weight:700; letter-spacing:3px; text-transform:uppercase; }
+    .contact-page .pagehead h1 { font-family:Georgia,serif; font-size:clamp(36px,4vw,52px); font-weight:400; line-height:1.2; margin:18px 0 20px; }
+    .contact-page .pagehead p { max-width:790px; font-size:19px; line-height:1.8; margin:0; }
+    .contact-page .section { padding:20px 0 75px; }
+    .contact-page .tile { max-width:780px; padding:30px 34px; background:#fffdf9; border:1px solid var(--westnut-line); border-radius:10px; }
+    .contact-page .tile h3 { margin:0 0 12px; font-size:23px; }
+    .contact-page .tile p { margin:0 0 14px; font-size:17px; }
+    .contact-page .tile .small { font-size:14px; color:#5c6b5e; }
+    .contact-page .foot { border-top:1px solid var(--westnut-line); padding:26px 0; }
+    .contact-page .foot .container { display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap; }
+    .contact-page .foot .small { font-size:14px; }
+    @media (max-width:1100px) {
+      .contact-page .top .nav { position:relative; }
+      .contact-page .menu-toggle { display:flex; }
+      .contact-page .top .links { display:none; position:absolute; top:100%; left:0; right:0; z-index:200; padding:20px; background:var(--westnut-bg); flex-direction:column; align-items:stretch; gap:6px; border-radius:0 0 10px 10px; box-shadow:0 10px 20px rgba(0,0,0,.12); }
+      .contact-page .top .links.open { display:flex; }
+      .contact-page .top .links a { display:block; padding:12px 14px; white-space:normal; }
+      .contact-page .top .links a[aria-current="page"] { padding:12px 14px; }
+    }
+    @media (max-width:700px) {
+      .contact-page .container { padding-left:20px; padding-right:20px; }
+      .contact-page .top .brand img { width:130px; }
+      .contact-page .pagehead { padding-top:40px; }
+      .contact-page .pagehead p { font-size:17px; }
+      .contact-page .tile { padding:24px 20px; }
+    }
+  </style>
+</head>
+<body class="contact-page">
+  <header class="top">
+    <nav class="container nav" aria-label="Hoofdnavigatie">
+      <a class="brand" href="index.html" aria-label="Westnut – naar de homepage">
+        <img src="westnut-logo-transparant.png" alt="Westnut – Belgische hazelnoten">
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Menu openen" aria-expanded="false" aria-controls="nav-links">☰</button>
+      <div class="links" id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="over-ons.html">Ons verhaal</a>
+        <a href="waarom-hazelnoten.html">Waarom hazelnoten?</a>
+        <a href="rassen.html">Variëteiten</a>
+        <a href="producten.html">Producten</a>
+        <a href="nieuws.html">Nieuws</a>
+        <a href="samenwerking.html">Steun &amp; samenwerking</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="pagehead">
+      <div class="container">
+        <div class="eyebrow">Contact</div>
+        <h1>Samen groeien.</h1>
+        <p>Een vraag over Westnut, onze teelt of toekomstige producten? We horen graag van je.</p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="tile">
+          <h3>Westnut</h3>
+          <p>West-Vlaanderen, België</p>
+          <p>E-mail: <a data-email>E-mailadres volgt</a></p>
+          <p class="small">Vul later je zakelijke e-mailadres in via Pages CMS bij Website-instellingen.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="foot">
+    <div class="container">
+      <div><strong>WESTNUT</strong><br>Belgische hazelnoten · West-Vlaanderen<br><span class="small">Lokale teelt. Toekomstige smaken.</span></div>
+      <div><a data-email>E-mailadres volgt</a><br><span class="small">© Westnut 2026</span></div>
+    </div>
+  </footer>
+  <script src="site.js" defer></script>
+  <script>
+    (function () {
+      const button = document.querySelector('.menu-toggle');
+      const links = document.getElementById('nav-links');
+      if (!button || !links) return;
+      function setOpen(open) {
+        links.classList.toggle('open', open);
+        button.setAttribute('aria-expanded', String(open));
+        button.setAttribute('aria-label', open ? 'Menu sluiten' : 'Menu openen');
+        button.textContent = open ? '✕' : '☰';
+      }
+      button.addEventListener('click', () => setOpen(!links.classList.contains('open')));
+      links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false)));
+      window.addEventListener('resize', () => { if (window.innerWidth > 1100) setOpen(false); });
+    })();
+  </script>
+</body>
+</html>
