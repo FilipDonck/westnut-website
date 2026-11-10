@@ -1,121 +1,50 @@
-
-
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap');
-
-/* ========================================
-   WESTNUT - VOLLEDIGE STYLESHEET
-   ======================================== */
-
-:root {
-  --green: #17351f;
-  --copper: #c8793c;
-  --cream: #f8f6f0;
-  --ink: #263b2b;
-  --muted: #70766a;
-  --tan: #e6b789;
+/* WESTNUT — uniforme navigatie op alle pagina's.
+   Plaats dit ONDERAAN style.css én verwijder/overschrijf conflicterende
+   pagina-specifieke navigatieregels die later in de cascade komen. */
+:root { --westnut-nav-bg:#f0eee5; --westnut-nav-green:#173824; }
+.top, .header, .westnut-header,
+.rassen-page .top { position:relative; z-index:100; background:var(--westnut-nav-bg); border-bottom:1px solid #deded3; backdrop-filter:none; }
+.top .nav, .header .nav, .westnut-nav, .rassen-page .top .nav {
+  width:100%; max-width:1400px; margin:0 auto; padding:12px 28px;
+  display:flex; align-items:center; justify-content:space-between;
+  gap:25px; flex-wrap:nowrap; min-height:0;
 }
-
-* {
-  box-sizing: border-box;
+.brand, .westnut-brand, .rassen-page .brand { display:flex; align-items:center; flex-shrink:0; text-decoration:none; }
+.brand img, .top .brand img, .header .brand img, .westnut-brand img,
+.rassen-page .brand img, .brand .westnut-logo {
+  display:block; width:150px; max-width:100%; height:auto; max-height:none;
+  object-fit:contain; background:transparent; border:0; box-shadow:none;
 }
-
-html {
-  scroll-behavior: smooth;
+.links, .top .links, .header .links, .westnut-links, .rassen-page .top .links {
+  display:flex; align-items:center; justify-content:flex-end;
+  gap:14px; flex-wrap:wrap;
 }
-
-body {
-  margin: 0;
-  background: var(--cream);
-  color: var(--ink);
-  font-family: 'DM Sans', sans-serif;
+.links a, .top .links a, .header .links a, .westnut-links a,
+.rassen-page .top .links a {
+  font-family:Arial,Helvetica,sans-serif; font-size:18px; font-weight:500;
+  letter-spacing:normal; line-height:1.4; color:var(--westnut-nav-green);
+  text-decoration:none; white-space:nowrap;
 }
-
-a {
-  color: inherit;
-  text-decoration: none;
+.links a:hover, .westnut-links a:hover { color:#c78043; }
+.links a[aria-current="page"], .westnut-links a[aria-current="page"],
+.westnut-links a.active, .rassen-page .top .links a[aria-current="page"] {
+  background:var(--westnut-nav-green); color:white; font-weight:600;
+  padding:12px 18px; border-radius:8px;
 }
-
-.container {
-  width: min(1380px, 94%);
-  margin: auto;
-}
-
-/* ========================================
-   NAVIGATIE - ALLE PAGINA'S
-   ======================================== */
-
-.top {
-  position: sticky;
-  top: 0;
-  z-index: 9;
-  background: rgba(248,246,240,.97);
-  border-bottom: 1px solid #e4e3d8;
-  backdrop-filter: blur(12px);
-}
-
-.top .nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 115px;
-  gap: 30px;
-  padding: 12px 0;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-}
-
-.brand img,
-.top .brand img {
-  display: block;
-  width: 110px;
-  height: auto;
-  max-width: none;
-  max-height: none;
-  object-fit: contain;
-}
-
-.links,
-.top .links {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  flex-wrap: wrap;
-  gap: 14px 24px;
-}
-
-.links a,
-.top .links a {
-  font-size: 16px;
-  font-weight: 500;
-  letter-spacing: .01em;
-  color: var(--green);
-  white-space: nowrap;
-
-/* Origineel transparant Westnut-logo */
-
-.brand {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-}
-
-.brand .westnut-logo {
-  width: 190px;
-  height: auto;
-  max-width: 100%;
-  display: block;
-  object-fit: contain;
-  background: transparent;
-  border: none;
-  box-shadow: none;
-}
-
-@media (max-width: 600px) {
-  .brand .westnut-logo {
-    width: 145px;
+.menu-toggle { display:none; align-items:center; justify-content:center; width:46px; height:46px; border:1px solid #d8dfd5; border-radius:8px; background:transparent; color:var(--westnut-nav-green); font-size:29px; line-height:1; cursor:pointer; flex-shrink:0; }
+@media(max-width:1100px) {
+  .top .nav, .header .nav, .westnut-nav, .rassen-page .top .nav { position:relative; }
+  .menu-toggle { display:flex; }
+  .links, .top .links, .header .links, .westnut-links, .rassen-page .top .links {
+    display:none; position:absolute; top:100%; left:0; right:0; z-index:200;
+    background:var(--westnut-nav-bg); padding:20px; flex-direction:column;
+    align-items:stretch; gap:6px; box-shadow:0 10px 20px rgba(0,0,0,.12);
   }
+  .links.open, .top .links.open, .header .links.open, .westnut-links.open, .rassen-page .top .links.open { display:flex; }
+  .links a, .top .links a, .header .links a, .westnut-links a, .rassen-page .top .links a { display:block; font-size:18px; padding:12px 14px; white-space:normal; }
+  .links a[aria-current="page"], .westnut-links a[aria-current="page"], .westnut-links a.active, .rassen-page .top .links a[aria-current="page"] { padding:12px 14px; }
+}
+@media(max-width:700px) {
+  .top .nav, .header .nav, .westnut-nav, .rassen-page .top .nav { padding:15px 20px; }
+  .brand img, .top .brand img, .header .brand img, .westnut-brand img, .rassen-page .brand img, .brand .westnut-logo { width:130px; }
 }
