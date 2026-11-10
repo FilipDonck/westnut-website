@@ -1,299 +1,71 @@
-
 <!doctype html>
 <html lang="nl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Nieuws | Westnut</title>
-  <meta name="description" content="Nieuws over de boomgaard, hazelnootteelt en productontwikkeling bij Westnut.">
-
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="westnut-logo-transparant.png">
-
-  <style>
-    /* ORIGINEEL WESTNUT-LOGO */
-
-    .top {
-      position: relative;
-      z-index: 100;
-      background: #faf8f3;
-    }
-
-    .top .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: nowrap;
-      padding-top: 12px;
-      padding-bottom: 12px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      flex-shrink: 0;
-      text-decoration: none;
-    }
-
-    .brand img {
-      width: 150px;
-      height: auto;
-      max-width: 100%;
-      display: block;
-      object-fit: contain;
-      background: transparent;
-      border: none;
-      box-shadow: none;
-    }
-
-    /* NAVIGATIE GROTE SCHERMEN */
-
-    .top .links {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .top .links a {
-      font-size: 18px;
-      font-weight: 500;
-      line-height: 1.4;
-      white-space: nowrap;
-      text-decoration: none;
-      color: #173824;
-      transition: color .2s;
-    }
-
-    .top .links a:hover {
-      color: #c78043;
-    }
-
-    /* ACTIEF TABBLAD GROEN */
-
-    .top .links a[aria-current="page"] {
-      background: #173824;
-      color: #ffffff;
-      font-weight: 600;
-      padding: 12px 18px;
-      border-radius: 8px;
-    }
-
-    .top .links a[aria-current="page"]:hover {
-      color: #ffffff;
-    }
-
-    /* UITKLAPMENU-KNOP */
-
-    .menu-toggle {
-      display: none;
-      align-items: center;
-      justify-content: center;
-      width: 46px;
-      height: 46px;
-      border: 1px solid #d8dfd5;
-      border-radius: 8px;
-      background: transparent;
-      color: #173824;
-      font-size: 29px;
-      line-height: 1;
-      cursor: pointer;
-      flex-shrink: 0;
-    }
-
-    /* TABLET EN SMARTPHONE */
-
-    @media (max-width: 1100px) {
-      .top .nav {
-        position: relative;
-      }
-
-      .menu-toggle {
-        display: flex;
-      }
-
-      .top .links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        z-index: 200;
-        background: #faf8f3;
-        padding: 20px;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 6px;
-        box-shadow: 0 10px 20px rgba(0,0,0,.12);
-        border-radius: 0 0 10px 10px;
-      }
-
-      .top .links.open {
-        display: flex;
-      }
-
-      .top .links a {
-        display: block;
-        font-size: 18px;
-        padding: 12px 14px;
-        white-space: normal;
-      }
-
-      .top .links a[aria-current="page"] {
-        padding: 12px 14px;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .brand img {
-        width: 130px;
-      }
-
-      .top .nav {
-        padding-top: 10px;
-        padding-bottom: 10px;
-      }
-    }
-
-    /* TOEGANKELIJKHEID */
-
-    .menu-toggle:focus-visible,
-    .top .links a:focus-visible {
-      outline: 3px solid #c78043;
-      outline-offset: 3px;
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nieuws | Westnut</title>
+<meta name="description" content="Nieuws over de boomgaard, hazelnootteelt en productontwikkeling bij Westnut.">
+<link rel="canonical" href="https://westnut.be/nieuws.html">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="westnut-logo-transparant.png">
+<style>
+/* De navigatie heeft een eigen, vaste stijl, onafhankelijk van style.css. */
+.westnut-header{background:#f0eee5;border-bottom:1px solid #deded3;position:relative;z-index:100;font-family:Arial,Helvetica,sans-serif}
+.westnut-header .westnut-nav{max-width:1400px;width:100%;margin:auto;padding:12px 28px;display:flex;justify-content:space-between;align-items:center;gap:25px;flex-wrap:nowrap;min-height:0}
+.westnut-header .westnut-brand{display:flex;align-items:center;flex-shrink:0;text-decoration:none}
+.westnut-header .westnut-brand img{width:150px;height:auto;max-width:100%;display:block;object-fit:contain;background:transparent;border:0;box-shadow:none}
+.westnut-header .westnut-links{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:flex-end}
+.westnut-header .westnut-links a{color:#173824;text-decoration:none;font-family:Arial,Helvetica,sans-serif;font-size:18px;font-weight:500;white-space:nowrap;line-height:1.4;letter-spacing:normal}
+.westnut-header .westnut-links a:hover{color:#c78043}
+.westnut-header .westnut-links a[aria-current="page"]{background:#173824;color:#fff;font-weight:600;padding:12px 18px;border-radius:8px}
+.westnut-header .westnut-links a[aria-current="page"]:hover{color:#fff}
+.westnut-header .menu-toggle{display:none;align-items:center;justify-content:center;width:46px;height:46px;border:1px solid #d8dfd5;border-radius:8px;background:transparent;color:#173824;font-size:29px;line-height:1;cursor:pointer;flex-shrink:0}
+.westnut-header .menu-toggle:focus-visible,.westnut-header a:focus-visible{outline:3px solid #c78043;outline-offset:3px}
+/* E-mailadres ook zichtbaar als site.js geen inhoud laadt. */
+.foot a[href^="mailto:"]{text-decoration:underline;text-underline-offset:3px}
+@media(max-width:1100px){
+.westnut-header .menu-toggle{display:flex}
+.westnut-header .westnut-links{display:none;position:absolute;top:100%;left:0;right:0;z-index:200;background:#f0eee5;padding:20px;flex-direction:column;align-items:stretch;gap:6px;box-shadow:0 10px 20px rgba(0,0,0,.12)}
+.westnut-header .westnut-links.open{display:flex}
+.westnut-header .westnut-links a{display:block;padding:12px 14px;font-size:18px;white-space:normal}
+.westnut-header .westnut-links a[aria-current="page"]{padding:12px 14px}
+}
+@media(max-width:700px){.westnut-header .westnut-nav{padding:15px 20px}.westnut-header .westnut-brand img{width:130px}}
+</style>
 </head>
-
 <body>
-
-<header class="top">
-  <nav class="container nav" aria-label="Hoofdnavigatie">
-
-    <a class="brand" href="index.html" aria-label="Westnut Home">
-      <img
-        src="westnut-logo-transparant.png"
-        alt="Westnut – Belgische hazelnoten">
-    </a>
-
-    <button
-      class="menu-toggle"
-      type="button"
-      aria-label="Menu openen"
-      aria-expanded="false"
-      aria-controls="nav-links">
-      ☰
-    </button>
-
-    <div class="links" id="nav-links">
-      <a href="index.html">Home</a>
-      <a href="over-ons.html">Ons verhaal</a>
-      <a href="waarom-hazelnoten.html">Waarom hazelnoten?</a>
-      <a href="rassen.html">Rassen</a>
-      <a href="producten.html">Producten</a>
-      <a href="nieuws.html" aria-current="page">Nieuws</a>
-      <a href="samenwerking.html">Steun &amp; samenwerking</a>
-      <a href="contact.html">Contact</a>
-    </div>
-
-  </nav>
+<header class="westnut-header">
+<nav class="westnut-nav" aria-label="Hoofdnavigatie">
+<a class="westnut-brand" href="index.html" aria-label="Westnut Home"><img src="westnut-logo-transparant.png" alt="Westnut – Belgische hazelnoten"></a>
+<button class="menu-toggle" type="button" aria-label="Menu openen" aria-expanded="false" aria-controls="nav-links">☰</button>
+<div class="westnut-links" id="nav-links">
+<a href="index.html">Home</a>
+<a href="over-ons.html">Ons verhaal</a>
+<a href="waarom-hazelnoten.html">Waarom hazelnoten?</a>
+<a href="rassen.html">Variëteiten</a>
+<a href="producten.html">Producten</a>
+<a href="nieuws.html" aria-current="page">Nieuws</a>
+<a href="samenwerking.html">Steun &amp; samenwerking</a>
+<a href="contact.html">Contact</a>
+</div>
+</nav>
 </header>
-
 <main>
-
-  <section class="pagehead">
-    <div class="container">
-      <div class="eyebrow">Achter de schermen</div>
-      <h1>Nieuws uit de boomgaard.</h1>
-      <p>
-        Volg de aanplant, de teelt en de ontwikkeling
-        van onze hazelnootproducten.
-      </p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-
-      <div id="nieuws-list" class="grid loading">
-        Nieuws laden…
-      </div>
-
-    </div>
-  </section>
-
+<section class="pagehead"><div class="container"><div class="eyebrow">Achter de schermen</div><h1>Nieuws uit de boomgaard.</h1><p>Volg de aanplant, de teelt en de ontwikkeling van onze hazelnootproducten.</p></div></section>
+<section class="section"><div class="container"><div id="nieuws-list" class="grid loading">Nieuws laden…</div></div></section>
 </main>
-
-<footer class="foot">
-  <div class="container">
-
-    <div>
-      <strong>WESTNUT</strong><br>
-      Belgische hazelnoten · West-Vlaanderen<br>
-      <span class="small">
-        Lokale teelt. Toekomstige smaken.
-      </span>
-    </div>
-
-    <div>
-      <a data-email>E-mailadres volgt</a><br>
-      <span class="small">© Westnut 2026</span>
-    </div>
-
-  </div>
-</footer>
-
+<footer class="foot"><div class="container"><div><strong>WESTNUT</strong><br>Belgische hazelnoten · West-Vlaanderen<br><span class="small">Lokale teelt. Toekomstige smaken.</span></div><div><a href="mailto:info@westnut.be">info@westnut.be</a><br><span class="small">© Westnut 2026</span></div></div></footer>
 <script src="site.js" defer></script>
-
 <script>
-  /* MOBIEL UITKLAPMENU */
-
-  const menuButton = document.querySelector(".menu-toggle");
-  const navLinks = document.querySelector("#nav-links");
-
-  if (menuButton && navLinks) {
-    menuButton.addEventListener("click", () => {
-      const isOpen = navLinks.classList.toggle("open");
-
-      menuButton.setAttribute(
-        "aria-expanded",
-        String(isOpen)
-      );
-
-      menuButton.setAttribute(
-        "aria-label",
-        isOpen ? "Menu sluiten" : "Menu openen"
-      );
-
-      menuButton.textContent = isOpen ? "✕" : "☰";
-    });
-
-    /* Sluit menu na keuze van een tabblad */
-
-    navLinks.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("open");
-        menuButton.setAttribute("aria-expanded", "false");
-        menuButton.setAttribute("aria-label", "Menu openen");
-        menuButton.textContent = "☰";
-      });
-    });
-
-    /* Sluit menu bij terugkeer naar groot scherm */
-
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > 1100) {
-        navLinks.classList.remove("open");
-        menuButton.setAttribute("aria-expanded", "false");
-        menuButton.setAttribute("aria-label", "Menu openen");
-        menuButton.textContent = "☰";
-      }
-    });
-  }
+const menuButton=document.querySelector('.westnut-header .menu-toggle');
+const navLinks=document.querySelector('#nav-links');
+if(menuButton&&navLinks){
+function closeMenu(){navLinks.classList.remove('open');menuButton.setAttribute('aria-expanded','false');menuButton.setAttribute('aria-label','Menu openen');menuButton.textContent='☰';}
+menuButton.addEventListener('click',()=>{const isOpen=navLinks.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(isOpen));menuButton.setAttribute('aria-label',isOpen?'Menu sluiten':'Menu openen');menuButton.textContent=isOpen?'✕':'☰';});
+navLinks.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeMenu));
+window.addEventListener('resize',()=>{if(window.innerWidth>1100)closeMenu();});
+document.addEventListener('keydown',event=>{if(event.key==='Escape')closeMenu();});
+}
 </script>
-
 </body>
 </html>
