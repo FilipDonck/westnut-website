@@ -1,79 +1,400 @@
+
 <!doctype html>
 <html lang="nl">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>Ons verhaal | Belgische hazelnoten uit West-Vlaanderen | Westnut</title>
   <meta name="description" content="Ontdek het verhaal van Westnut: van familiaal landbouwbedrijf naar lokale teelt en verwerking van Belgische hazelnoten in West-Vlaanderen.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://westnut.be/over-ons.html">
   <link rel="icon" type="image/png" href="westnut-logo-transparant.png">
+
   <style>
-    :root { --bg:#faf8f3; --green:#173824; --orange:#c87536; --line:#e8e3da; }
-    * { box-sizing:border-box; }
-    body { margin:0; background:var(--bg); color:var(--green); font-family:Arial,Helvetica,sans-serif; line-height:1.65; }
-    a { color:inherit; text-decoration:none; }
-    .container { max-width:1320px; margin:auto; padding:0 32px; }
-    .header { position:relative; z-index:100; border-bottom:1px solid var(--line); background:var(--bg); }
-    .nav { display:flex; align-items:center; justify-content:space-between; gap:20px; min-height:90px; }
-    .brand { display:flex; align-items:center; flex-shrink:0; }
-    .brand img { width:150px; height:auto; max-width:100%; object-fit:contain; display:block; background:transparent; border:0; box-shadow:none; }
-    .links { display:flex; gap:clamp(9px,1vw,15px); align-items:center; justify-content:flex-end; flex-wrap:wrap; }
-    .links a { font-size:clamp(15px,1.12vw,18px); font-weight:500; line-height:1.4; white-space:nowrap; transition:color .2s; }
-    .links a:hover { color:var(--orange); }
-    .links a[aria-current="page"] { background:var(--green); color:#fff; padding:12px 16px; border-radius:8px; font-weight:600; }
-    .links a[aria-current="page"]:hover { color:#fff; }
-    .menu-toggle { display:none; align-items:center; justify-content:center; width:46px; height:46px; border:1px solid #d8dfd5; border-radius:8px; background:transparent; color:var(--green); font-size:29px; line-height:1; cursor:pointer; flex-shrink:0; }
-    .menu-toggle:focus-visible,.links a:focus-visible,.btn:focus-visible { outline:3px solid var(--orange); outline-offset:3px; }
-    /* Bovenste gedeelte: nieuw vierkant logo links, tekst rechts */
-    .hero { border-bottom:1px solid var(--line); }
-    .hero-inner { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.15fr); gap:clamp(36px,6vw,90px); align-items:center; padding-top:62px; padding-bottom:62px; }
-    .hero-logo { display:flex; align-items:center; justify-content:center; min-width:0; }
-    .hero-logo img { display:block; width:100%; max-width:390px; height:auto; object-fit:contain; background:transparent; border:0; box-shadow:none; }
-    .hero-content { min-width:0; }
-    .eyebrow { display:inline-block; border:1.5px solid var(--orange); border-radius:30px; padding:5px 16px; color:#b55e29; font-size:20px; font-weight:700; letter-spacing:.03em; }
-    .hero h1 { font-family:Georgia,'Times New Roman',serif; font-size:clamp(40px,4.3vw,62px); font-weight:normal; line-height:1.13; letter-spacing:-.025em; margin:20px 0 24px; }
-    .hero p { max-width:620px; font-size:clamp(18px,1.5vw,22px); line-height:1.7; margin:0 0 20px; }
-    .btn { display:inline-block; background:var(--orange); color:white; padding:15px 23px; font-weight:bold; font-size:15px; margin-top:8px; border-radius:5px; }
-    .btn:hover { background:#aa602d; }
-    /* Bestaande verhaal en kaart */
-    .story { padding-top:64px; padding-bottom:75px; }
-    .story h2 { font-family:Georgia,'Times New Roman',serif; font-weight:normal; font-size:clamp(32px,3.1vw,43px); line-height:1.22; border-left:4px solid var(--orange); padding-left:18px; margin:0 0 30px; }
-    .story-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.25fr); gap:40px; align-items:center; }
-    .story-copy { font-size:clamp(17px,1.35vw,19px); line-height:1.8; }
-    .story-copy p { margin:0 0 21px; }
-    .story-images { display:flex; align-items:center; justify-content:center; min-width:0; }
-    .story-map { display:block; width:100%; max-width:675px; height:auto; border-radius:8px; }
-    .footer-line { height:9px; background:var(--green); }
-    @media (max-width:1150px) {
-      .menu-toggle { display:flex; }
-      .links { display:none; position:absolute; top:100%; left:0; right:0; z-index:200; background:var(--bg); padding:20px 28px; flex-direction:column; align-items:stretch; gap:6px; box-shadow:0 10px 20px rgba(0,0,0,.12); }
-      .links.open { display:flex; }
-      .links a { display:block; font-size:18px; padding:12px 14px; white-space:normal; }
-      .links a[aria-current="page"] { padding:12px 14px; }
+    :root {
+      --bg: #faf8f3;
+      --green: #173824;
+      --orange: #c87536;
+      --line: #e8e3da;
     }
-    @media (max-width:760px) {
-      .container { padding:0 20px; }
-      .nav { gap:12px; min-height:0; padding-top:12px; padding-bottom:12px; }
-      .brand img { width:130px; }
-      .hero-inner { grid-template-columns:1fr; gap:24px; padding-top:35px; padding-bottom:42px; }
-      .hero-logo img { max-width:280px; }
-      .hero h1 { font-size:clamp(37px,9vw,49px); }
-      .hero p { font-size:18px; }
-      .story { padding-top:42px; padding-bottom:55px; }
-      .story-grid { grid-template-columns:1fr; gap:22px; }
-      .story-map { max-width:100%; }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--green);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1320px;
+      margin: auto;
+      padding: 0 32px;
+    }
+
+    /* ==========================================
+       STANDAARD WESTNUT BOVENBALK
+       IDENTIEK AAN STEUN & SAMENWERKING
+       ========================================== */
+
+    .westnut-header {
+      background: #f0eee5;
+      border-bottom: 1px solid #deded3;
+      position: relative;
+      z-index: 100;
+    }
+
+    .westnut-nav {
+      max-width: 1400px;
+      margin: auto;
+      padding: 12px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+      flex-wrap: nowrap;
+    }
+
+    .westnut-brand {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+      text-decoration: none;
+    }
+
+    .westnut-brand img {
+      width: 150px;
+      height: auto;
+      max-width: 100%;
+      display: block;
+      object-fit: contain;
+      background: transparent;
+      border: none;
+      box-shadow: none;
+    }
+
+    .westnut-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .westnut-links a {
+      color: #173824;
+      text-decoration: none;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 18px;
+      font-weight: 500;
+      white-space: nowrap;
+      line-height: 1.4;
+    }
+
+    .westnut-links a:hover {
+      color: #c78043;
+    }
+
+    .westnut-links a.active,
+    .westnut-links a[aria-current="page"] {
+      background: #173824;
+      color: #fff;
+      font-weight: 600;
+      padding: 12px 18px;
+      border-radius: 8px;
+    }
+
+    .westnut-links a.active:hover,
+    .westnut-links a[aria-current="page"]:hover {
+      color: #fff;
+    }
+
+    .menu-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 46px;
+      height: 46px;
+      border: 1px solid #d8dfd5;
+      border-radius: 8px;
+      background: transparent;
+      color: #173824;
+      font-size: 29px;
+      line-height: 1;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .menu-toggle:focus-visible,
+    .westnut-links a:focus-visible,
+    .btn:focus-visible {
+      outline: 3px solid #c78043;
+      outline-offset: 3px;
+    }
+
+    /* ==========================================
+       INTRODUCTIE
+       VIERKANT LOGO LINKS - TEKST RECHTS
+       ========================================== */
+
+    .hero {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0,1fr) minmax(0,1.15fr);
+      gap: clamp(36px,6vw,90px);
+      align-items: center;
+      padding-top: 62px;
+      padding-bottom: 62px;
+    }
+
+    .hero-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 0;
+    }
+
+    .hero-logo img {
+      display: block;
+      width: 100%;
+      max-width: 390px;
+      height: auto;
+      object-fit: contain;
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+    }
+
+    .hero-content {
+      min-width: 0;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      border: 1.5px solid var(--orange);
+      border-radius: 30px;
+      padding: 5px 16px;
+      color: #b55e29;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: .03em;
+    }
+
+    .hero h1 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(40px,4.3vw,62px);
+      font-weight: normal;
+      line-height: 1.13;
+      letter-spacing: -.025em;
+      margin: 20px 0 24px;
+    }
+
+    .hero p {
+      max-width: 620px;
+      font-size: clamp(18px,1.5vw,22px);
+      line-height: 1.7;
+      margin: 0 0 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--orange);
+      color: white;
+      padding: 15px 23px;
+      font-weight: bold;
+      font-size: 15px;
+      margin-top: 8px;
+      border-radius: 5px;
+    }
+
+    .btn:hover {
+      background: #aa602d;
+    }
+
+    /* ==========================================
+       ONS VERHAAL EN KAART
+       ========================================== */
+
+    .story {
+      padding-top: 64px;
+      padding-bottom: 75px;
+    }
+
+    .story h2 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-weight: normal;
+      font-size: clamp(32px,3.1vw,43px);
+      line-height: 1.22;
+      border-left: 4px solid var(--orange);
+      padding-left: 18px;
+      margin: 0 0 30px;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: minmax(0,1fr) minmax(0,1.25fr);
+      gap: 40px;
+      align-items: center;
+    }
+
+    .story-copy {
+      font-size: clamp(17px,1.35vw,19px);
+      line-height: 1.8;
+    }
+
+    .story-copy p {
+      margin: 0 0 21px;
+    }
+
+    .story-images {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 0;
+    }
+
+    .story-map {
+      display: block;
+      width: 100%;
+      max-width: 675px;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .footer-line {
+      height: 9px;
+      background: var(--green);
+    }
+
+    /* ==========================================
+       TABLET - IDENTIEK UITKLAPMENU
+       ========================================== */
+
+    @media (max-width: 1100px) {
+      .menu-toggle {
+        display: flex;
+      }
+
+      .westnut-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        z-index: 200;
+        background: #f0eee5;
+        padding: 20px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+        box-shadow: 0 10px 20px rgba(0,0,0,.12);
+      }
+
+      .westnut-links.open {
+        display: flex;
+      }
+
+      .westnut-links a {
+        display: block;
+        padding: 12px 14px;
+        font-size: 18px;
+        white-space: normal;
+      }
+
+      .westnut-links a.active,
+      .westnut-links a[aria-current="page"] {
+        padding: 12px 14px;
+      }
+    }
+
+    /* ==========================================
+       SMARTPHONE
+       ========================================== */
+
+    @media (max-width: 760px) {
+      .container {
+        padding: 0 20px;
+      }
+
+      .westnut-nav {
+        padding: 15px 20px;
+      }
+
+      .westnut-brand img {
+        width: 130px;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding-top: 35px;
+        padding-bottom: 42px;
+      }
+
+      .hero-logo img {
+        max-width: 280px;
+      }
+
+      .hero h1 {
+        font-size: clamp(37px,9vw,49px);
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      .story {
+        padding-top: 42px;
+        padding-bottom: 55px;
+      }
+
+      .story-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+
+      .story-map {
+        max-width: 100%;
+      }
     }
   </style>
 </head>
+
 <body>
-  <header class="header">
-    <nav class="container nav" aria-label="Hoofdnavigatie">
-      <a class="brand" href="index.html" aria-label="Westnut Home"><img src="westnut-logo-transparant.png" alt="Westnut – Belgische hazelnoten"></a>
-      <button class="menu-toggle" type="button" aria-label="Menu openen" aria-expanded="false" aria-controls="nav-links">☰</button>
-      <div class="links" id="nav-links">
+
+  <!-- STANDAARD WESTNUT BOVENBALK -->
+  <header class="westnut-header">
+    <nav class="westnut-nav" aria-label="Hoofdnavigatie">
+
+      <a class="westnut-brand" href="index.html">
+        <img
+          src="westnut-logo-transparant.png"
+          alt="Westnut – Belgische hazelnoten">
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Menu openen"
+        aria-expanded="false"
+        aria-controls="nav-links">☰</button>
+
+      <div class="westnut-links" id="nav-links">
         <a href="index.html">Home</a>
-        <a href="over-ons.html" aria-current="page">Ons verhaal</a>
+        <a href="over-ons.html" class="active" aria-current="page">Ons verhaal</a>
         <a href="waarom-hazelnoten.html">Waarom hazelnoten?</a>
         <a href="rassen.html">Variëteiten</a>
         <a href="producten.html">Producten</a>
@@ -81,46 +402,142 @@
         <a href="samenwerking.html">Steun &amp; samenwerking</a>
         <a href="contact.html">Contact</a>
       </div>
+
     </nav>
   </header>
+
   <main>
+
+    <!-- INTRODUCTIE -->
     <section class="hero">
       <div class="container hero-inner">
+
         <div class="hero-logo">
-          <img src="Westnut logo vierkant transparant.png" alt="Origineel vierkant Westnut-logo met Belgische hazelnoten">
+          <img
+            src="Westnut logo vierkant transparant.png"
+            alt="Origineel vierkant Westnut-logo met Belgische hazelnoten">
         </div>
+
         <div class="hero-content">
           <span class="eyebrow">ONS VERHAAL</span>
+
           <h1>Geworteld in West-Vlaanderen.</h1>
-          <p>Bij Westnut geloven we in de toekomst van Belgische hazelnoten. Vanuit West-Vlaanderen bouwen we aan een lokale en duurzame teelt, met aandacht voor kwaliteit, innovatie en de natuur.</p>
-          <a class="btn" href="rassen.html">ONTDEK ONZE VARIËTEITEN</a>
+
+          <p>
+            Bij Westnut geloven we in de toekomst van Belgische
+            hazelnoten. Vanuit West-Vlaanderen bouwen we aan een
+            lokale en duurzame teelt, met aandacht voor kwaliteit,
+            innovatie en de natuur.
+          </p>
+
+          <a class="btn" href="rassen.html">
+            ONTDEK ONZE VARIËTEITEN
+          </a>
         </div>
+
       </div>
     </section>
+
+    <!-- ONS VERHAAL -->
     <section class="container story">
+
       <h2>Van landbouwtraditie naar een nieuwe toekomst</h2>
+
       <div class="story-grid">
+
         <div class="story-copy">
-          <p>Westnut is ontstaan vanuit de ambitie om ons familiale landbouwbedrijf een nieuwe toekomst te geven. Met respect voor onze landbouwroots kiezen we bewust voor een nieuwe richting: de teelt en verwerking van Belgische hazelnoten.</p>
-          <p>Wat begon als een idee, groeide uit tot een ambitieus landbouwproject waarin ondernemerschap, duurzaamheid en passie voor lokale voeding samenkomen.</p>
-          <p>België staat wereldwijd bekend om zijn chocolade. Ook in West-Vlaanderen vinden we chocolatiers en chocoladeproducenten van wereldklasse. En wat past er beter bij chocolade dan de rijke, verfijnde smaak van hazelnoten? Denk maar aan praliné, een van de meest geliefde combinaties binnen de chocoladewereld.</p>
-          <p>Toch worden de hazelnoten die in deze producten verwerkt worden vandaag grotendeels ingevoerd. <strong>Waarom zouden we deze waardevolle grondstof niet dichter bij huis kunnen telen?</strong></p>
-          <p>Vanuit die gedachte wil Westnut mee bouwen aan een nieuwe toekomst: lokaal geteelde Belgische hazelnoten die hun weg vinden naar onze chocolatiers, voedingsproducenten én uiteindelijk de consument.</p>
+
+          <p>
+            Westnut is ontstaan vanuit de ambitie om ons familiale
+            landbouwbedrijf een nieuwe toekomst te geven. Met respect
+            voor onze landbouwroots kiezen we bewust voor een nieuwe
+            richting: de teelt en verwerking van Belgische hazelnoten.
+          </p>
+
+          <p>
+            Wat begon als een idee, groeide uit tot een ambitieus
+            landbouwproject waarin ondernemerschap, duurzaamheid
+            en passie voor lokale voeding samenkomen.
+          </p>
+
+          <p>
+            België staat wereldwijd bekend om zijn chocolade.
+            Ook in West-Vlaanderen vinden we chocolatiers en
+            chocoladeproducenten van wereldklasse. En wat past er
+            beter bij chocolade dan de rijke, verfijnde smaak van
+            hazelnoten? Denk maar aan praliné, een van de meest
+            geliefde combinaties binnen de chocoladewereld.
+          </p>
+
+          <p>
+            Toch worden de hazelnoten die in deze producten verwerkt
+            worden vandaag grotendeels ingevoerd.
+            <strong>
+              Waarom zouden we deze waardevolle grondstof niet
+              dichter bij huis kunnen telen?
+            </strong>
+          </p>
+
+          <p>
+            Vanuit die gedachte wil Westnut mee bouwen aan een
+            nieuwe toekomst: lokaal geteelde Belgische hazelnoten
+            die hun weg vinden naar onze chocolatiers,
+            voedingsproducenten én uiteindelijk de consument.
+          </p>
+
         </div>
-        <div class="story-images"><img class="story-map" src="West-Vlaanderen hazelnotenkaart.png" alt="Kaart van West-Vlaanderen met de ligging van Westnut in Reninge" loading="lazy"></div>
+
+        <div class="story-images">
+          <img
+            class="story-map"
+            src="West-Vlaanderen hazelnotenkaart.png"
+            alt="Kaart van West-Vlaanderen met de ligging van Westnut in Reninge"
+            loading="lazy">
+        </div>
+
       </div>
     </section>
+
   </main>
+
   <div class="footer-line"></div>
+
   <script>
-    const menuButton=document.querySelector('.menu-toggle');
-    const navLinks=document.querySelector('#nav-links');
-    if(menuButton&&navLinks){
-      function setMenuOpen(open){navLinks.classList.toggle('open',open);menuButton.setAttribute('aria-expanded',String(open));menuButton.setAttribute('aria-label',open?'Menu sluiten':'Menu openen');menuButton.textContent=open?'✕':'☰';}
-      menuButton.addEventListener('click',()=>setMenuOpen(!navLinks.classList.contains('open')));
-      navLinks.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>setMenuOpen(false)));
-      window.addEventListener('resize',()=>{if(window.innerWidth>1150)setMenuOpen(false);});
+    const menuButton = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('#nav-links');
+
+    if (menuButton && navLinks) {
+      function closeMenu() {
+        navLinks.classList.remove('open');
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.setAttribute('aria-label', 'Menu openen');
+        menuButton.textContent = '☰';
+      }
+
+      menuButton.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('open');
+
+        menuButton.setAttribute('aria-expanded', String(isOpen));
+        menuButton.setAttribute(
+          'aria-label',
+          isOpen ? 'Menu sluiten' : 'Menu openen'
+        );
+        menuButton.textContent = isOpen ? '✕' : '☰';
+      });
+
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeMenu);
+      });
+
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 1100) closeMenu();
+      });
+
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape') closeMenu();
+      });
     }
   </script>
+
 </body>
 </html>
