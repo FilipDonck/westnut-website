@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Contact | Westnut – Belgische hazelnoten</title>
-  <meta name="description" content="Neem contact op met Westnut, producent in ontwikkeling van lokaal geteelde Belgische hazelnoten in West-Vlaanderen.">
+  <meta name="description" content="Neem contact op met Westnut over lokaal geteelde Belgische hazelnoten, teelt, variëteiten, producten en samenwerking.">
   <link rel="canonical" href="https://westnut.be/contact.html">
   <link rel="icon" type="image/png" href="westnut-logo-transparant.png">
   <link rel="stylesheet" href="style.css">
@@ -13,7 +13,6 @@
     *, *::before, *::after { box-sizing:border-box; }
     body.contact-page { margin:0; background:var(--westnut-bg); color:var(--westnut-green); font-family:Arial,Helvetica,sans-serif; line-height:1.65; }
     .contact-page .container { max-width:1220px; margin:0 auto; padding-left:28px; padding-right:28px; }
-    /* Zelfde bovenbalk als Steun & samenwerking */
     .contact-page .top { position:relative; z-index:100; background:var(--westnut-bg); border-bottom:1px solid var(--westnut-line); }
     .contact-page .top .nav { display:flex; align-items:center; justify-content:space-between; gap:20px; min-height:90px; padding-top:12px; padding-bottom:12px; }
     .contact-page .top .brand { display:flex; align-items:center; flex-shrink:0; text-decoration:none; }
@@ -25,16 +24,25 @@
     .contact-page .top .links a[aria-current="page"]:hover { color:#fff; }
     .contact-page .menu-toggle { display:none; align-items:center; justify-content:center; flex-shrink:0; width:46px; height:46px; border:1px solid #d8dfd5; border-radius:8px; background:transparent; color:var(--westnut-green); font-size:29px; line-height:1; cursor:pointer; }
     .contact-page .menu-toggle:focus-visible, .contact-page .top .links a:focus-visible { outline:3px solid var(--westnut-orange); outline-offset:3px; }
-    /* Contactinhoud: bestaande informatie met verzorgde opmaak */
     .contact-page .pagehead { padding:65px 0 28px; background:transparent; }
     .contact-page .pagehead .eyebrow { color:#b47742; font-size:13px; font-weight:700; letter-spacing:3px; text-transform:uppercase; }
     .contact-page .pagehead h1 { font-family:Georgia,serif; font-size:clamp(36px,4vw,52px); font-weight:400; line-height:1.2; margin:18px 0 20px; }
     .contact-page .pagehead p { max-width:790px; font-size:19px; line-height:1.8; margin:0; }
     .contact-page .section { padding:20px 0 75px; }
-    .contact-page .tile { max-width:780px; padding:30px 34px; background:#fffdf9; border:1px solid var(--westnut-line); border-radius:10px; }
-    .contact-page .tile h3 { margin:0 0 12px; font-size:23px; }
+    .contact-page .contact-grid { display:grid; grid-template-columns:minmax(0,1.45fr) minmax(280px,1fr); gap:24px; align-items:start; }
+    .contact-page .tile { padding:30px 34px; background:#fffdf9; border:1px solid var(--westnut-line); border-radius:10px; }
+    .contact-page .tile h2 { margin:0 0 12px; font-size:23px; }
     .contact-page .tile p { margin:0 0 14px; font-size:17px; }
     .contact-page .tile .small { font-size:14px; color:#5c6b5e; }
+    .contact-page .email-link { color:#205a34; text-decoration:underline; text-underline-offset:3px; overflow-wrap:anywhere; }
+    .contact-page .field { margin-top:18px; }
+    .contact-page .field label { display:block; font-size:15px; font-weight:600; margin-bottom:6px; }
+    .contact-page .field input, .contact-page .field select, .contact-page .field textarea { width:100%; padding:12px 14px; border:1px solid #cbd3c9; border-radius:7px; background:white; color:var(--westnut-green); font:inherit; font-size:16px; }
+    .contact-page .field textarea { min-height:155px; resize:vertical; }
+    .contact-page .field input:focus-visible, .contact-page .field select:focus-visible, .contact-page .field textarea:focus-visible, .contact-page .send-button:focus-visible { outline:3px solid var(--westnut-orange); outline-offset:2px; }
+    .contact-page .send-button { margin-top:22px; border:0; border-radius:8px; background:var(--westnut-green); color:#fff; padding:14px 24px; font:inherit; font-size:16px; font-weight:600; cursor:pointer; }
+    .contact-page .send-button:hover { background:#28553a; }
+    .contact-page .form-note { margin-top:12px !important; font-size:14px !important; color:#5c6b5e; }
     .contact-page .foot { border-top:1px solid var(--westnut-line); padding:26px 0; }
     .contact-page .foot .container { display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap; }
     .contact-page .foot .small { font-size:14px; }
@@ -46,6 +54,7 @@
       .contact-page .top .links a { display:block; padding:12px 14px; white-space:normal; }
       .contact-page .top .links a[aria-current="page"] { padding:12px 14px; }
     }
+    @media (max-width:800px) { .contact-page .contact-grid { grid-template-columns:1fr; } }
     @media (max-width:700px) {
       .contact-page .container { padding-left:20px; padding-right:20px; }
       .contact-page .top .brand img { width:130px; }
@@ -83,12 +92,24 @@
       </div>
     </section>
     <section class="section">
-      <div class="container">
+      <div class="container contact-grid">
         <div class="tile">
-          <h3>Westnut</h3>
+          <h2>Stel ons je vraag</h2>
+          <p>Vul hieronder je gegevens en bericht in.</p>
+          <form id="contact-form">
+            <div class="field"><label for="contact-name">Naam *</label><input id="contact-name" name="name" type="text" autocomplete="name" required maxlength="120"></div>
+            <div class="field"><label for="contact-email">E-mailadres *</label><input id="contact-email" name="email" type="email" autocomplete="email" required maxlength="254"></div>
+            <div class="field"><label for="contact-subject">Onderwerp</label><select id="contact-subject" name="subject"><option>Algemene vraag</option><option>Hazelnootteelt en variëteiten</option><option>Producten</option><option>Steun en samenwerking</option><option>Andere vraag</option></select></div>
+            <div class="field"><label for="contact-message">Je bericht *</label><textarea id="contact-message" name="message" required maxlength="5000" placeholder="Schrijf hier je vraag..."></textarea></div>
+            <button class="send-button" type="submit">✉ Open e-mail om te versturen</button>
+            <p class="form-note">Je e-mailprogramma opent met je ingevulde bericht. Controleer het bericht en klik daar op Verzenden. Het formulier verstuurt nog niet zelfstandig.</p>
+          </form>
+        </div>
+        <div class="tile">
+          <h2>Westnut</h2>
           <p>West-Vlaanderen, België</p>
-          <p>E-mail: <a data-email>E-mailadres volgt</a></p>
-          <p class="small">Vul later je zakelijke e-mailadres in via Pages CMS bij Website-instellingen.</p>
+          <p>E-mail: <a class="email-link" href="mailto:info@westnut.be">info@westnut.be</a></p>
+          <p class="small">Je kunt ons ook rechtstreeks mailen via bovenstaand adres.</p>
         </div>
       </div>
     </section>
@@ -96,7 +117,7 @@
   <footer class="foot">
     <div class="container">
       <div><strong>WESTNUT</strong><br>Belgische hazelnoten · West-Vlaanderen<br><span class="small">Lokale teelt. Toekomstige smaken.</span></div>
-      <div><a data-email>E-mailadres volgt</a><br><span class="small">© Westnut 2026</span></div>
+      <div><a class="email-link" href="mailto:info@westnut.be">info@westnut.be</a><br><span class="small">© Westnut 2026</span></div>
     </div>
   </footer>
   <script src="site.js" defer></script>
@@ -104,16 +125,29 @@
     (function () {
       const button = document.querySelector('.menu-toggle');
       const links = document.getElementById('nav-links');
-      if (!button || !links) return;
-      function setOpen(open) {
-        links.classList.toggle('open', open);
-        button.setAttribute('aria-expanded', String(open));
-        button.setAttribute('aria-label', open ? 'Menu sluiten' : 'Menu openen');
-        button.textContent = open ? '✕' : '☰';
+      if (button && links) {
+        function setOpen(open) {
+          links.classList.toggle('open', open);
+          button.setAttribute('aria-expanded', String(open));
+          button.setAttribute('aria-label', open ? 'Menu sluiten' : 'Menu openen');
+          button.textContent = open ? '✕' : '☰';
+        }
+        button.addEventListener('click', () => setOpen(!links.classList.contains('open')));
+        links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false)));
+        window.addEventListener('resize', () => { if (window.innerWidth > 1100) setOpen(false); });
       }
-      button.addEventListener('click', () => setOpen(!links.classList.contains('open')));
-      links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false)));
-      window.addEventListener('resize', () => { if (window.innerWidth > 1100) setOpen(false); });
+      const form = document.getElementById('contact-form');
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        if (!form.reportValidity()) return;
+        const name = document.getElementById('contact-name').value.trim();
+        const email = document.getElementById('contact-email').value.trim();
+        const subject = document.getElementById('contact-subject').value;
+        const message = document.getElementById('contact-message').value.trim();
+        if (!name || !email || !message) return;
+        const body = 'Naam: ' + name + '\nE-mailadres: ' + email + '\n\nBericht:\n' + message;
+        window.location.href = 'mailto:info@westnut.be?subject=' + encodeURIComponent('Westnut – ' + subject) + '&body=' + encodeURIComponent(body);
+      });
     })();
   </script>
 </body>
